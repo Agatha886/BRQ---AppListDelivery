@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MeuPrimeiroApp">
         <activity android:name="br.com.brq.listdelivery.ui.CriarContaActivity"></activity>
-        <activity android:name="br.com.brq.listdelivery.PrincipalActivity" />
+        <activity android:name="br.com.brq.listdelivery.ui.PrincipalActivity" />
         <activity android:name="br.com.brq.listdelivery.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
