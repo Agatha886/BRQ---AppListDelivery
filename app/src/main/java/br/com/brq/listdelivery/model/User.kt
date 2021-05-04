@@ -1,4 +1,4 @@
-package br.com.brq.meuprimeiroapp.model
+package br.com.brq.listdelivery.model
 
 class User (var nome: String,
             var email: String,

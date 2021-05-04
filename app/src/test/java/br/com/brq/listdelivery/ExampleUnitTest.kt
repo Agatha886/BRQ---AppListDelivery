@@ -1,4 +1,4 @@
-package br.com.brq.meuprimeiroapp
+package br.com.brq.listdelivery
 
 import org.junit.Test
 

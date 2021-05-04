@@ -1,13 +1,12 @@
-package br.com.brq.meuprimeiroapp
+package br.com.brq.listdelivery
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
-import br.com.brq.meuprimeiroapp.model.User
-import br.com.brq.meuprimeiroapp.ui.CriarContaActivity
+import br.com.brq.listdelivery.model.User
+import br.com.brq.listdelivery.ui.CriarContaActivity
 
 class LoginActivity : AppCompatActivity() {
     lateinit var btnLogin: Button

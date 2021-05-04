@@ -1,19 +1,21 @@
 <resources>
-<!--    //String Títulos-->
+    <!--    //String Títulos-->
     <string name="titulo_tela_segunda">Crie Sua Conta</string>
     <string name="app_name">ListDelivery</string>
     <string name="titulo_tela_login">Login</string>
 
-<!--    String TexEdit:-->
+    <!--    String TexEdit:-->
     <string name="senha">Senha:</string>
     <string name="confirmar_senha">Confirme Sua Senha:</string>
     <string name="login">Digite seu Login ou Email:</string>
     <string name="nome">Nome:</string>
     <string name="email">Email:</string>
 
-<!--    Button-->
+    <!--    Button-->
     <string name="botao_enviar">Enviar</string>
     <string name="botao_criar">Nova Conta</string>
     <string name="botao_cadastrar">Cadastrar</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

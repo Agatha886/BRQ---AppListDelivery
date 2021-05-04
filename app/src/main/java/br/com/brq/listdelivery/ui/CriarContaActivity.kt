@@ -1,14 +1,12 @@
-package br.com.brq.meuprimeiroapp.ui
+package br.com.brq.listdelivery.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import br.com.brq.meuprimeiroapp.LoginActivity
-import br.com.brq.meuprimeiroapp.PrincipalActivity
-import br.com.brq.meuprimeiroapp.R
+import br.com.brq.listdelivery.LoginActivity
+import br.com.brq.listdelivery.R
 
 class CriarContaActivity : AppCompatActivity() {
 
