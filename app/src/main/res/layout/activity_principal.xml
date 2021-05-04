@@ -10,15 +10,6 @@
     android:orientation="vertical"
     tools:context=".LoginActivity">
 
-    <fragment
-        android:id="@+id/menu_fragment"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"/>
-
-
     <Button
         android:id="@+id/button_principal"
         android:layout_width="167dp"
