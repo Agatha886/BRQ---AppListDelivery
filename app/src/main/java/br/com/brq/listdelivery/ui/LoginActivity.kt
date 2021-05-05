@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import br.com.brq.listdelivery.model.User
 import br.com.brq.listdelivery.ui.CriarContaActivity
+import br.com.brq.listdelivery.ui.PrincipalActivity
 
 class LoginActivity : AppCompatActivity() {
     lateinit var btnLogin: Button

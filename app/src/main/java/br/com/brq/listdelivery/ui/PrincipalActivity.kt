@@ -1,10 +1,9 @@
-package br.com.brq.listdelivery
+package br.com.brq.listdelivery.ui
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import br.com.brq.listdelivery.ui.CriarContaActivity
+import br.com.brq.listdelivery.R
 
 class PrincipalActivity : AppCompatActivity() {
     lateinit var btnPrincipal: Button
