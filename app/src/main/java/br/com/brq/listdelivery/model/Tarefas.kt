@@ -1,6 +1,4 @@
-package br.com.brq.meuprimeiroapp.model
-
-import br.com.brq.listdelivery.model.User
+package br.com.brq.listdelivery.model
 
 class Tarefas (
         var id : String,
