@@ -17,5 +17,11 @@
     <string name="botao_cadastrar">Cadastrar</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="voltar_para_login">Já tem uma Conta? Faça Login</string>
+    <string name="clicar">Clicar</string>
+    <string name="menu_pedidos">Pedidos</string>
+    <string name="menu_entregues">Pedidos entregues</string>
+    <string name="menu_atrasados">Pedidos atrasados</string>
+    <string name="menu_cancelados">Pedidos cancelados</string>
 
 </resources>

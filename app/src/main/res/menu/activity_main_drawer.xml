@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_pedidos"
+            android:title="Todos os pedidos" />
+        <item
+            android:id="@+id/nav_entregues"
+            android:title="Pedidos entregues" />
+        <item
+            android:id="@+id/nav_atrasados"
+            android:title="Pedidos atrasados" />
+        <item
+            android:id="@+id/nav_cancelados"
+            android:title="Pedidos cancelados" />
+        <item
+            android:id="@+id/logout"
+            android:title="Sair" />
+    </group>
+</menu>

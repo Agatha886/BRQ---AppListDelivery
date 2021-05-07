@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -50,10 +51,10 @@
         android:paddingTop="10dp"
         android:textColor="@color/segunda_color_bacground"
         android:textColorHint="@color/color_botton"
-        android:textSize="13dp"
+        android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tituloSegundaTela"></EditText>
+        app:layout_constraintTop_toBottomOf="@+id/tituloSegundaTela"/>
 
     <EditText
         android:id="@+id/editTextEmail"
@@ -66,10 +67,10 @@
         android:paddingTop="10dp"
         android:textColor="@color/segunda_color_bacground"
         android:textColorHint="@color/color_botton"
-        android:textSize="13dp"
+        android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNome"></EditText>
+        app:layout_constraintTop_toBottomOf="@+id/editTextNome"/>
 
     <EditText
         android:id="@+id/editTextSenha"
@@ -82,10 +83,10 @@
         android:paddingTop="10dp"
         android:textColor="@color/segunda_color_bacground"
         android:textColorHint="@color/color_botton"
-        android:textSize="13dp"
+        android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextEmail"></EditText>
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmail"/>
 
     <EditText
         android:id="@+id/editTextConfirmarSenha"
@@ -98,10 +99,10 @@
         android:paddingTop="10dp"
         android:textColor="@color/segunda_color_bacground"
         android:textColorHint="@color/color_botton"
-        android:textSize="13dp"
+        android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextSenha"></EditText>
+        app:layout_constraintTop_toBottomOf="@+id/editTextSenha"/>
 
     <Button
         android:id="@+id/button_criar_conta"
@@ -111,7 +112,7 @@
         android:background="@drawable/button_enviar_drawable"
         android:padding="5dp"
         android:text="@string/botao_cadastrar"
-        android:textSize="13dp"
+        android:textSize="13sp"
         app:layout_constraintBottom_toTopOf="@+id/button_criar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -124,7 +125,7 @@
         android:layout_height="wrap_content"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:text="Já tem uma Conta? Faça Login"
+        android:text="@string/voltar_para_login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

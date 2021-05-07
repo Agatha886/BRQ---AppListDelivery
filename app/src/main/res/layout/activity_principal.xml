@@ -10,16 +10,23 @@
     android:orientation="vertical"
     tools:context=".LoginActivity">
 
-    <Button
-        android:id="@+id/button_principal"
-        android:layout_width="167dp"
-        android:layout_height="84dp"
-        android:backgroundTint="@color/color_botton"
-        android:text="Clicar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+    <include
+        layout="@layout/app_bar_top"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"/>
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/nav_view"
+        app:headerLayout="@layout/nav_header_main"
+        app:menu="@menu/activity_main_drawer"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+
+
     
 </androidx.constraintlayout.widget.ConstraintLayout>
