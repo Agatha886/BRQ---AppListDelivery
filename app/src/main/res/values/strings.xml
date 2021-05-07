@@ -1,8 +1,9 @@
 <resources>
+    <string name="app_name">Meu primeiro app</string>
+    <string name="titulo_tela_login">Login</string>
+
 <!--    //String Títulos-->
     <string name="titulo_tela_segunda">Crie Sua Conta</string>
-    <string name="app_name">ListDelivery</string>
-    <string name="titulo_tela_login">Login</string>
 
 <!--    String TexEdit:-->
     <string name="senha">Senha:</string>
@@ -16,4 +17,6 @@
     <string name="botao_criar">Nova Conta</string>
     <string name="botao_cadastrar">Cadastrar</string>
 
+<!--    Erro-->
+    <string name="erroLogin">LOGIN NÃO ENCONTRADO</string>
 </resources>
