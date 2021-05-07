@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_pedidos">
 
     <fragment
         android:id="@+id/nav_pedidos"
@@ -15,13 +15,14 @@
         android:id="@+id/nav_entregues"
         android:name="br.com.brq.listdelivery.ui.entregues.EntreguesFragment"
         android:label="@string/menu_entregues"
-        tools:layout="@layout/fragment_pedidos" />
+        tools:layout="@layout/fragment_entregues" />
 
     <fragment
         android:id="@+id/nav_atrasados"
         android:name="br.com.brq.listdelivery.ui.atrasados.AtrasadosFragment"
         android:label="@string/menu_atrasados"
-        tools:layout="@layout/fragment_atrasados" />
+        tools:layout="@layout/fragment_atrasados" >
+    </fragment>
 
     <fragment
         android:id="@+id/nav_cancelados"

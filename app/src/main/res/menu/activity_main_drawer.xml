@@ -16,8 +16,6 @@
         <item
             android:id="@+id/nav_cancelados"
             android:title="Pedidos cancelados" />
-        <item
-            android:id="@+id/logout"
-            android:title="Sair" />
+
     </group>
 </menu>
