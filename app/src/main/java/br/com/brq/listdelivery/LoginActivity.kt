@@ -1,51 +1,55 @@
-package br.com.brq.meuprimeiroapp
+package br.com.brq.listDelivery
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
-import br.com.brq.meuprimeiroapp.model.User
-import br.com.brq.meuprimeiroapp.ui.CriarContaActivity
+import br.com.brq.listDelivery.model.Conta
+import br.com.brq.listDelivery.ui.CriarContaActivity
+import com.google.android.material.snackbar.Snackbar
 
 class LoginActivity : AppCompatActivity() {
     lateinit var btnLogin: Button
     lateinit var btnCriar: Button
     lateinit var editTextEmail: EditText
+    lateinit var editTextSenha : EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        println("----- ON CREATE")
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         carregarElementos()
         carregarEventos()
 
-        val email = editTextEmail.text.toString()
-        val user = User(nome = "Agatha", email = email, senha = "123", idade = 20)
-        if (user.validarEmail()) {
-            println("Email TRUE")
-        } else {
-            println("Email FALSE")
-        }
-        user.addIdade(novaIdade = 5)
-        println(user.idade)
     }
 
     fun carregarElementos() {
         btnLogin = findViewById<Button>(R.id.button_login)
         btnCriar = findViewById<Button>(R.id.button_criar)
         editTextEmail = findViewById<EditText>(R.id.editTextEmail)
+        editTextSenha = findViewById<EditText>(R.id.editTextSenha)
     }
 
     fun carregarEventos() {
         btnLogin.setOnClickListener {
-            val intent = Intent(this, PrincipalActivity::class.java)
-            startActivity(intent)
+            var conta = Conta()
+            var email = editTextEmail.text.toString()
+            var senha = editTextSenha.text.toString()
+            var valid = conta.validAcesso(editTextEmail = email, editTextSenha = senha)
+            if(valid){
+                val intentTelaPrincipal = Intent(this, PrincipalActivity::class.java)
+                startActivity(intentTelaPrincipal)
+            }else{
+                Snackbar.make(
+                        findViewById(R.id.ConstraintLayout),
+                        R.string.erroLogin,
+                        Snackbar.LENGTH_SHORT
+                ).show()
+            }
         }
         btnCriar.setOnClickListener {
-            val intent = Intent(this, CriarContaActivity::class.java)
-            startActivity(intent)
+            val intentTelaDeCadastro = Intent(this, CriarContaActivity::class.java)
+            startActivity(intentTelaDeCadastro)
         }
     }
 

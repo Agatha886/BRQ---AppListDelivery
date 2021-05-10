@@ -1,4 +1,4 @@
-package br.com.brq.listDelivery.model
+package br.com.brq.listDelivery.model.dataClasse
 
 data class User (
     var id: Int,
