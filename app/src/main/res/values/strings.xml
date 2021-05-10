@@ -23,5 +23,6 @@
     <string name="menu_entregues">Pedidos entregues</string>
     <string name="menu_atrasados">Pedidos atrasados</string>
     <string name="menu_cancelados">Pedidos cancelados</string>
+    <string name="menu">Menu</string>
 
 </resources>

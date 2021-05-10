@@ -36,7 +36,7 @@ class PrincipalActivity : AppCompatActivity() {
 
         val menu_layout : DrawerLayout = findViewById(R.id.menu_layout)
         val nav_view : NavigationView = findViewById(R.id.nav_view)
-        val nav_host : NavController = findNavController(R.id.nav_host_fragment_container)
+        val nav_host : NavController = findNavController(R.id.nav_principal_fragment)
 
         appBarConfiguration = AppBarConfiguration(setOf(
                 R.id.nav_pedidos, R.id.nav_entregues, R.id.nav_atrasados, R.id.nav_cancelados), menu_layout)

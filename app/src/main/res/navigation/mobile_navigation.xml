@@ -11,24 +11,24 @@
         android:label="@string/menu_pedidos"
         tools:layout="@layout/fragment_pedidos" />
 
-    <fragment
-        android:id="@+id/nav_entregues"
-        android:name="br.com.brq.listdelivery.ui.entregues.EntreguesFragment"
-        android:label="@string/menu_entregues"
-        tools:layout="@layout/fragment_entregues" />
+<!--    <fragment-->
+<!--        android:id="@+id/nav_entregues"-->
+<!--        android:name="br.com.brq.listdelivery.ui.entregues.EntreguesFragment"-->
+<!--        android:label="@string/menu_entregues"-->
+<!--        tools:layout="@layout/fragment_entregues" />-->
 
-    <fragment
-        android:id="@+id/nav_atrasados"
-        android:name="br.com.brq.listdelivery.ui.atrasados.AtrasadosFragment"
-        android:label="@string/menu_atrasados"
-        tools:layout="@layout/fragment_atrasados" >
-    </fragment>
+<!--    <fragment-->
+<!--        android:id="@+id/nav_atrasados"-->
+<!--        android:name="br.com.brq.listdelivery.ui.atrasados.AtrasadosFragment"-->
+<!--        android:label="@string/menu_atrasados"-->
+<!--        tools:layout="@layout/fragment_atrasados" >-->
+<!--    </fragment>-->
 
-    <fragment
-        android:id="@+id/nav_cancelados"
-        android:name="br.com.brq.listdelivery.ui.cancelados.CanceladosFragment"
-        android:label="@string/menu_cancelados"
-        tools:layout="@layout/fragment_cancelados" />
+<!--    <fragment-->
+<!--        android:id="@+id/nav_cancelados"-->
+<!--        android:name="br.com.brq.listdelivery.ui.cancelados.CanceladosFragment"-->
+<!--        android:label="@string/menu_cancelados"-->
+<!--        tools:layout="@layout/fragment_cancelados" />-->
 
 
 </navigation>

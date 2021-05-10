@@ -4,12 +4,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="250dp"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_gradient_principal"
-    android:orientation="vertical"
-    tools:context=".LoginActivity"
     android:id="@+id/menu_layout"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start"
     >
 
     <include
