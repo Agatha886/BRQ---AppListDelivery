@@ -32,7 +32,6 @@ class PrincipalActivity : AppCompatActivity() {
 
     fun carregarEventos() {
         val tarefa = ListasTarefas()
-//        conta.validTarefa(text)
 //        tarefa.imprimeTarefa()
     }
 
@@ -42,6 +41,8 @@ class PrincipalActivity : AppCompatActivity() {
 
         listasTarefas.add(tarefa.tarefa1)
         listasTarefas.add(tarefa.tarefa2)
+        listasTarefas.add(tarefa.tarefa3)
+        listasTarefas.add(tarefa.tarefa4)
     }
 
 

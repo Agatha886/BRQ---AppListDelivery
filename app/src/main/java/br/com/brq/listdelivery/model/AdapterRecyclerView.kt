@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.brq.listDelivery.R
@@ -21,7 +22,10 @@ class AdapterRecyclerView(val context : Context , val listaTarefas: ArrayList<Ta
         listaTarefas.get(position).also {
             holder.textViewStatus.text = it.status.toString()
             holder.textViewData.text = it.dataDeEntrega
-            holder.textViewObs.text = it.pedido.nomeDoProduto
+            holder.textViewNomeProduto.text = "Produto: ${it.pedido.nomeDoProduto}"
+            holder.textViewNomeCliente.text = "Nome: ${it.pedido.destinatario}"
+            holder.textViewCpfCliente.text = "CPF: ${it.pedido.cpdDoDestinatario}"
+            holder.imgTarefa.setImageResource(imgListaTarefa(holder))
         }
          listaTarefas[position].toString()
     }
@@ -34,10 +38,29 @@ class AdapterRecyclerView(val context : Context , val listaTarefas: ArrayList<Ta
 class ViewHoldertarefas(itemView: View): RecyclerView.ViewHolder(itemView){
     var textViewStatus : TextView
     var textViewData : TextView
-    var textViewObs : TextView
+    var textViewNomeProduto : TextView
+    var textViewNomeCliente : TextView
+    var textViewCpfCliente : TextView
+    var imgTarefa : ImageView
     init {
         textViewStatus = itemView.findViewById(R.id.textStatus)
         textViewData = itemView.findViewById(R.id.textData)
-        textViewObs = itemView.findViewById(R.id.textObd)
+        textViewNomeProduto = itemView.findViewById(R.id.textNomeProduto)
+        textViewNomeCliente = itemView.findViewById(R.id.textNomeCliente)
+        textViewCpfCliente = itemView.findViewById(R.id.textCpfCliente)
+        imgTarefa = itemView.findViewById(R.id.imageTarefa)
     }
+
+}
+
+fun imgListaTarefa(holder: ViewHoldertarefas): Int {
+    var img : Int
+    if(holder.textViewStatus.text == StatusPedido.PENDENTE.toString()){
+        img = R.drawable.tarefa_pendente
+    }else if(holder.textViewStatus.text == StatusPedido.ENTREGUE.toString()){
+        img = R.drawable.tarefa_entregue
+    }else{
+        img = R.drawable.tarefa_cancelada
+    }
+    return img
 }
