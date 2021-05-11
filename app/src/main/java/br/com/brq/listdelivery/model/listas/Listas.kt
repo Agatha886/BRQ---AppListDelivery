@@ -24,7 +24,7 @@ class ListasTarefas (){
 
    val tarefa2 = Tarefas(
             id = 2,
-            status = StatusPedido.PENDENTE,
+            status = StatusPedido.ATRASADO,
             User = listaUser.user2,
             dataDeEntrega ="2021-01-02",
             pedido= listaPedido.pedido2,
@@ -60,7 +60,7 @@ class ListasTarefas (){
 
     fun imgListaTarefa(tarefa: Tarefas): Int {
         if(tarefa.status == StatusPedido.PENDENTE){
-           return R.drawable.tarefa_pendente
+           return R.drawable.tarefa_atrasada
         }
 
         if(tarefa.status == StatusPedido.ENTREGUE){

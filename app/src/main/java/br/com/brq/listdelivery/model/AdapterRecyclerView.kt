@@ -57,8 +57,10 @@ fun imgListaTarefa(holder: ViewHoldertarefas): Int {
     var img : Int
     if(holder.textViewStatus.text == StatusPedido.PENDENTE.toString()){
         img = R.drawable.tarefa_pendente
-    }else if(holder.textViewStatus.text == StatusPedido.ENTREGUE.toString()){
+    }else if(holder.textViewStatus.text == StatusPedido.ENTREGUE.toString()) {
         img = R.drawable.tarefa_entregue
+    }else if(holder.textViewStatus.text == StatusPedido.ATRASADO.toString()){
+        img = R.drawable.tarefa_atrasada
     }else{
         img = R.drawable.tarefa_cancelada
     }
