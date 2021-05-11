@@ -1,6 +1,7 @@
 package br.com.brq.listDelivery
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -40,11 +41,18 @@ class LoginActivity : AppCompatActivity() {
                 val intentTelaPrincipal = Intent(this, PrincipalActivity::class.java)
                 startActivity(intentTelaPrincipal)
             }else{
+//                Snackbar.make(
+//                        findViewById(R.id.ConstraintLayout),
+//                        R.string.erroLogin,
+//                        Snackbar.LENGTH_SHORT
+//                ).show()
                 Snackbar.make(
                         findViewById(R.id.ConstraintLayout),
                         R.string.erroLogin,
                         Snackbar.LENGTH_SHORT
-                ).show()
+                ).setTextColor(Color.RED)
+                 .setBackgroundTint(Color.WHITE)
+                 .show()
             }
         }
         btnCriar.setOnClickListener {

@@ -52,23 +52,12 @@ class ListasTarefas (){
 
 //    val listaTarefas : MutableList<Tarefas> = mutableListOf(tarefa1,tarefa2)
 
-    fun filtroListaTarefas(){
-        listOf<String>("agathamonfredini@gmail.com","alexalves@gmail.com","mariajoaquina@gmail.com")
-                .filterIndexed { index, _ ->  index== 0 }
-                .forEach { println("                               " + it +"                                            ") }
-    }
-
-    fun imgListaTarefa(tarefa: Tarefas): Int {
-        if(tarefa.status == StatusPedido.PENDENTE){
-           return R.drawable.tarefa_atrasada
-        }
-
-        if(tarefa.status == StatusPedido.ENTREGUE){
-            return R.drawable.tarefa_entregue
-        }
-        return R.drawable.tarefa_cancelada
-    }
-
+//    fun filtroListaTarefas(){
+//        listOf<String>("agathamonfredini@gmail.com","alexalves@gmail.com","mariajoaquina@gmail.com")
+//                .filterIndexed { index, _ ->  index== 0 }
+//                .forEach { println("                               " + it +"                                            ") }
+//    }
+//
 
 
 //    fun imprimeTarefa(){
