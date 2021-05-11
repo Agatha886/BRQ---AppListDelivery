@@ -19,7 +19,7 @@ class EntreguesFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         entreguesViewModel = ViewModelProvider(this).get(EntreguesViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_pedidos, container, false)
+        val root = inflater.inflate(R.layout.fragment_entregues, container, false)
         val textView: TextView = root.findViewById(R.id.entregues_fragment)
         entreguesViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it

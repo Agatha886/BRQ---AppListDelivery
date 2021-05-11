@@ -19,7 +19,7 @@ class AtrasadosFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         atrasadosViewModel = ViewModelProvider(this).get(AtrasadosViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_pedidos, container, false)
+        val root = inflater.inflate(R.layout.fragment_atrasados, container, false)
         val textView: TextView = root.findViewById(R.id.atrasados_fragment)
         atrasadosViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it

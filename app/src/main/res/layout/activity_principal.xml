@@ -22,9 +22,8 @@
         android:id="@+id/nav_view"
         app:headerLayout="@layout/nav_header_main"
         app:menu="@menu/activity_main_drawer"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:fitsSystemWindows="true"
+        android:layout_gravity="start"
         />
 
 </androidx.drawerlayout.widget.DrawerLayout>

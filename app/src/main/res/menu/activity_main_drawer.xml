@@ -6,16 +6,19 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_pedidos"
+            android:icon="@drawable/abc_vector_test"
             android:title="Todos os pedidos" />
         <item
             android:id="@+id/nav_entregues"
-            android:title="Pedidos entregues" />
+            android:title="Pedidos entregues"
+            android:icon="@drawable/abc_vector_test"/>
         <item
             android:id="@+id/nav_atrasados"
-            android:title="Pedidos atrasados" />
+            android:title="Pedidos atrasados"
+            android:icon="@drawable/abc_vector_test"/>
         <item
             android:id="@+id/nav_cancelados"
-            android:title="Pedidos cancelados" />
-
+            android:title="Pedidos cancelados"
+            android:icon="@drawable/abc_vector_test"/>
     </group>
 </menu>

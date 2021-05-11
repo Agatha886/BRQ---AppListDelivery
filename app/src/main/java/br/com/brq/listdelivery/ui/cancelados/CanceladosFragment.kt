@@ -19,7 +19,7 @@ class CanceladosFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         canceladosViewModel = ViewModelProvider(this).get(CanceladosViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_pedidos, container, false)
+        val root = inflater.inflate(R.layout.fragment_cancelados, container, false)
         val textView: TextView = root.findViewById(R.id.cancelados_fragment)
         canceladosViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
