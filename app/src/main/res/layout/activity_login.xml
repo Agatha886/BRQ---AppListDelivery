@@ -12,7 +12,7 @@
     android:padding="30dp">
 
   <EditText
-      android:id="@+id/editTextEmail"
+      android:id="@+id/editTextDescricao"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_marginTop="25dp"
@@ -30,7 +30,7 @@
   </EditText>
 
   <EditText
-      android:id="@+id/editTextSenha"
+      android:id="@+id/editTextDestintario"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_marginTop="16dp"
@@ -44,7 +44,7 @@
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/editTextEmail"
+      app:layout_constraintTop_toBottomOf="@+id/editTextDescricao"
       app:layout_constraintVertical_bias="0.0">
 
   </EditText>
@@ -60,7 +60,7 @@
       app:layout_constraintBottom_toTopOf="@+id/button_criar"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/editTextSenha"
+      app:layout_constraintTop_toBottomOf="@+id/editTextDestintario"
       app:layout_constraintVertical_bias="0.261" />
   <Button
       android:id="@+id/button_criar"

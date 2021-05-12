@@ -1,9 +1,15 @@
 package br.com.brq.listDelivery.model.dataClasse
 
+import java.io.Serializable
+
 data class User (
-    var id: Int,
     var email : String,
     var senha: String,
     var nome : String,
     var cpf: String
-)
+) : Serializable{
+    companion object {
+        val listaUses = hashMapOf<Int,User>()
+    }
+}
+

@@ -14,9 +14,22 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_weight="1"
-        android:background="@color/white"/>
+        android:background="@color/white">
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/tarefaAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_marginEnd="124dp"
+            android:layout_marginBottom="136dp"
+            android:src="@drawable/moto_logo"
+            app:fabSize="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
 
+        </com.google.android.material.floatingactionbutton.FloatingActionButton>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

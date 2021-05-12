@@ -5,5 +5,5 @@ data class Pedido (
         var descricaoDoProduto : String,
         var destinatario : String,
         var enderecoEntrega : String,
-        var cpdDoDestinatario : String
+        var cpfDoDestinatario : String
 )
