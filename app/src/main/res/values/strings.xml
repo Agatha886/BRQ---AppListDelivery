@@ -18,5 +18,5 @@
     <string name="botao_cadastrar">Cadastrar</string>
 
 <!--    Erro-->
-    <string name="erroLogin">LOGIN NÃO ENCONTRADO</string>
+    <string name="erro_cadastro">LOGIN NÃO ENCONTRADO!!!</string>
 </resources>

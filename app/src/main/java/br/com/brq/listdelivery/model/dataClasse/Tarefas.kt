@@ -5,14 +5,14 @@ import java.io.Serializable
 
 data class Tarefas(
         val status: StatusPedido,
-        var User: User,
+        var User: User?,
         val dataDeEntrega: String,
         val pedido: Pedido,
         val obs: String,
 
 ):Serializable{
     companion object{
-        val listasTarefas = hashMapOf<Int, Tarefas>()
+//        val listasTarefas = hashMapOf<Int, Tarefas>()
     }
 
 }

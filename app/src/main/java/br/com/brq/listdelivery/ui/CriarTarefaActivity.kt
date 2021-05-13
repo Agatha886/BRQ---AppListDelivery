@@ -32,7 +32,7 @@ class CriarTarefaActivity : AppCompatActivity(){
         CarregarElementos()
         CarregarEventos()
 
-        AdapterRecyclerView(this, Tarefas.listasTarefas).let {
+        AdapterRecyclerView(this, listasTarefas).let {
             adapter = it
             recyclerView?.adapter = it
         }

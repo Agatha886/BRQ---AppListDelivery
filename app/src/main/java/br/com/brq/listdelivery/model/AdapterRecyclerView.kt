@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import br.com.brq.listDelivery.R
 import br.com.brq.listDelivery.model.dataClasse.Tarefas
 
-class AdapterRecyclerView(val context: Context, val listaTarefas: HashMap<Int, Tarefas>): RecyclerView.Adapter<ViewHoldertarefas>() {
+class AdapterRecyclerView(val context: Context, val listaTarefas: ArrayList<Tarefas>): RecyclerView.Adapter<ViewHoldertarefas>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHoldertarefas {
         val inflater = LayoutInflater.from(context)
         val view : View = inflater.inflate(R.layout.item_lista,parent,false)
@@ -18,14 +18,13 @@ class AdapterRecyclerView(val context: Context, val listaTarefas: HashMap<Int, T
     }
 
     override fun onBindViewHolder(holder: ViewHoldertarefas, position: Int) {
-
         listaTarefas.get(position).also {
-            holder.textViewStatus.text = it?.status.toString()
-            holder.textViewData.text = it?.dataDeEntrega
-            holder.textViewNomeProduto.text = "Produto: ${it?.pedido?.nomeDoProduto}"
-            holder.textViewNomeCliente.text = "Nome: ${it?.pedido?.destinatario}"
-            holder.textViewCpfCliente.text = "CPF: ${it?.pedido?.cpfDoDestinatario}"
-            holder.imgTarefa.setImageResource(imgListaTarefa(holder))
+                holder.textViewStatus.text = it?.status.toString()
+                holder.textViewData.text = it?.dataDeEntrega
+                holder.textViewNomeProduto.text = "Produto: ${it?.pedido?.nomeDoProduto}"
+                holder.textViewNomeCliente.text = "Nome: ${it?.pedido?.destinatario}"
+                holder.textViewCpfCliente.text = "CPF: ${it?.pedido?.cpfDoDestinatario}"
+                holder.imgTarefa.setImageResource(imgListaTarefa(holder))
         }
     }
 
@@ -34,8 +33,17 @@ class AdapterRecyclerView(val context: Context, val listaTarefas: HashMap<Int, T
     }
 //    fun addItemLista(tarefa : Tarefas){
 //        listaTarefas.put(tarefa)
-//        notifyDataSetChanged()
+//        notifLlist()
 //    }
+//    fun update(listaFiltrada : ArrayList<Tarefas>){
+//        listaTarefas.clear()
+//        listaTarefas.addAll(listaFiltrada)
+//        notifList()
+//    }
+
+    private fun notifList(){
+        notifyDataSetChanged()
+    }
 }
 
 class ViewHoldertarefas(itemView: View): RecyclerView.ViewHolder(itemView){

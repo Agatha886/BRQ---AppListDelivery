@@ -6,9 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import br.com.brq.listDelivery.model.Conta
 import br.com.brq.listDelivery.model.dataClasse.User
-import br.com.brq.listDelivery.ui.CriarContaActivity
 import com.google.android.material.snackbar.Snackbar
 
 class LoginActivity : AppCompatActivity() {
@@ -35,18 +33,18 @@ class LoginActivity : AppCompatActivity() {
 
     fun carregarEventos() {
         btnLogin.setOnClickListener {
-            var conta = Conta()
             var email = editTextEmail.text.toString()
             var senha = editTextSenha.text.toString()
 
-            for ((key, value) in User.listaUses) {
+            for ((key, value) in User.listaUser) {
                 if (email == value.email && senha == value.senha) {
                 val intentTelaPrincipal = Intent(this, PrincipalActivity::class.java)
                  startActivity(intentTelaPrincipal)
+                   User.user = value
                 }else{
                     Snackbar.make(
                         findViewById(R.id.ConstraintLayout),
-                        R.string.erroLogin,
+                        R.string.erro_cadastro,
                         Snackbar.LENGTH_SHORT
                 ).setTextColor(Color.RED)
                  .setBackgroundTint(Color.WHITE)
@@ -57,9 +55,9 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun carregarListas(){
-        User.listaUses.put(1,User("agathamonfredini@gmail.com","123","Agatha Monfredini","14788965523"))
-        User.listaUses.put(2,User("alexalves@gmail.com","123","Alex Alves","78955632258"))
-        User.listaUses.put(3,User("mariajoaquina@gmail.com","Maria@741", "Maria Joaquina","78955423365"))
+        User.listaUser.put(1,User("agathamonfredini@gmail.com","123","Agatha Monfredini","14788965523"))
+        User.listaUser.put(2,User("alexalves@gmail.com","123","Alex Alves","78955632258"))
+        User.listaUser.put(3,User("mariajoaquina@gmail.com","Maria@741", "Maria Joaquina","78955423365"))
     }
 
 

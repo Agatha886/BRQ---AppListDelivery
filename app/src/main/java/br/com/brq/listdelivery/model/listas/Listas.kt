@@ -7,62 +7,62 @@ import br.com.brq.listDelivery.model.dataClasse.User
 class ListasTarefas (){
 
     var listaPedido = ListasPedido()
-    var listaUser = ListaUser()
+
 
 //        Tarefas
 
-//    val tarefa1 = Tarefas(
-//            status = StatusPedido.PENDENTE,
-////            User = listaUser.user1,
-//            dataDeEntrega ="2021-01-01",
-//            pedido = listaPedido.pedido1,
-//            obs =""
-//    )
-//
-//   val tarefa2 = Tarefas(
-//
-//            status = StatusPedido.ATRASADO,
-////            User = listaUser.user2,
-//            dataDeEntrega ="2021-01-02",
-//            pedido= listaPedido.pedido2,
-//            obs="",
-//    )
-//
-//    val tarefa3 = Tarefas(
-//
-//            status = StatusPedido.CANCELADO,
-////            User = listaUser.user1,
-//            dataDeEntrega ="2021-01-01",
-//            pedido= listaPedido.pedido3,
-//            obs="Produto com defeito",
-//    )
-//
-//    val tarefa4 = Tarefas(
-//            status = StatusPedido.ENTREGUE,
-////            User = listaUser.user2,
-//            dataDeEntrega ="2021-01-02",
-//            pedido= listaPedido.pedido4,
-//            obs="",
-//    )
+    val tarefa1 = Tarefas(
+            status = StatusPedido.PENDENTE,
+            User = User.listaUser.get(1),
+            dataDeEntrega ="2021-01-01",
+            pedido = listaPedido.pedido1,
+            obs =""
+    )
+
+   val tarefa2 = Tarefas(
+
+            status = StatusPedido.ATRASADO,
+            User = User.listaUser.get(2),
+            dataDeEntrega ="2021-01-02",
+            pedido= listaPedido.pedido2,
+            obs="",
+    )
+
+    val tarefa3 = Tarefas(
+
+            status = StatusPedido.CANCELADO,
+            User = User.listaUser.get(2),
+            dataDeEntrega ="2021-01-01",
+            pedido= listaPedido.pedido3,
+            obs="Produto com defeito",
+    )
+
+    val tarefa4 = Tarefas(
+            status = StatusPedido.ENTREGUE,
+            User = User.listaUser.get(1),
+            dataDeEntrega ="2021-01-02",
+            pedido= listaPedido.pedido4,
+            obs="",
+    )
 
 
 
-//    val listaTarefas : MutableList<Tarefas> = mutableListOf(tarefa1,tarefa2)
+    val listaTarefas : MutableList<Tarefas> = mutableListOf(tarefa1,tarefa2)
 
-//    fun filtroListaTarefas(){
-//        listOf<String>("agathamonfredini@gmail.com","alexalves@gmail.com","mariajoaquina@gmail.com")
-//                .filterIndexed { index, _ ->  index== 0 }
-//                .forEach { println("                               " + it +"                                            ") }
-//    }
-//
+    fun filtroListaTarefas(){
+        listOf<String>("agathamonfredini@gmail.com","alexalves@gmail.com","mariajoaquina@gmail.com")
+                .filterIndexed { index, _ ->  index== 0 }
+                .forEach { println("                               " + it +"                                            ") }
+    }
 
 
-//    fun imprimeTarefa(){
-//        val lista = listaTarefas.joinToString(separator = "\n"){
-//            "- ${it.dataDeEntrega}"
-//        }
-////        textView.text = lista
-//    }
+
+    fun imprimeTarefa(){
+        val lista = listaTarefas.joinToString(separator = "\n"){
+            "- ${it.dataDeEntrega}"
+        }
+//        textView.text = lista
+    }
 }
 
 class ListasPedido(){

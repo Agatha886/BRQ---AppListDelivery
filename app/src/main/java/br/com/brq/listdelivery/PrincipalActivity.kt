@@ -1,20 +1,24 @@
 package br.com.brq.listDelivery
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.com.brq.listDelivery.model.AdapterRecyclerView
+import br.com.brq.listDelivery.model.ListasTarefas
 import br.com.brq.listDelivery.model.StatusPedido
 import br.com.brq.listDelivery.model.dataClasse.Pedido
 import br.com.brq.listDelivery.model.dataClasse.Tarefas
 import br.com.brq.listDelivery.model.dataClasse.User
+import com.google.android.material.snackbar.Snackbar
 
 
 class PrincipalActivity : AppCompatActivity() {
     var recyclerView: RecyclerView? = null
     lateinit var listasTarefas: ArrayList<Tarefas>
+    lateinit var listaFiltada: ArrayList<Tarefas>
     var criarTarefa : View? = null
     var adapter: AdapterRecyclerView? = null
 
@@ -25,9 +29,9 @@ class PrincipalActivity : AppCompatActivity() {
         carregarElementos()
         carregarEventos()
         carregarListas()
+        filtrarLlista()
 
-
-        AdapterRecyclerView(this, Tarefas.listasTarefas).let {
+        AdapterRecyclerView(this, listaFiltada).let {
             adapter = it
             recyclerView?.adapter = it
         }
@@ -57,30 +61,22 @@ class PrincipalActivity : AppCompatActivity() {
     }
 
     fun carregarListas(){
-        var user = User.listaUses.get(1)
-//        val tarefa = ListasTarefas()
-//        listasTarefas = ArrayList()
-//        listasTarefas.add(tarefa.tarefa1)
-//        listasTarefas.add(tarefa.tarefa2)
-//        listasTarefas.add(tarefa.tarefa3)
-//        listasTarefas.add(tarefa.tarefa4)
-        val pedido1 = Pedido(
-                nomeDoProduto = "Aspirador de Água e Pó",
-                descricaoDoProduto = "Aspirador de Água e Pó Electrolux Hidrolux AWD01 1250W",
-                enderecoEntrega = "Avenida Queiroz Filho - Vila Hamburguesa, São Paulo - SP, 05319-000",
-                destinatario = "Maria Joaquina",
-                cpfDoDestinatario = "45699875563"
-        )
-        var user1 = User(
-//        id = 1,
-                email = "agathamonfredini@gmail.com",
-                senha = "123",
-                nome = "Agatha Monfredini",
-                cpf = "47877569986"
-        )
-
-        Tarefas.listasTarefas.put(1,Tarefas(StatusPedido.PENDENTE,user1,"02-03-2021",pedido1," "))
+        val tarefa = ListasTarefas()
+        listasTarefas = ArrayList()
+        listasTarefas.add(tarefa.tarefa1)
+        listasTarefas.add(tarefa.tarefa2)
+        listasTarefas.add(tarefa.tarefa3)
+        listasTarefas.add(tarefa.tarefa4)
     }
+
+    fun filtrarLlista(){
+       listaFiltada = ArrayList()
+       listaFiltada = listasTarefas.filter {
+           (it.User!!.email == User.user.email)
+        }
+    }
+
+
 
 
 }
