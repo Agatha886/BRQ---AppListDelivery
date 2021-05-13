@@ -13,13 +13,15 @@ import br.com.brq.listDelivery.model.dataClasse.Pedido
 import br.com.brq.listDelivery.model.dataClasse.Tarefas
 import br.com.brq.listDelivery.model.dataClasse.User
 import com.google.android.material.snackbar.Snackbar
+import java.util.*
+import kotlin.collections.ArrayList
 
 
 class PrincipalActivity : AppCompatActivity() {
     var recyclerView: RecyclerView? = null
     lateinit var listasTarefas: ArrayList<Tarefas>
     lateinit var listaFiltada: ArrayList<Tarefas>
-    var criarTarefa : View? = null
+    var criarTarefa: View? = null
     var adapter: AdapterRecyclerView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,21 +48,21 @@ class PrincipalActivity : AppCompatActivity() {
 
     fun carregarEventos() {
         var pedido = Pedido(
-                nomeDoProduto = "teste",
-                descricaoDoProduto = "teste",
-                destinatario = "teste",
-                enderecoEntrega = "teste",
-                cpfDoDestinatario = "teste"
+            nomeDoProduto = "teste",
+            descricaoDoProduto = "teste",
+            destinatario = "teste",
+            enderecoEntrega = "teste",
+            cpfDoDestinatario = "teste"
         )
 
-        criarTarefa?.setOnClickListener{
+        criarTarefa?.setOnClickListener {
 //            val int = Intent(this, CriarTarefaActivity::class.java)
 //            startActivity(int)
 //            adapter?.addItemLista(Tarefas(StatusPedido.PENDENTE,"01-02-2021", pedido," "))
         }
     }
 
-    fun carregarListas(){
+    fun carregarListas() {
         val tarefa = ListasTarefas()
         listasTarefas = ArrayList()
         listasTarefas.add(tarefa.tarefa1)
@@ -69,14 +71,11 @@ class PrincipalActivity : AppCompatActivity() {
         listasTarefas.add(tarefa.tarefa4)
     }
 
-    fun filtrarLlista(){
-       listaFiltada = ArrayList()
-       listaFiltada = listasTarefas.filter {
-           (it.User!!.email == User.user.email)
-        }
+    fun filtrarLlista() {
+        listaFiltada = ArrayList()
+        listaFiltada = listasTarefas.filter {
+            (it.User!!.email == User.user.email)
+        } as ArrayList<Tarefas>
     }
-
-
-
 
 }
