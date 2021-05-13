@@ -1,4 +1,4 @@
-package br.com.brq.listdelivery.model
+package br.com.brq.listDelivery.model
 
 enum class StatusPedido {
     PENDENTE,
