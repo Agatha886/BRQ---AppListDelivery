@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MeuPrimeiroApp">
-        <activity android:name="br.com.brq.listDelivery.ui.CriarContaActivity"></activity>
+        <activity android:name="br.com.brq.listDelivery.ui.CriarTarefaActivity"></activity>
         <activity android:name="br.com.brq.listDelivery.PrincipalActivity" />
         <activity android:name="br.com.brq.listDelivery.LoginActivity">
             <intent-filter>

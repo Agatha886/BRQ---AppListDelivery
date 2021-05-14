@@ -14,11 +14,27 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_weight="1"
-        android:background="@color/white"/>
+        android:background="@color/white">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/tarefaAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_marginEnd="124dp"
+            android:layout_marginBottom="136dp"
+            android:src="@drawable/moto_logo"
+            app:fabSize="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+        </com.google.android.material.floatingactionbutton.FloatingActionButton>
 
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_weight="2"
@@ -27,7 +43,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_tarefas"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:padding="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -35,6 +51,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/textViewSemTarefas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="100dp"
+            android:text=""
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 

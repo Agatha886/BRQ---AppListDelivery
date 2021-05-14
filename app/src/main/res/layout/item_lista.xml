@@ -27,7 +27,7 @@
             <ImageView
                 android:id="@+id/imageTarefa"
                 android:layout_width="match_parent"
-                android:layout_height="113dp"
+                android:layout_height="100dp"
                 android:layout_marginTop="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -39,7 +39,7 @@
                 android:id="@+id/textStatus"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="105dp"
+                android:layout_marginTop="95dp"
                 android:padding="5dp"
                 android:text="PENDENTE"
                 android:textAlignment="center"
@@ -63,13 +63,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/background_listas_tarefas"
-                android:padding="6dp"
+                android:padding="4dp"
                 android:text="Data: 2021-01-01"
                 android:textAlignment="center"
                 android:textColor="@color/color_botton"
-                android:textSize="25dp"
+                android:textSize="20dp"
                 android:textStyle="bold"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="0dp" />
 
             <TextView
                 android:id="@+id/textNomeProduto"
