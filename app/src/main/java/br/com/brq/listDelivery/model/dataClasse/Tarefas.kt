@@ -7,12 +7,12 @@ data class Tarefas(
         val status: StatusPedido,
         var User: User?,
         val dataDeEntrega: String,
-        val pedido: Pedido,
+        val pedido: Pedido?,
         val obs: String,
 
 ):Serializable{
     companion object{
-//        val listasTarefas = hashMapOf<Int, Tarefas>()
+        val listasTarefas = ArrayList<Tarefas>()
     }
 
 }

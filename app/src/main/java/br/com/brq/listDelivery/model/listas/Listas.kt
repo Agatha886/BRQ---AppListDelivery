@@ -78,7 +78,7 @@ class ListasPedido(){
        nomeDoProduto = "Liquidificador Mondial",
        descricaoDoProduto = "Liquidificador Mondial Turbo Power L-99 FB com 3 Velocidades 500W – Preto",
        enderecoEntrega = "R. Anatólia, 290 - Boaçava, São Paulo - SP, 05471-000",
-       destinatario = "Francisco de Oliveira",
+       destinatario = "Francisco da Cruz",
        cpfDoDestinatario = "74266895531"
     )
 

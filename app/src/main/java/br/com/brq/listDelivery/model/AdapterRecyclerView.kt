@@ -31,19 +31,12 @@ class AdapterRecyclerView(val context: Context, val listaTarefas: ArrayList<Tare
     override fun getItemCount(): Int {
         return listaTarefas.size
     }
-//    fun addItemLista(tarefa : Tarefas){
-//        listaTarefas.put(tarefa)
-//        notifLlist()
-//    }
-//    fun update(listaFiltrada : ArrayList<Tarefas>){
-//        listaTarefas.clear()
-//        listaTarefas.addAll(listaFiltrada)
-//        notifList()
-//    }
 
-    private fun notifList(){
+    fun addItemLista(tarefa : Tarefas){
+        listaTarefas.add(tarefa)
         notifyDataSetChanged()
     }
+
 }
 
 class ViewHoldertarefas(itemView: View): RecyclerView.ViewHolder(itemView){
