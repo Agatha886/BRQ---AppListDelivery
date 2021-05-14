@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import br.com.brq.listDelivery.model.dataClasse.User
 import br.com.brq.listDelivery.model.CarregarListas
+import br.com.brq.listDelivery.ui.CriarContaActivity
 import com.google.android.material.snackbar.Snackbar
 
 class LoginActivity : AppCompatActivity() {
@@ -17,12 +18,18 @@ class LoginActivity : AppCompatActivity() {
     lateinit var editTextSenha : EditText
     lateinit var carregarLlistas : CarregarListas
 
+    lateinit var novoUsuarioNome : String
+    lateinit var novoUsuarioEmail : String
+    lateinit var novoUsuarioSenha : String
+    lateinit var novoUsuarioCpf : String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         carregarElementos()
         carregarLlistas.carregarListas()
         carregarEventos()
+        carregareAdicionarExtrasNovaConta()
 
     }
 
@@ -55,6 +62,30 @@ class LoginActivity : AppCompatActivity() {
                 }
             }
         }
+
+        btnCriar.setOnClickListener {
+            val intentTelaCriarConta = Intent(this, CriarContaActivity::class.java)
+            startActivity(intentTelaCriarConta)
+        }
+    }
+
+        fun carregareAdicionarExtrasNovaConta(){
+
+        novoUsuarioNome = intent.getStringExtra("nome").toString()
+        novoUsuarioSenha = intent.getStringExtra("senha").toString()
+        novoUsuarioEmail = intent.getStringExtra("email").toString()
+        novoUsuarioCpf = intent.getStringExtra("cpf").toString()
+
+        if(
+            !novoUsuarioEmail.isNullOrBlank() &&
+            !novoUsuarioNome.isNullOrBlank() &&
+            !novoUsuarioSenha.isNullOrBlank()
+        ){
+            println("email = ${novoUsuarioEmail} nome = ${novoUsuarioNome} senha = ${novoUsuarioSenha} cpf = ${novoUsuarioCpf}")
+
+            User.listaUser.add(User(novoUsuarioEmail,novoUsuarioSenha,novoUsuarioNome,novoUsuarioCpf))
+        }
+
     }
 
 }

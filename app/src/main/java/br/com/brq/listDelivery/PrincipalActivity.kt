@@ -1,23 +1,16 @@
 package br.com.brq.listDelivery
 
 import android.content.Intent
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.EditText
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.com.brq.listDelivery.model.AdapterRecyclerView
-import br.com.brq.listDelivery.model.ListasTarefas
-import br.com.brq.listDelivery.model.StatusPedido
-import br.com.brq.listDelivery.model.dataClasse.Pedido
 import br.com.brq.listDelivery.model.dataClasse.Tarefas
 import br.com.brq.listDelivery.model.dataClasse.User
 import br.com.brq.listDelivery.ui.CriarTarefaActivity
-import com.google.android.material.snackbar.Snackbar
-import java.util.*
 import kotlin.collections.ArrayList
 
 
@@ -44,6 +37,13 @@ class PrincipalActivity : AppCompatActivity() {
         }
 
         recyclerView?.layoutManager = LinearLayoutManager(this)
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+            if(Tarefas.newTarefa != null){
+                adapter?.addItemLista(Tarefas.newTarefa!!)
+            }
     }
 
     fun carregarElementos() {

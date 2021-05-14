@@ -9,7 +9,7 @@
     android:paddingBottom="10dp"
     android:paddingLeft="30dp"
     android:paddingRight="30dp"
-    android:paddingTop="10dp"
+    android:paddingTop="20dp"
     tools:context=".LoginActivity">
 
     <LinearLayout
@@ -23,9 +23,9 @@
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="match_parent"
-            android:layout_height="120dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/img_criar" />
+            app:srcCompat="@drawable/img_criar_tarefas" />
     </LinearLayout>
 
 
@@ -48,13 +48,13 @@
         android:id="@+id/editTextData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:backgroundTint="@color/color_botton"
         android:hint="Data de Entrega:"
         android:paddingTop="10dp"
         android:textColor="@color/segunda_color_bacground"
         android:textColorHint="@color/color_botton"
-        android:textSize="13dp"
+        android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tituloCriarTarefa"></EditText>
@@ -69,7 +69,7 @@
         android:paddingTop="10dp"
         android:textColor="@color/segunda_color_bacground"
         android:textColorHint="@color/color_botton"
-        android:textSize="13dp"
+        android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextData"></EditText>
@@ -84,7 +84,7 @@
         android:paddingTop="10dp"
         android:textColor="@color/segunda_color_bacground"
         android:textColorHint="@color/color_botton"
-        android:textSize="13dp"
+        android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNomeProduto"></EditText>
@@ -99,7 +99,7 @@
         android:paddingTop="10dp"
         android:textColor="@color/segunda_color_bacground"
         android:textColorHint="@color/color_botton"
-        android:textSize="13dp"
+        android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextDescricao"></EditText>
@@ -114,7 +114,7 @@
         android:paddingTop="10dp"
         android:textColor="@color/segunda_color_bacground"
         android:textColorHint="@color/color_botton"
-        android:textSize="13dp"
+        android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextDestintario"></EditText>
@@ -129,7 +129,7 @@
         android:paddingTop="10dp"
         android:textColor="@color/segunda_color_bacground"
         android:textColorHint="@color/color_botton"
-        android:textSize="13dp"
+        android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextEndereco"></EditText>
@@ -145,7 +145,7 @@
         android:layout_marginBottom="30dp"
         android:textColor="@color/segunda_color_bacground"
         android:textColorHint="@color/color_botton"
-        android:textSize="13dp"
+        android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextCpfCliente"></EditText>
@@ -154,7 +154,7 @@
         android:id="@+id/button_criar_tarefa"
         android:layout_width="210dp"
         android:layout_height="38dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="30dp"
         android:background="@drawable/button_enviar_drawable"
         android:padding="5dp"
@@ -165,7 +165,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextObs"
-        app:layout_constraintVertical_bias="0.854" />
+        app:layout_constraintVertical_bias="0.397" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
