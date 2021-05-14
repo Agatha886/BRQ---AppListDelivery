@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="colo_rounded_button">#52000000</color>
+    <color name="color_digitacao">#BBF4EF</color>
+    <color name="color_botton">#20B2AA</color>
+    <color name="segunda_color_bacground">#006287</color>
+    <color name="color_bacground_login">#19bc9f</color>
+    <color name="color_bacground_principal">#B78BF4</color>
+</resources>
