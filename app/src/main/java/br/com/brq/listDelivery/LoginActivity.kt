@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import br.com.brq.listDelivery.model.dataClasse.User
 import br.com.brq.listDelivery.model.CarregarListas
+import br.com.brq.listDelivery.model.dataClasse.Tarefas
 import br.com.brq.listDelivery.ui.CriarContaActivity
 import com.google.android.material.snackbar.Snackbar
 
@@ -27,7 +28,9 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         carregarElementos()
-        carregarLlistas.carregarListas()
+        if(Tarefas.listasTarefas.size == 0){
+            carregarLlistas.carregarListas()
+        }
         carregarEventos()
         carregareAdicionarExtrasNovaConta()
 
@@ -41,7 +44,7 @@ class LoginActivity : AppCompatActivity() {
         carregarLlistas = CarregarListas()
     }
 
-    fun carregarEventos() {
+    fun carregarEventos(){
         btnLogin.setOnClickListener {
             var email = editTextEmail.text.toString()
             var senha = editTextSenha.text.toString()
@@ -56,9 +59,9 @@ class LoginActivity : AppCompatActivity() {
                         findViewById(R.id.ConstraintLayout),
                         R.string.erro_cadastro,
                         Snackbar.LENGTH_SHORT
-                ).setTextColor(Color.RED)
-                 .setBackgroundTint(Color.WHITE)
-                 .show()
+                ).setBackgroundTint(getResources().getColor(R.color.color_cancelada))
+                .setTextColor(Color.WHITE)
+                .show()
                 }
             }
         }

@@ -37,7 +37,7 @@
       android:padding="10dp"
       android:background="@drawable/rounded_button_drawable"
       android:hint="@string/senha"
-      android:inputType="textEmailAddress"
+      android:inputType="textPassword"
       android:textColor="@color/color_digitacao"
       android:textColorHint="@color/white"
       android:textSize="13dp"

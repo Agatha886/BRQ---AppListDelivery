@@ -21,14 +21,91 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:layout_marginEnd="124dp"
-            android:layout_marginBottom="136dp"
-            android:src="@drawable/moto_logo"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:src="@android:drawable/ic_menu_add"
             app:fabSize="normal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
 
         </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+        <Button
+            android:id="@+id/btn_sair"
+            android:layout_width="49dp"
+            android:layout_height="45dp"
+            android:layout_margin="16dp"
+            android:background="@drawable/btn_sair"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </Button>
+
+
+        <TextView
+            android:id="@+id/textViewSuasTarefas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="0dp"
+            android:text="Suas Tarefas"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+        <TextView
+            android:id="@+id/textViewBemVindUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            tools:text="Bem vindo: Agatha"
+            android:textSize="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewSuasTarefas" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="49dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/btn_menu"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="83dp"
+            android:layout_height="74dp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/mascara" />
+
+        <TextView
+            android:id="@+id/textUseMascara"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Use máscara"
+            android:textColor="@color/color_botton"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+        <TextView
+            android:id="@+id/textHigenize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Higienize os Itens"
+            android:textColor="@color/color_botton"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/textUseMascara" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

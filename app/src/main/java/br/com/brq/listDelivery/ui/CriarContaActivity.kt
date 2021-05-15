@@ -19,6 +19,7 @@ class CriarContaActivity : AppCompatActivity() {
     lateinit var editTextConfirmarSenha : EditText
     lateinit var editTextEmail : EditText
     lateinit var editTextNome : EditText
+    lateinit var editTextCpf : EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +36,7 @@ class CriarContaActivity : AppCompatActivity() {
         editTextEmail = findViewById<EditText>(R.id.editTextEmail)
         editTextSenha = findViewById<EditText>(R.id.editTextSenha)
         editTextConfirmarSenha = findViewById<EditText>(R.id.editTextConfirmarSenha)
+        editTextCpf = findViewById(R.id.editTextCpfCliente)
     }
 
     fun carregarEventos() {
@@ -49,6 +51,7 @@ class CriarContaActivity : AppCompatActivity() {
             val email = editTextEmail.text.toString()
             val nome = editTextNome.text.toString()
             val senha = editTextSenha.text.toString()
+            val cpf = editTextCpf.text.toString()
 
             if(validarNovoUser(nome,email,senha,confirmarSenha)){
                 val intent = Intent(this, LoginActivity::class.java)
@@ -56,6 +59,7 @@ class CriarContaActivity : AppCompatActivity() {
                 intent.putExtra("senha",senha)
                 intent.putExtra("email", email)
                 intent.putExtra("nome", nome)
+                intent.putExtra("cpf",cpf)
 
                 startActivity(intent)
 
@@ -64,7 +68,8 @@ class CriarContaActivity : AppCompatActivity() {
                 Snackbar.make(findViewById(R.id.CriarContaLayout),"Alguma informação está incorreta!",
                     Snackbar.LENGTH_SHORT
                 ).setTextColor(Color.BLACK)
-                    .setBackgroundTint(getResources().getColor(R.color.color_bacground_login))
+                    .setBackgroundTint(getResources().getColor(R.color.color_cancelada))
+                    .setTextColor(Color.WHITE)
                     .show()
             }
 

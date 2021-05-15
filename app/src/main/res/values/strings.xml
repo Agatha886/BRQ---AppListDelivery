@@ -11,6 +11,7 @@
     <string name="login">Digite seu Login ou Email:</string>
     <string name="nome">Nome:</string>
     <string name="email">Email:</string>
+    <string name="cpf">CPF:</string>
 
 <!--    Button-->
     <string name="botao_enviar">Enviar</string>
