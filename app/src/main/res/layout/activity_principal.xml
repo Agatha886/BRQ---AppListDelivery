@@ -47,7 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="52dp"
             android:text="Suas Tarefas"
             android:textColor="@color/segunda_color_bacground"
             android:textSize="30dp"
@@ -64,60 +64,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewSuasTarefas"
             tools:text="Bem vindo: Agatha" />
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight=""
-            android:background="@color/white"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toTopOf="@+id/imageView"
-            app:layout_constraintTop_toBottomOf="@+id/textViewBemVindUser"
-            tools:layout_editor_absoluteX="10dp">
-
-            <ImageView
-                android:id="@+id/buttonPendente"
-                android:layout_width="0dp"
-                android:layout_height="70dp"
-                android:layout_marginTop="5dp"
-                android:layout_weight="1"
-                android:background="@drawable/tarefa_pendente"
-                android:padding="50dp"
-                tools:layout_editor_absoluteX="79dp"
-                tools:layout_editor_absoluteY="140dp" />
-
-            <ImageView
-                android:id="@+id/button3"
-                android:layout_width="0dp"
-                android:layout_height="70dp"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:background="@drawable/tarefa_entregue"
-                tools:layout_editor_absoluteX="26dp"
-                tools:layout_editor_absoluteY="202dp" />
-
-            <ImageView
-                android:id="@+id/button4"
-                android:layout_width="0dp"
-                android:layout_height="70dp"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:background="@drawable/tarefa_atrasada"
-                tools:layout_editor_absoluteX="229dp"
-                tools:layout_editor_absoluteY="136dp" />
-
-            <Button
-                android:id="@+id/button5"
-                android:layout_width="0dp"
-                android:layout_height="70dp"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:background="@drawable/tarefa_cancelada"
-                tools:layout_editor_absoluteX="246dp"
-                tools:layout_editor_absoluteY="202dp" />
-
-        </LinearLayout>
 
 
         <ImageView
@@ -184,6 +130,58 @@
             android:textColor="@color/white"
             android:textSize="30dp"
             android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp">
+
+        <ImageView
+            android:layout_weight="1"
+            android:id="@+id/buttonPendente"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:padding="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/tarefa_pendente"
+            tools:layout_editor_absoluteX="79dp"
+            tools:layout_editor_absoluteY="140dp" />
+
+        <ImageView
+            android:layout_weight="1"
+            android:background="@drawable/tarefa_entregue"
+            android:id="@+id/button3"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_margin="5dp"
+            tools:layout_editor_absoluteX="26dp"
+            tools:layout_editor_absoluteY="202dp" />
+
+        <ImageView
+            android:layout_weight="1"
+            android:id="@+id/button4"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/tarefa_atrasada"
+            tools:layout_editor_absoluteX="229dp"
+            tools:layout_editor_absoluteY="136dp" />
+
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/button5"
+            android:background="@drawable/tarefa_cancelada"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_margin="5dp"
+            tools:layout_editor_absoluteX="246dp"
+            tools:layout_editor_absoluteY="202dp" />
 
     </LinearLayout>
 
