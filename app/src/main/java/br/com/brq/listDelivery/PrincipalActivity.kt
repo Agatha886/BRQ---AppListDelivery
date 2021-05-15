@@ -81,7 +81,6 @@ class PrincipalActivity : AppCompatActivity(), ItemClickListener {
         listaFiltada = Tarefas.listasTarefas.filter {
             (it.User!!.email == User.user.email)
         } as ArrayList<Tarefas>
-        println(listaFiltada)
     }
 
     fun mensagemSemTarefas(){
