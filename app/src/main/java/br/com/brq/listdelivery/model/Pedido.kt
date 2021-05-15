@@ -1,8 +1,16 @@
 package br.com.brq.listdelivery.model
 
-class Pedido (
-        var dataSolicitacao : String,
-        var EnderecoEntrega : String,
-        var Cliente : String
-){
+import java.io.Serializable
+
+data class Pedido (
+        var nomeDoProduto : String,
+        var descricaoDoProduto : String,
+        var destinatario : String,
+        var enderecoEntrega : String,
+        var cpfDoDestinatario : String
+): Serializable {
+        companion object{
+                val listasPedido = ArrayList<Pedido>()
+        }
+
 }

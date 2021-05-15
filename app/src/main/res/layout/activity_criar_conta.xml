@@ -59,6 +59,22 @@
         app:layout_constraintTop_toBottomOf="@+id/tituloSegundaTela"/>
 
     <EditText
+        android:id="@+id/editTextCpf"
+        android:inputType="number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/color_botton"
+        android:hint="@string/cpf"
+        android:paddingTop="10dp"
+        android:textColor="@color/segunda_color_bacground"
+        android:textColorHint="@color/color_botton"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNome"/>
+
+    <EditText
         android:id="@+id/editTextEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -72,7 +88,7 @@
         android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNome"/>
+        app:layout_constraintTop_toBottomOf="@+id/editTextCpf"/>
 
     <EditText
         android:id="@+id/editTextSenha"
@@ -115,7 +131,6 @@
         android:padding="5dp"
         android:text="@string/botao_cadastrar"
         android:textSize="13sp"
-        app:layout_constraintBottom_toTopOf="@+id/button_criar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextConfirmarSenha"

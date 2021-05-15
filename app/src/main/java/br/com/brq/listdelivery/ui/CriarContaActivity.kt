@@ -20,6 +20,7 @@ class CriarContaActivity : AppCompatActivity() {
     lateinit var editTextConfirmarSenha : EditText
     lateinit var editTextEmail : EditText
     lateinit var editTextNome : EditText
+    lateinit var editTextCpf : EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +37,7 @@ class CriarContaActivity : AppCompatActivity() {
         editTextEmail = findViewById<EditText>(R.id.editTextEmail)
         editTextSenha = findViewById<EditText>(R.id.editTextSenha)
         editTextConfirmarSenha = findViewById<EditText>(R.id.editTextConfirmarSenha)
+        editTextCpf = findViewById<EditText>(R.id.editTextCpf)
     }
 
     fun carregarEventos() {
@@ -50,13 +52,15 @@ class CriarContaActivity : AppCompatActivity() {
             val email = editTextEmail.text.toString()
             val nome = editTextNome.text.toString()
             val senha = editTextSenha.text.toString()
+            val cpf = editTextCpf.text.toString()
 
-            if(validarNovoUser(nome,email,senha,confirmarSenha)){
+            if(validarNovoUser(nome,email,senha,confirmarSenha,cpf)){
                 val intent = Intent(this,LoginActivity::class.java)
 
                 intent.putExtra("senha",senha)
                 intent.putExtra("email", email)
                 intent.putExtra("nome", nome)
+                intent.putExtra("cpf", cpf)
 
                 startActivity(intent)
 
@@ -72,8 +76,8 @@ class CriarContaActivity : AppCompatActivity() {
 
     }
 
-    fun validarNovoUser(nome:String,email:String,senha:String,confirmarSenha:String):Boolean {
-        return !(nome.isNullOrBlank() && senha.isNullOrBlank() &&
+    fun validarNovoUser(nome:String,email:String,senha:String,confirmarSenha:String,cpf:String):Boolean {
+        return !(nome.isNullOrBlank() && cpf.isNullOrBlank() && senha.isNullOrBlank() &&
                 email.isNullOrBlank() && confirmarSenha.isNullOrBlank()) && senha == confirmarSenha
     }
 }

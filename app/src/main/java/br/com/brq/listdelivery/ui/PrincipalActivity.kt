@@ -1,10 +1,8 @@
 package br.com.brq.listdelivery.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
@@ -42,6 +40,8 @@ class PrincipalActivity : AppCompatActivity() {
                 R.id.nav_pedidos, R.id.nav_entregues, R.id.nav_atrasados, R.id.nav_cancelados), menu_layout)
         setupActionBarWithNavController(nav_host, appBarConfiguration)
         nav_view.setupWithNavController(nav_host)
+
+
     }
 
     override fun onSupportNavigateUp(): Boolean {

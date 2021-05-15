@@ -10,4 +10,6 @@
     <color name="segunda_color_bacground">#006287</color>
     <color name="color_bacground_login">#19bc9f</color>
     <color name="color_bacground_principal">#B78BF4</color>
+    <color name="color_cancelada">#C35555</color>
+    <color name="color_atrasada">#F18665</color>
 </resources>

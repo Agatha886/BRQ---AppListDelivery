@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import br.com.brq.listdelivery.model.CarregarListas
+import br.com.brq.listdelivery.model.Tarefas
 import br.com.brq.listdelivery.model.User
 import br.com.brq.listdelivery.ui.CriarContaActivity
 import br.com.brq.listdelivery.ui.PrincipalActivity
@@ -19,6 +21,8 @@ class LoginActivity : AppCompatActivity() {
     lateinit var novoUsuarioNome : String
     lateinit var novoUsuarioEmail : String
     lateinit var novoUsuarioSenha : String
+    lateinit var novoUsuarioCpf : String
+    lateinit var carregarListas : CarregarListas
 
     override fun onCreate(savedInstanceState: Bundle?) {
         println("----- ON CREATE")
@@ -26,10 +30,13 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         carregarElementos()
-        carregarListas()
+
+        if(Tarefas.listasTarefas.size == 0){
+            carregarListas.carregarListas()
+        }
+
         carregarEventos()
         carregareAdicionarExtrasNovaConta()
-
 
 
     }
@@ -39,6 +46,7 @@ class LoginActivity : AppCompatActivity() {
         btnCriar = findViewById<Button>(R.id.button_criar)
         editTextEmail = findViewById<EditText>(R.id.editTextEmail)
         editTextSenha = findViewById<EditText>(R.id.editTextSenha)
+        carregarListas = CarregarListas()
     }
 
     fun carregarEventos() {
@@ -46,7 +54,7 @@ class LoginActivity : AppCompatActivity() {
             var email = editTextEmail.text.toString()
             var senha = editTextSenha.text.toString()
 
-            for ((key, value) in User.listaUser) {
+            for (value in User.listaUser) {
                 if (email == value.email && senha == value.senha) {
                     val intentTelaPrincipal = Intent(this, PrincipalActivity::class.java)
                     startActivity(intentTelaPrincipal)
@@ -69,28 +77,23 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    fun carregarListas(){
-        User.listaUser.put(1,User("agathamonfredini@gmail.com","123","Agatha Monfredini"))
-        User.listaUser.put(2,User("alexalves@gmail.com","123","Alex Alves"))
-        User.listaUser.put(3,User("mariajoaquina@gmail.com","Maria@741", "Maria Joaquina"))
-    }
-
     fun carregareAdicionarExtrasNovaConta(){
 
         novoUsuarioNome = intent.getStringExtra("nome").toString()
         novoUsuarioSenha = intent.getStringExtra("senha").toString()
         novoUsuarioEmail = intent.getStringExtra("email").toString()
+        novoUsuarioCpf = intent.getStringExtra("email").toString()
 
         if(
-            !novoUsuarioEmail.isNullOrBlank() &&
-            !novoUsuarioNome.isNullOrBlank() &&
-            !novoUsuarioSenha.isNullOrBlank()
+            !novoUsuarioEmail.isBlank() &&
+            !novoUsuarioNome.isBlank() &&
+            !novoUsuarioSenha.isBlank() &&
+            !novoUsuarioCpf.isBlank()
         ){
-            println("email = ${novoUsuarioEmail} nome = ${novoUsuarioNome} senha = ${novoUsuarioSenha} ")
+            println("email = ${novoUsuarioEmail} nome = ${novoUsuarioNome} senha = ${novoUsuarioSenha} cpf = ${novoUsuarioCpf} ")
 
-            User.listaUser.put(
-                User.listaUser.size+1,
-                User(novoUsuarioEmail,novoUsuarioSenha,novoUsuarioNome)
+            User.listaUser.add(
+                User(novoUsuarioEmail,novoUsuarioSenha,novoUsuarioNome,novoUsuarioCpf)
             )
         }
 
