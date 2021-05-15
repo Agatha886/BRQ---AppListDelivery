@@ -16,24 +16,10 @@
         android:layout_weight="1"
         android:background="@color/white">
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/tarefaAdd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
-            android:src="@android:drawable/ic_menu_add"
-            app:fabSize="normal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
-
-        </com.google.android.material.floatingactionbutton.FloatingActionButton>
-
         <Button
             android:id="@+id/btn_sair"
-            android:layout_width="49dp"
-            android:layout_height="45dp"
+            android:layout_width="41dp"
+            android:layout_height="40dp"
             android:layout_margin="16dp"
             android:background="@drawable/btn_sair"
             app:layout_constraintEnd_toEndOf="parent"
@@ -46,31 +32,34 @@
             android:id="@+id/textViewSuasTarefas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="52dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
             android:text="Suas Tarefas"
             android:textColor="@color/segunda_color_bacground"
             android:textSize="30dp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/imageView"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.341" />
 
         <TextView
             android:id="@+id/textViewBemVindUser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="16dp"
             android:textSize="15dp"
+            app:layout_constraintBottom_toTopOf="@+id/imageView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewSuasTarefas"
+            app:layout_constraintVertical_bias="0.0"
             tools:text="Bem vindo: Agatha" />
-
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="83dp"
-            android:layout_height="74dp"
-            android:layout_marginStart="16dp"
+            android:layout_width="59dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@drawable/mascara" />
@@ -79,24 +68,25 @@
             android:id="@+id/textUseMascara"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="0dp"
             android:text="Use máscara"
             android:textColor="@color/color_botton"
-            android:textSize="15dp"
+            android:textSize="14dp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/imageView"
-            app:layout_constraintTop_toTopOf="@+id/imageView" />
+            app:layout_constraintTop_toBottomOf="@+id/textHigenize" />
 
         <TextView
             android:id="@+id/textHigenize"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             android:text="Higienize os Itens"
             android:textColor="@color/color_botton"
-            android:textSize="15dp"
+            android:textSize="14dp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/imageView"
-            app:layout_constraintTop_toBottomOf="@+id/textUseMascara" />
+            app:layout_constraintTop_toTopOf="@+id/imageView" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -105,7 +95,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_weight="2"
+        android:layout_weight="4"
         android:background="@drawable/background_listas">
 
         <androidx.recyclerview.widget.RecyclerView
@@ -133,55 +123,70 @@
 
     </LinearLayout>
 
+
     <LinearLayout
-        android:layout_weight="0"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
-        android:orientation="horizontal"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp">
+        android:orientation="horizontal">
 
-        <ImageView
-            android:layout_weight="1"
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/buttonPendente"
-            android:layout_width="0dp"
-            android:layout_height="70dp"
-            android:padding="50dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/tarefa_pendente"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:backgroundTint="@color/segunda_color_bacground"
+            android:src="@drawable/tarefa_pendente"
             tools:layout_editor_absoluteX="79dp"
             tools:layout_editor_absoluteY="140dp" />
 
-        <ImageView
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:layout_weight="1"
-            android:background="@drawable/tarefa_entregue"
-            android:id="@+id/button3"
-            android:layout_width="0dp"
-            android:layout_height="70dp"
-            android:layout_margin="5dp"
+            android:id="@+id/buttonEntregue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:backgroundTint="@color/segunda_color_bacground"
+            android:src="@drawable/tarefa_entregue"
             tools:layout_editor_absoluteX="26dp"
-            tools:layout_editor_absoluteY="202dp" />
+            tools:layout_editor_absoluteY="202dp" >
+        </com.google.android.material.floatingactionbutton.FloatingActionButton>
 
-        <ImageView
-            android:layout_weight="1"
-            android:id="@+id/button4"
-            android:layout_width="0dp"
-            android:layout_height="70dp"
-            android:layout_margin="5dp"
-            android:background="@drawable/tarefa_atrasada"
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/tarefaAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:src="@android:drawable/ic_menu_add"
+            app:fabSize="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+        </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/buttonAtrasaddo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:backgroundTint="@color/segunda_color_bacground"
+            android:src="@drawable/tarefa_atrasada"
             tools:layout_editor_absoluteX="229dp"
-            tools:layout_editor_absoluteY="136dp" />
+            tools:layout_editor_absoluteY="136dp" >
+        </com.google.android.material.floatingactionbutton.FloatingActionButton>
 
-        <Button
-            android:layout_weight="1"
-            android:id="@+id/button5"
-            android:background="@drawable/tarefa_cancelada"
-            android:layout_width="0dp"
-            android:layout_height="70dp"
-            android:layout_margin="5dp"
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/buttonCancelado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:backgroundTint="@color/segunda_color_bacground"
+            android:src="@drawable/tarefa_cancelada"
             tools:layout_editor_absoluteX="246dp"
-            tools:layout_editor_absoluteY="202dp" />
+            tools:layout_editor_absoluteY="310dp"></com.google.android.material.floatingactionbutton.FloatingActionButton>
 
     </LinearLayout>
 

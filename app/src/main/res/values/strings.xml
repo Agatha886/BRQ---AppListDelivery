@@ -20,4 +20,6 @@
 
 <!--    Erro-->
     <string name="erro_cadastro">LOGIN NÃO ENCONTRADO!!!</string>
+    <string name="erro_user">USUÁRIO INVÁLIDO!!!</string>
+    <string name="erro_senha">SENHA INVÁLIDA!!!</string>
 </resources>
