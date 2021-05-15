@@ -124,35 +124,41 @@
     </LinearLayout>
 
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
-        android:orientation="horizontal">
+        android:orientation="vertical">
+
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/buttonPendente"
-            android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="6dp"
             android:backgroundTint="@color/segunda_color_bacground"
             android:src="@drawable/tarefa_pendente"
-            tools:layout_editor_absoluteX="79dp"
-            tools:layout_editor_absoluteY="140dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tarefaAdd"
+            app:layout_constraintTop_toTopOf="parent" />
+
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:layout_weight="1"
             android:id="@+id/buttonEntregue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="6dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginBottom="6dp"
             android:backgroundTint="@color/segunda_color_bacground"
             android:src="@drawable/tarefa_entregue"
-            tools:layout_editor_absoluteX="26dp"
-            tools:layout_editor_absoluteY="202dp" >
-        </com.google.android.material.floatingactionbutton.FloatingActionButton>
-
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/buttonPendente"
+            app:layout_constraintHorizontal_bias="0.939"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"></com.google.android.material.floatingactionbutton.FloatingActionButton>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/tarefaAdd"
@@ -162,32 +168,38 @@
             android:src="@android:drawable/ic_menu_add"
             app:fabSize="normal"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
-        </com.google.android.material.floatingactionbutton.FloatingActionButton>
-
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="177dp"></com.google.android.material.floatingactionbutton.FloatingActionButton>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/buttonAtrasaddo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="6dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="6dp"
             android:backgroundTint="@color/segunda_color_bacground"
             android:src="@drawable/tarefa_atrasada"
-            tools:layout_editor_absoluteX="229dp"
-            tools:layout_editor_absoluteY="136dp" >
-        </com.google.android.material.floatingactionbutton.FloatingActionButton>
-
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/buttonCancelado"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"></com.google.android.material.floatingactionbutton.FloatingActionButton>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/buttonCancelado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="6dp"
+            android:layout_marginStart="40dp"
             android:backgroundTint="@color/segunda_color_bacground"
             android:src="@drawable/tarefa_cancelada"
-            tools:layout_editor_absoluteX="246dp"
-            tools:layout_editor_absoluteY="310dp"></com.google.android.material.floatingactionbutton.FloatingActionButton>
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tarefaAdd"
+            app:layout_constraintTop_toTopOf="parent"></com.google.android.material.floatingactionbutton.FloatingActionButton>
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>
