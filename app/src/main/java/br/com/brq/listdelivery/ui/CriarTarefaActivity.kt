@@ -8,7 +8,7 @@ import android.widget.EditText
 import br.com.brq.listDelivery.PrincipalActivity
 import br.com.brq.listDelivery.R
 import br.com.brq.listDelivery.model.dataClasse.Tarefas
-
+import com.google.android.material.snackbar.Snackbar
 
 
 class CriarTarefaActivity : AppCompatActivity(){
@@ -48,14 +48,25 @@ class CriarTarefaActivity : AppCompatActivity(){
     fun CarregarEventos(){
 
         btnCriarTarefa.setOnClickListener {
-            addItemLista(Tarefas.NovaTarefa(editTextNomeDoProduto,editTextDescricao,editTextDestinatario,editTextEndereco,editTextCpfDoCliente,editTextData,editTextObs))
-            val intentTelaPrincipal = Intent(this, PrincipalActivity::class.java)
-            startActivity(intentTelaPrincipal)
+
+            if(validarTarefa(editTextNomeDoProduto.text.toString(),editTextDescricao.text.toString(),editTextDestinatario.text.toString(),editTextEndereco.text.toString(),editTextCpfDoCliente.text.toString(),editTextData.text.toString(),editTextObs.text.toString())){
+                addItemLista(Tarefas.NovaTarefa(editTextNomeDoProduto,editTextDescricao,editTextDestinatario,editTextEndereco,editTextCpfDoCliente,editTextData,editTextObs))
+                val intentTelaPrincipal = Intent(this, PrincipalActivity::class.java)
+                startActivity(intentTelaPrincipal)
+            } else {
+                Snackbar.make(findViewById(R.id.CriarTarefaLayout),"Os espaços não vem estar em branco",Snackbar.LENGTH_SHORT).show()
+            }
+
+
         }
     }
 
     fun addItemLista(tarefa : Tarefas){
         Tarefas.listasTarefas.add(tarefa)
+    }
+
+    fun validarTarefa(nome:String,descricao:String,destinatario:String,endereco:String,cpf:String,data:String,obs:String):Boolean{
+        return nome.isNotBlank()&&descricao.isNotBlank()&&destinatario.isNotBlank()&&endereco.isNotBlank()&&cpf.isNotBlank()&&data.isNotBlank()&&obs.isNotBlank()
     }
 
 }

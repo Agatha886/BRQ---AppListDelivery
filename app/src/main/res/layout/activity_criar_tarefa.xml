@@ -10,7 +10,8 @@
     android:paddingLeft="30dp"
     android:paddingRight="30dp"
     android:paddingTop="20dp"
-    tools:context=".LoginActivity">
+    tools:context=".LoginActivity"
+    android:id="@+id/CriarTarefaLayout">
 
     <LinearLayout
         android:id="@+id/linearLayout"
