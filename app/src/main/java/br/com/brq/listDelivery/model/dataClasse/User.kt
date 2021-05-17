@@ -11,6 +11,7 @@ data class User (
     companion object {
         val listaUser = ArrayList<User>()
         lateinit var user : User
+
     }
 }
 

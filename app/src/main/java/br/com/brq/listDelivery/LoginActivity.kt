@@ -46,15 +46,12 @@ class LoginActivity : AppCompatActivity() {
 
     fun carregarEventos(){
         btnLogin.setOnClickListener {
-            var email = editTextEmail.text.toString()
-            var senha = editTextSenha.text.toString()
-
-            for (value in User.listaUser) {
-                if (email == value.email && senha == value.senha) {
+                validUser()
+                validSenha()
+                if (validUser() && validSenha()) {
                 val intentTelaPrincipal = Intent(this, PrincipalActivity::class.java)
                  startActivity(intentTelaPrincipal)
-                   User.user = value
-                }else{
+                 }else{
                     Snackbar.make(
                         findViewById(R.id.ConstraintLayout),
                         R.string.erro_cadastro,
@@ -63,7 +60,6 @@ class LoginActivity : AppCompatActivity() {
                 .setTextColor(Color.WHITE)
                 .show()
                 }
-            }
         }
 
         btnCriar.setOnClickListener {
@@ -90,5 +86,48 @@ class LoginActivity : AppCompatActivity() {
         }
 
     }
+
+    fun validUser(): Boolean{
+        var email = editTextEmail.text.toString()
+
+        for (value in User.listaUser) {
+            if (email == value.email ) {
+                User.user = value
+                return true
+            }else{
+                Snackbar.make(
+                    findViewById(R.id.ConstraintLayout),
+                    R.string.erro_user,
+                    Snackbar.LENGTH_SHORT
+                ).setBackgroundTint(getResources().getColor(R.color.color_cancelada))
+                    .setTextColor(Color.WHITE)
+                    .show()
+            }
+        }
+        return false
+
+    }
+
+    fun validSenha(): Boolean{
+        var senha = editTextSenha.text.toString()
+
+        for (value in User.listaUser) {
+            if (senha != value.senha ) {
+                Snackbar.make(
+                    findViewById(R.id.ConstraintLayout),
+                    R.string.erro_senha,
+                    Snackbar.LENGTH_SHORT
+                ).setBackgroundTint(getResources().getColor(R.color.color_cancelada))
+                    .setTextColor(Color.WHITE)
+                    .show()
+            }else{
+                return true
+            }
+        }
+        return false
+    }
+
+
+
 
 }
