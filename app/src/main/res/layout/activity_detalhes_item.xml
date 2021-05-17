@@ -47,7 +47,7 @@
                     android:layout_height="wrap_content"
                     android:text="Status:"
 
-                    android:layout_marginStart="90dp"
+                    android:layout_marginStart="20dp"
                     />
 
             </LinearLayout>
@@ -166,10 +166,6 @@
                 android:text="Deletar pedido"
                 android:layout_marginTop="16dp"
                 />
-
-
-
-
 
         </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
