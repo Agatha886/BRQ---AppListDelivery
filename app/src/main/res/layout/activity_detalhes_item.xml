@@ -101,19 +101,13 @@
                 android:layout_marginEnd="20dp"
                 />
 
-            <EditText
-                android:id="@+id/editTextNovaObs"
-                android:layout_width="match_parent"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_height="wrap_content"
-                android:text="O pedido está com problemas aleatórios e por isso eu irei entregar para o papai noel"
-                android:textSize="16sp"/>
+
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Alterar o status:"/>
+                android:text="Alterar o status:"
+                android:layout_marginTop="32dp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"

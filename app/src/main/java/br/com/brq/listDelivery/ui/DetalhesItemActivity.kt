@@ -3,6 +3,7 @@ package br.com.brq.listDelivery.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
+import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import br.com.brq.listDelivery.R
@@ -10,6 +11,18 @@ import org.w3c.dom.Text
 
 class DetalhesItemActivity : AppCompatActivity() {
 
+lateinit var btnEntregue : Button
+lateinit var btnAtrasado : Button
+lateinit var btnCancelado : Button
+lateinit var btnPendente : Button
+lateinit var tituloView : TextView
+lateinit var dateView : TextView
+lateinit var statusView : TextView
+lateinit var nomeDestinatarioView : TextView
+lateinit var cpfView : TextView
+lateinit var enderecoView : TextView
+lateinit var descView : TextView
+lateinit var obsView : TextView
 
 
 
@@ -18,13 +31,8 @@ class DetalhesItemActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detalhes_item)
 
-        var tituloView : TextView = findViewById(R.id.tituloView)
-        var dateView : TextView = findViewById(R.id.dateView)
-        var statusView: TextView = findViewById(R.id.statusView)
-        var nomeDestinatarioView : TextView = findViewById(R.id.nomeDestinatarioView)
-        var cpfView : TextView = findViewById(R.id.cpfView)
-        var enderecoView : TextView = findViewById(R.id.enderecoView)
-        var descView : TextView = findViewById(R.id.descView)
+        carregarElementos()
+        carregarEventos()
 
 
         var produto = intent.extras?.get("nomeProduto")
@@ -48,7 +56,34 @@ class DetalhesItemActivity : AppCompatActivity() {
         var descricao = intent.extras?.get("descProduto")
         descView.text = "Descrição: ${descricao.toString()}"
 
-
+        var obs = intent.extras?.get("obs")
+        obsView.text = "Observação: ${obs.toString()}"
+        println(obs.toString())
 
     }
+
+    fun carregarElementos() {
+        btnEntregue = findViewById(R.id.buttonEntregue)
+        btnAtrasado = findViewById(R.id.buttonAtrasado)
+        btnPendente = findViewById(R.id.buttonPendente)
+        btnCancelado = findViewById(R.id.buttonCancelado)
+
+        tituloView = findViewById(R.id.tituloView)
+        dateView = findViewById(R.id.dateView)
+        statusView = findViewById(R.id.statusView)
+        nomeDestinatarioView = findViewById(R.id.nomeDestinatarioView)
+        cpfView = findViewById(R.id.cpfView)
+        enderecoView = findViewById(R.id.enderecoView)
+        descView = findViewById(R.id.descView)
+        obsView = findViewById(R.id.obsView)
+
+    }
+
+    fun carregarEventos(){
+        btnEntregue.setOnClickListener(){
+
+        }
+
+    }
+
 }
