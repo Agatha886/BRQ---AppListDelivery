@@ -37,7 +37,7 @@
 
                 <ImageView
                     android:layout_weight="1"
-                    android:id="@+id/imageTarefa"
+                    android:id="@+id/imageTarefaItem"
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -52,7 +52,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="13dp"
-                    tools:text="STATUS: CANCELADO"
+                    tools:text="STATUS: ENTREGUE"
                     android:textAlignment="center"
                     />
 
@@ -117,15 +117,13 @@
                 android:layout_marginEnd="20dp"
                 />
 
-            <EditText
+            <TextView
                 android:id="@+id/obsView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Observação:"
-                android:textColorHint="@color/color_botton"
-                android:textColor="@color/segunda_color_bacground"
+                tools:text="Observação:"
+                android:textColor="@color/color_botton"
                 android:textSize="14dp"
-                android:backgroundTint="@color/color_botton"
                 android:layout_marginTop="15dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"

@@ -25,7 +25,7 @@ class AdapterRecyclerView(val context: Context, val listaTarefas: ArrayList<Tare
                 holder.textViewNomeProduto.text = "Produto: ${it?.pedido?.nomeDoProduto}"
                 holder.textViewNomeCliente.text = "Nome: ${it?.pedido?.destinatario}"
                 holder.textViewCpfCliente.text = "CPF: ${it?.pedido?.cpfDoDestinatario}"
-                holder.imgTarefa.setImageResource(imgListaTarefa(holder))
+                holder.imgTarefa.setImageResource(it.photo)
         }
     }
 
@@ -75,20 +75,20 @@ class ViewHoldertarefas(itemView: View, private val nossaInterface: ItemClickLis
     }
 
 }
-
-fun imgListaTarefa(holder: ViewHoldertarefas): Int {
-    var img : Int
-    if(holder.textViewStatus.text == StatusPedido.PENDENTE.toString()){
-        img = R.drawable.tarefa_pendente
-    }else if(holder.textViewStatus.text == StatusPedido.ENTREGUE.toString()) {
-        img = R.drawable.tarefa_entregue
-    }else if(holder.textViewStatus.text == StatusPedido.ATRASADO.toString()){
-        img = R.drawable.tarefa_atrasada
-    }else{
-        img = R.drawable.tarefa_cancelada
-    }
-    return img
-}
+//
+//fun imgListaTarefa(holder: ViewHoldertarefas): Int {
+//    var img : Int
+//    if(holder.textViewStatus.text == StatusPedido.PENDENTE.toString()){
+//        img = R.drawable.tarefa_pendente
+//    }else if(holder.textViewStatus.text == StatusPedido.ENTREGUE.toString()) {
+//        img = R.drawable.tarefa_entregue
+//    }else if(holder.textViewStatus.text == StatusPedido.ATRASADO.toString()){
+//        img = R.drawable.tarefa_atrasada
+//    }else{
+//        img = R.drawable.tarefa_cancelada
+//    }
+//    return img
+//}
 
 interface ItemClickListener {
 

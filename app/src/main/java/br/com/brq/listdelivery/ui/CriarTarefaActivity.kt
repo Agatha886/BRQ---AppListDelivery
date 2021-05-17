@@ -7,7 +7,10 @@ import android.widget.Button
 import android.widget.EditText
 import br.com.brq.listDelivery.PrincipalActivity
 import br.com.brq.listDelivery.R
+import br.com.brq.listDelivery.model.StatusPedido
+import br.com.brq.listDelivery.model.dataClasse.Pedido
 import br.com.brq.listDelivery.model.dataClasse.Tarefas
+import br.com.brq.listDelivery.model.dataClasse.User
 import com.google.android.material.snackbar.Snackbar
 
 

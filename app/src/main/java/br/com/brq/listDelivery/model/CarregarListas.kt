@@ -1,5 +1,6 @@
 package br.com.brq.listDelivery.model
 
+import br.com.brq.listDelivery.R
 import br.com.brq.listDelivery.model.dataClasse.Pedido
 import br.com.brq.listDelivery.model.dataClasse.Tarefas
 import br.com.brq.listDelivery.model.dataClasse.User
@@ -18,9 +19,27 @@ class CarregarListas {
         Pedido.listasPedido.add(Pedido("Fone de Ouvido Bluetooth","Fone de Ouvido Bluetooth JBL Tune 115BT - Preto","Fátima do Carmo","R. Dr. Tomás Alves, 87 - Vila Mariana, São Paulo - SP, 04017-070","7418936625"))
         Pedido.listasPedido.add(Pedido("Jogo de Soquetes","Jogo de Soquetes Tramontina em Aço Cromo Vanádio - 22 Peças","Rodrigo da Silva Antônio","R. Dr. Tomás Alves, 87 - Vila Mariana, São Paulo - SP, 04017-070","7418936625"))
 //  Tarefas:
-        Tarefas.listasTarefas.add(Tarefas(StatusPedido.PENDENTE,User.listaUser[0],"2021-01-01",Pedido.listasPedido[0],""))
-        Tarefas.listasTarefas.add(Tarefas(StatusPedido.ATRASADO,User.listaUser[1],"2021-01-02",Pedido.listasPedido[1],""))
-        Tarefas.listasTarefas.add(Tarefas(StatusPedido.CANCELADO,User.listaUser[1],"2021-01-01",Pedido.listasPedido[2],"Produto com defeito"))
-        Tarefas.listasTarefas.add(Tarefas(StatusPedido.ENTREGUE,User.listaUser[0],"2021-01-02",Pedido.listasPedido[3],obs=""))
+        Tarefas.listasTarefas.add(Tarefas(StatusPedido.PENDENTE, User.listaUser[0],"2021-01-01",Pedido.listasPedido[0],"",imgStatus()))
+        Tarefas.listasTarefas.add(Tarefas(StatusPedido.ATRASADO, User.listaUser[1],"2021-01-02",Pedido.listasPedido[1],"",imgStatus()))
+        Tarefas.listasTarefas.add(Tarefas(StatusPedido.CANCELADO, User.listaUser[1],"2021-01-01",Pedido.listasPedido[2],"Produto com defeito",imgStatus()))
+        Tarefas.listasTarefas.add(Tarefas(StatusPedido.ENTREGUE, User.listaUser[0],"2021-01-02",Pedido.listasPedido[3], "",imgStatus()))
     }
+
+    fun imgStatus(): Int {
+        var img : Int
+        var listaTarefas = Tarefas.listasTarefas
+        for (tarefas in listaTarefas){
+            if(tarefas.status== StatusPedido.PENDENTE){
+                img = R.drawable.tarefa_pendente
+            }else if(tarefas.status == StatusPedido.ENTREGUE) {
+                img = R.drawable.tarefa_entregue
+            }else if(tarefas.status == StatusPedido.ATRASADO){
+                img = R.drawable.tarefa_atrasada
+            }else{
+                img = R.drawable.tarefa_cancelada
+            }
+        }
+        return img
+    }
+
 }

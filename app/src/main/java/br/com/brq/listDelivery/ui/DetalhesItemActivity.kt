@@ -1,9 +1,13 @@
 package br.com.brq.listDelivery.ui
 
+import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.TextView
 import br.com.brq.listDelivery.R
+import br.com.brq.listDelivery.model.StatusPedido
+import br.com.brq.listDelivery.model.dataClasse.Tarefas
 
 class DetalhesItemActivity : AppCompatActivity() {
 
@@ -18,6 +22,7 @@ class DetalhesItemActivity : AppCompatActivity() {
         var cpfView : TextView = findViewById(R.id.cpfView)
         var enderecoView : TextView = findViewById(R.id.enderecoView)
         var descView : TextView = findViewById(R.id.descView)
+        var imgTarefa : ImageView = findViewById(R.id.imageTarefaItem)
 
 
         var produto = intent.extras?.get("nomeProduto")
@@ -41,6 +46,8 @@ class DetalhesItemActivity : AppCompatActivity() {
         var descricao = intent.extras?.get("descProduto")
         descView.text = "Descrição: ${descricao.toString()}"
 
+//        imgTarefa.setImageURI("@drawable/tarefa_entregue")
 
     }
+
 }
