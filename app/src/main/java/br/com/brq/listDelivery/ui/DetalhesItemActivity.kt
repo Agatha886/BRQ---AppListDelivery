@@ -2,12 +2,9 @@ package br.com.brq.listDelivery.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Editable
 import android.widget.Button
-import android.widget.EditText
 import android.widget.TextView
 import br.com.brq.listDelivery.R
-import org.w3c.dom.Text
 
 class DetalhesItemActivity : AppCompatActivity() {
 
@@ -23,9 +20,6 @@ lateinit var cpfView : TextView
 lateinit var enderecoView : TextView
 lateinit var descView : TextView
 lateinit var obsView : TextView
-
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

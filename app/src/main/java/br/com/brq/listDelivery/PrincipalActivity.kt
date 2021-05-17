@@ -96,6 +96,8 @@ class PrincipalActivity : AppCompatActivity(), ItemClickListener {
 
         var intent = Intent(this, DetalhesItemActivity::class.java)
         var item = listaFiltada[index]
+
+        intent.putExtra("item",item)
         intent.putExtra("destinatario",item.pedido?.destinatario)
         intent.putExtra("data",item.dataDeEntrega)
         intent.putExtra("status",item.status)
