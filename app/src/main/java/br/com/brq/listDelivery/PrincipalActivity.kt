@@ -96,9 +96,8 @@ class PrincipalActivity : AppCompatActivity(), ItemClickListener {
 
         var intent = Intent(this, DetalhesItemActivity::class.java)
         var item = listaFiltada[index]
-<<<<<<< HEAD
+
         intent.putExtra("item",item)
-=======
         intent.putExtra("destinatario",item.pedido?.destinatario)
         intent.putExtra("data",item.dataDeEntrega)
         intent.putExtra("status",item.status)
@@ -106,7 +105,6 @@ class PrincipalActivity : AppCompatActivity(), ItemClickListener {
         intent.putExtra("cpfDestinatario",item.pedido?.cpfDoDestinatario)
         intent.putExtra("endereco",item.pedido?.enderecoEntrega)
         intent.putExtra("descProduto",item.pedido?.descricaoDoProduto)
->>>>>>> 475214104e524f1acb9decc0c9beb921ee5ed5c1
         startActivity(intent)
 
 //        adapter?.remoteItem(index)
