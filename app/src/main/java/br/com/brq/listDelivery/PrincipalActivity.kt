@@ -105,6 +105,7 @@ class PrincipalActivity : AppCompatActivity(), ItemClickListener {
         intent.putExtra("cpfDestinatario",item.pedido?.cpfDoDestinatario)
         intent.putExtra("endereco",item.pedido?.enderecoEntrega)
         intent.putExtra("descProduto",item.pedido?.descricaoDoProduto)
+        intent.putExtra("obs",item.obs)
         startActivity(intent)
 
 //        adapter?.remoteItem(index)
