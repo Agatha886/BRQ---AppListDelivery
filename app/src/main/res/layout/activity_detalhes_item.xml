@@ -13,14 +13,20 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:gravity="center_horizontal"
+<<<<<<< HEAD
             android:layout_margin="20dp"
             android:background="@drawable/background_listas_tarefas"
+=======
+            android:background="@color/white"
+            android:layout_margin="40dp"
+>>>>>>> 475214104e524f1acb9decc0c9beb921ee5ed5c1
             >
 
             <TextView
                 android:id="@+id/tituloView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+<<<<<<< HEAD
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="Data: 2021-01-01"
@@ -54,10 +60,40 @@
                     android:textSize="13dp"
                     android:text="STATUS: CANCELADO"
                     android:textAlignment="center"
+=======
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="Nome do Produto"
+                android:textSize="24sp" />
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="32dp"
+                >
+
+                <TextView
+                    android:id="@+id/dateView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Data:"
+                    android:layout_marginStart="20dp"
+                    />
+                <TextView
+                    android:id="@+id/statusView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Status:"
+
+                    android:layout_marginStart="20dp"
+>>>>>>> 475214104e524f1acb9decc0c9beb921ee5ed5c1
                     />
 
             </LinearLayout>
 
+<<<<<<< HEAD
             <TextView
                 android:id="@+id/dateView"
                 android:layout_width="match_parent"
@@ -70,14 +106,20 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 />
+=======
+>>>>>>> 475214104e524f1acb9decc0c9beb921ee5ed5c1
 
             <TextView
                 android:id="@+id/nomeDestinatarioView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+<<<<<<< HEAD
                 android:text="Destinatário: Fátima do Carmo"
                 android:textColor="@color/color_botton"
                 android:textSize="14dp"
+=======
+                android:text="Destinatário: "
+>>>>>>> 475214104e524f1acb9decc0c9beb921ee5ed5c1
                 android:layout_marginTop="15dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
@@ -86,9 +128,13 @@
                 android:id="@+id/cpfView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+<<<<<<< HEAD
                 android:text="CPF: 7418936625"
                 android:textColor="@color/color_botton"
                 android:textSize="14dp"
+=======
+                android:text="CPF:"
+>>>>>>> 475214104e524f1acb9decc0c9beb921ee5ed5c1
                 android:layout_marginTop="15dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
@@ -97,9 +143,13 @@
                 android:id="@+id/enderecoView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+<<<<<<< HEAD
                 android:text="Endereço: R. Dr. Tomás Alves, 87 - Vila Mariana, São Paulo - SP, 04017-070"
                 android:textColor="@color/color_botton"
                 android:textSize="14dp"
+=======
+                android:text="Endereço:"
+>>>>>>> 475214104e524f1acb9decc0c9beb921ee5ed5c1
                 android:layout_marginTop="15dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
@@ -109,14 +159,19 @@
                 android:id="@+id/descView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+<<<<<<< HEAD
                 android:text="Descrição do produto: Fone de Ouvido Bluetooth JBL Tune 115BT - Preto"
                 android:textColor="@color/color_botton"
                 android:textSize="14dp"
+=======
+                android:text="Descrição do produto:"
+>>>>>>> 475214104e524f1acb9decc0c9beb921ee5ed5c1
                 android:layout_marginTop="15dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 />
 
+<<<<<<< HEAD
             <EditText
                 android:id="@+id/obsView"
                 android:layout_width="match_parent"
@@ -126,23 +181,50 @@
                 android:textColor="@color/segunda_color_bacground"
                 android:textSize="14dp"
                 android:backgroundTint="@color/color_botton"
+=======
+            <TextView
+                android:id="@+id/obsView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Observação:"
+>>>>>>> 475214104e524f1acb9decc0c9beb921ee5ed5c1
                 android:layout_marginTop="15dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 />
 
+<<<<<<< HEAD
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Alterar o status:"
                 android:layout_marginTop="15dp"/>
+=======
+            <EditText
+                android:id="@+id/editTextNovaObs"
+                android:layout_width="match_parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_height="wrap_content"
+                android:text="O pedido está com problemas aleatórios e por isso eu irei entregar para o papai noel"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Alterar o status:"/>
+>>>>>>> 475214104e524f1acb9decc0c9beb921ee5ed5c1
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center_horizontal"
+<<<<<<< HEAD
                 android:layout_marginTop="10dp">
+=======
+                android:layout_marginTop="16dp">
+>>>>>>> 475214104e524f1acb9decc0c9beb921ee5ed5c1
 
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -151,8 +233,11 @@
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/segunda_color_bacground"
                     android:src="@drawable/tarefa_entregue"
+<<<<<<< HEAD
                     app:elevation="0dp"
                     android:layout_margin="2dp"
+=======
+>>>>>>> 475214104e524f1acb9decc0c9beb921ee5ed5c1
                     />
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -161,18 +246,28 @@
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/segunda_color_bacground"
                     android:src="@drawable/tarefa_pendente"
+<<<<<<< HEAD
                     app:elevation="0dp"
                     android:layout_margin="2dp"
                     />
 
+=======
+                    />
+
+
+
+>>>>>>> 475214104e524f1acb9decc0c9beb921ee5ed5c1
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/buttonCancelado"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/segunda_color_bacground"
                     android:src="@drawable/tarefa_cancelada"
+<<<<<<< HEAD
                     app:elevation="0dp"
                     android:layout_margin="2dp"
+=======
+>>>>>>> 475214104e524f1acb9decc0c9beb921ee5ed5c1
                     />
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -181,13 +276,18 @@
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/segunda_color_bacground"
                     android:src="@drawable/tarefa_atrasada"
+<<<<<<< HEAD
                     app:elevation="0dp"
                     android:layout_margin="2dp"
+=======
+
+>>>>>>> 475214104e524f1acb9decc0c9beb921ee5ed5c1
                     />
 
             </LinearLayout>
 
             <Button
+<<<<<<< HEAD
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Deletar pedido"
@@ -201,5 +301,13 @@
 
 
 
+=======
+                android:layout_width="120dp"
+                android:layout_height="62dp"
+                android:text="Deletar pedido"
+                android:layout_marginTop="16dp"
+                />
+
+>>>>>>> 475214104e524f1acb9decc0c9beb921ee5ed5c1
         </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
