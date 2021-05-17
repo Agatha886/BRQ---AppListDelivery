@@ -38,7 +38,7 @@
             android:textColor="@color/segunda_color_bacground"
             android:textSize="30dp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/imageView"
+            app:layout_constraintBottom_toTopOf="@+id/mascara"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.341" />
@@ -49,14 +49,14 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:textSize="15dp"
-            app:layout_constraintBottom_toTopOf="@+id/imageView"
+            app:layout_constraintBottom_toTopOf="@+id/mascara"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewSuasTarefas"
             app:layout_constraintVertical_bias="0.0"
             tools:text="Bem vindo: Agatha" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/mascara"
             android:layout_width="59dp"
             android:layout_height="55dp"
             android:layout_marginStart="20dp"
@@ -73,7 +73,7 @@
             android:textColor="@color/color_botton"
             android:textSize="14dp"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintStart_toEndOf="@+id/mascara"
             app:layout_constraintTop_toBottomOf="@+id/textHigenize" />
 
         <TextView
@@ -85,8 +85,8 @@
             android:textColor="@color/color_botton"
             android:textSize="14dp"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/imageView"
-            app:layout_constraintTop_toTopOf="@+id/imageView" />
+            app:layout_constraintStart_toEndOf="@+id/mascara"
+            app:layout_constraintTop_toTopOf="@+id/mascara" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -96,7 +96,8 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_weight="4"
-        android:background="@drawable/background_listas">
+        android:background="@drawable/background_listas"
+        android:id="@+id/layoutRecycler">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_tarefas"
@@ -122,84 +123,144 @@
             android:textStyle="bold" />
 
     </LinearLayout>
+    <LinearLayout
 
-
-    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:orientation="vertical">
-
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/buttonPendente"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="6dp"
-            android:backgroundTint="@color/segunda_color_bacground"
-            android:src="@drawable/tarefa_pendente"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/tarefaAdd"
-            app:layout_constraintTop_toTopOf="parent" />
-
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_weight="0"
+        android:layout_marginBottom="4dp">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/buttonEntregue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="6dp"
-            android:layout_marginEnd="6dp"
-            android:layout_marginBottom="6dp"
             android:backgroundTint="@color/segunda_color_bacground"
             android:src="@drawable/tarefa_entregue"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/buttonPendente"
-            app:layout_constraintHorizontal_bias="0.939"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"></com.google.android.material.floatingactionbutton.FloatingActionButton>
+            app:elevation="0dp"
+            android:layout_margin="2dp"
+            />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/buttonPendente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/segunda_color_bacground"
+            android:src="@drawable/tarefa_pendente"
+            app:elevation="0dp"
+            android:layout_margin="2dp"
+            />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/tarefaAdd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="6dp"
             android:src="@android:drawable/ic_menu_add"
-            app:fabSize="normal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:layout_editor_absoluteX="177dp"></com.google.android.material.floatingactionbutton.FloatingActionButton>
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/buttonAtrasaddo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="6dp"
-            android:layout_marginTop="6dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="6dp"
-            android:backgroundTint="@color/segunda_color_bacground"
-            android:src="@drawable/tarefa_atrasada"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/buttonCancelado"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"></com.google.android.material.floatingactionbutton.FloatingActionButton>
+            app:elevation="0dp"
+            android:layout_margin="2dp"
+            />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/buttonCancelado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="6dp"
-            android:layout_marginStart="40dp"
             android:backgroundTint="@color/segunda_color_bacground"
             android:src="@drawable/tarefa_cancelada"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/tarefaAdd"
-            app:layout_constraintTop_toTopOf="parent"></com.google.android.material.floatingactionbutton.FloatingActionButton>
+            app:elevation="0dp"
+            android:layout_margin="2dp"
+            />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/buttonAtrasado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/segunda_color_bacground"
+            android:src="@drawable/tarefa_atrasada"
+            app:elevation="0dp"
+            android:layout_margin="2dp"
+
+            />
+    </LinearLayout>
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@color/white"-->
+<!--        android:orientation="vertical">-->
+
+
+
+<!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--            android:id="@+id/buttonEntregue"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="6dp"-->
+<!--            android:backgroundTint="@color/segunda_color_bacground"-->
+<!--            android:src="@drawable/tarefa_entregue"-->
+<!--            app:layout_constraintEnd_toEndOf="@id/buttonPendente"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            />-->
+
+<!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--            android:id="@+id/buttonPendente"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="6dp"-->
+<!--            android:backgroundTint="@color/segunda_color_bacground"-->
+<!--            android:src="@drawable/tarefa_pendente"-->
+<!--            app:layout_constraintStart_toStartOf="@id/buttonEntregue"-->
+<!--            app:layout_constraintEnd_toEndOf="@id/tarefaAdd"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            />-->
+
+<!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--            android:id="@+id/tarefaAdd"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="6dp"-->
+<!--            android:src="@android:drawable/ic_menu_add"-->
+<!--            app:fabSize="normal"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="@id/buttonPendente"-->
+<!--            app:layout_constraintEnd_toEndOf="@id/buttonCancelado"-->
+<!--            />-->
+
+<!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--            android:id="@+id/buttonCancelado"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="6dp"-->
+<!--            android:layout_marginStart="40dp"-->
+<!--            android:backgroundTint="@color/segunda_color_bacground"-->
+<!--            android:src="@drawable/tarefa_cancelada"-->
+<!--            app:layout_constraintStart_toStartOf="@id/tarefaAdd"-->
+<!--            app:layout_constraintEnd_toEndOf="@id/buttonAtrasado"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--             />-->
+
+<!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--            android:id="@+id/buttonAtrasado"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="6dp"-->
+<!--            android:layout_marginTop="6dp"-->
+<!--            android:layout_marginEnd="20dp"-->
+<!--            android:layout_marginBottom="6dp"-->
+<!--            android:backgroundTint="@color/segunda_color_bacground"-->
+<!--            android:src="@drawable/tarefa_atrasada"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="@id/buttonCancelado"-->
+<!--             />-->
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
 
 </LinearLayout>

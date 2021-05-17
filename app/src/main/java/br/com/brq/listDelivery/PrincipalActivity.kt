@@ -14,6 +14,7 @@ import br.com.brq.listDelivery.model.ItemClickListener
 import br.com.brq.listDelivery.model.dataClasse.Tarefas
 import br.com.brq.listDelivery.model.dataClasse.User
 import br.com.brq.listDelivery.ui.CriarTarefaActivity
+import br.com.brq.listDelivery.ui.DetalhesItemActivity
 import kotlin.collections.ArrayList
 
 
@@ -92,7 +93,13 @@ class PrincipalActivity : AppCompatActivity(), ItemClickListener {
     }
 
     override fun onClickItem(view: View?, index: Int) {
-        adapter?.remoteItem(index)
+
+        var intent = Intent(this, DetalhesItemActivity::class.java)
+        var item = listaFiltada[index]
+        intent.putExtra("item",item)
+        startActivity(intent)
+
+//        adapter?.remoteItem(index)
     }
 //
 //    override fun onClickItem(view: View?, index: Int) {
