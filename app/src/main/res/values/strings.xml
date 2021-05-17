@@ -2,10 +2,10 @@
     <string name="app_name">Meu primeiro app</string>
     <string name="titulo_tela_login">Login</string>
 
-<!--    //String Títulos-->
+    <!--    //String Títulos-->
     <string name="titulo_tela_segunda">Crie Sua Conta</string>
 
-<!--    String TexEdit:-->
+    <!--    String TexEdit:-->
     <string name="senha">Senha:</string>
     <string name="confirmar_senha">Confirme Sua Senha:</string>
     <string name="login">Digite seu Login ou Email:</string>
@@ -13,12 +13,12 @@
     <string name="email">Email:</string>
     <string name="cpf">CPF:</string>
 
-<!--    Button-->
+    <!--    Button-->
     <string name="botao_enviar">Enviar</string>
     <string name="botao_criar">Nova Conta</string>
     <string name="botao_cadastrar">Cadastrar</string>
 
-<!--    Erro-->
+    <!--    Erro-->
     <string name="erro_cadastro">LOGIN NÃO ENCONTRADO!!!</string>
     <string name="erro_user">USUÁRIO INVÁLIDO!!!</string>
     <string name="erro_senha">SENHA INVÁLIDA!!!</string>

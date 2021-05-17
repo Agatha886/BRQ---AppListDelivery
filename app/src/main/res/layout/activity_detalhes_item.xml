@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.DetalhesItemActivity"
+    android:background="@drawable/background_gradient">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:background="@color/white"
+            android:layout_margin="40dp"
+            >
+
+            <TextView
+                android:id="@+id/tituloView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="Nome do Produto"
+                android:textSize="24sp" />
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="32dp"
+                >
+
+                <TextView
+                    android:id="@+id/dateView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Data:"
+                    android:layout_marginStart="20dp"
+                    />
+                <TextView
+                    android:id="@+id/statusView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Status:"
+
+                    android:layout_marginStart="90dp"
+                    />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/nomeDestinatarioView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Destinatário: "
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                />
+            <TextView
+                android:id="@+id/cpfView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CPF:"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                />
+            <TextView
+                android:id="@+id/enderecoView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Endereço:"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                />
+
+            <TextView
+                android:id="@+id/descView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Descrição do produto:"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                />
+
+            <TextView
+                android:id="@+id/obsView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Observação:"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                />
+
+            <EditText
+                android:id="@+id/editTextNovaObs"
+                android:layout_width="match_parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_height="wrap_content"
+                android:text="O pedido está com problemas aleatórios e por isso eu irei entregar para o papai noel"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Alterar o status:"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="16dp">
+
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/buttonEntregue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/segunda_color_bacground"
+                    android:src="@drawable/tarefa_entregue"
+                    />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/buttonPendente"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/segunda_color_bacground"
+                    android:src="@drawable/tarefa_pendente"
+                    />
+
+
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/buttonCancelado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/segunda_color_bacground"
+                    android:src="@drawable/tarefa_cancelada"
+                    />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/buttonAtrasado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/segunda_color_bacground"
+                    android:src="@drawable/tarefa_atrasada"
+
+                    />
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="120dp"
+                android:layout_height="62dp"
+                android:text="Deletar pedido"
+                android:layout_marginTop="16dp"
+                />
+
+
+
+
+
+        </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

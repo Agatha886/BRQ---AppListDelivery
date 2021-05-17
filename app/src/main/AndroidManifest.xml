@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MeuPrimeiroApp">
-        <activity android:name="br.com.brq.listDelivery.ui.CriarTarefaActivity"></activity>
-        <activity android:name="br.com.brq.listDelivery.PrincipalActivity" />
-        <activity android:name="br.com.brq.listDelivery.ui.CriarContaActivity"></activity>
-        <activity android:name="br.com.brq.listDelivery.LoginActivity">
+        <activity android:name=".ui.DetalhesItemActivity"></activity>
+        <activity android:name=".ui.CriarTarefaActivity" />
+        <activity android:name=".PrincipalActivity" />
+        <activity android:name=".ui.CriarContaActivity" />
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
