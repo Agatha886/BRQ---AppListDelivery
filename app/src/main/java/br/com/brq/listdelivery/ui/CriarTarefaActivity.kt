@@ -56,8 +56,6 @@ class CriarTarefaActivity : AppCompatActivity(){
             } else {
                 Snackbar.make(findViewById(R.id.CriarTarefaLayout),"Os espaços não vem estar em branco",Snackbar.LENGTH_SHORT).show()
             }
-
-
         }
     }
 
