@@ -159,6 +159,7 @@ class PrincipalActivity : AppCompatActivity(), ItemClickListener {
         intent.putExtra("descProduto",item.pedido?.descricaoDoProduto)
         intent.putExtra("obs",item.obs)
         intent.putExtra("img",item.photo)
+        intent.putExtra("index",index)
         startActivity(intent)
 
 //        adapter?.remoteItem(index)

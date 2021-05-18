@@ -49,6 +49,11 @@ class AdapterRecyclerView(val context: Context, val listaTarefas: ArrayList<Tare
         notifyList()
     }
 
+    fun setStatusEntregue(index: Int){
+        listaTarefas[index].status = StatusPedido.ENTREGUE
+        notifyList()
+    }
+
     fun updateList(listTarefas: ArrayList<Tarefas>){
         this.listaTarefas.clear()
         this.listaTarefas.addAll(listTarefas)

@@ -8,7 +8,7 @@ import java.io.Serializable
 import kotlin.properties.Delegates
 
 class Tarefas(
-    val status: StatusPedido,
+    var status: StatusPedido,
     var User: User,
     val dataDeEntrega: String,
     val pedido: Pedido,

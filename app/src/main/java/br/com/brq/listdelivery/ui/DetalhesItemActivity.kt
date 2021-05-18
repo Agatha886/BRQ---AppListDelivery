@@ -3,9 +3,12 @@ package br.com.brq.listdelivery.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import br.com.brq.listdelivery.R
+import br.com.brq.listdelivery.model.AdapterRecyclerView
+import br.com.brq.listdelivery.model.StatusPedido
 
 class DetalhesItemActivity : AppCompatActivity() {
 
@@ -13,6 +16,7 @@ class DetalhesItemActivity : AppCompatActivity() {
     var btnAtrasado:   View? = null
     var btnCancelado: View? = null
     var btnPendente: View? = null
+    var adapter: AdapterRecyclerView? = null
 
     lateinit var imgTarefa : ImageView
     lateinit var tituloView: TextView
@@ -38,7 +42,8 @@ class DetalhesItemActivity : AppCompatActivity() {
 //        var imgTarefa: ImageView = findViewById(R.id.imageTarefa)
 
         carregarElementos()
-        carregarEventos()
+
+        var index: Int = intent.extras?.get("index") as Int
 
         var produto = intent.extras?.get("nomeProduto")
         tituloView.text = "Produto: ${produto.toString()}"
@@ -68,6 +73,10 @@ class DetalhesItemActivity : AppCompatActivity() {
         obsView.text = "Observação: ${obs.toString()}"
         println(obs.toString())
 
+
+
+        carregarEventos(index)
+
     }
 
 
@@ -89,9 +98,13 @@ class DetalhesItemActivity : AppCompatActivity() {
 
     }
 
-    fun carregarEventos() {
+    fun carregarEventos(index: Int) {
+
         btnEntregue?.setOnClickListener {
-            btnEntregue?.setBackgroundResource(R.color.color_botton)
+            adapter?.setStatusEntregue(index)
+
+            println(adapter?.listaTarefas?.get(index))
+
         }
 
     }
