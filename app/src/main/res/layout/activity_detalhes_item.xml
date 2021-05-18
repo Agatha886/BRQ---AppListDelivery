@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.DetalhesItemActivity"
+    android:background="@drawable/background_gradient">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_margin="20dp"
+            android:background="@drawable/background_listas_tarefas"
+            >
+
+            <TextView
+                android:id="@+id/dateView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                tools:text="Data: 2021-01-01"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/segunda_color_bacground"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="0dp"
+                >
+
+                <ImageView
+                    android:layout_weight="1"
+                    android:id="@+id/imageTarefaItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/tarefa_entregue" />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/statusView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="13dp"
+                    tools:text="STATUS: ENTREGUE"
+                    android:textAlignment="center"
+                    />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tituloView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Nome: Fone de Ouvido Bluetooth"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:textColor="@color/segunda_color_bacground"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                />
+
+            <TextView
+                android:id="@+id/nomeDestinatarioView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Destinatário: Fátima do Carmo"
+                android:textColor="@color/color_botton"
+                android:textSize="14dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                />
+            <TextView
+                android:id="@+id/cpfView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+               tools:text="CPF: 7418936625"
+                android:textColor="@color/color_botton"
+                android:textSize="14dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                />
+            <TextView
+                android:id="@+id/enderecoView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Endereço: R. Dr. Tomás Alves, 87 - Vila Mariana, São Paulo - SP, 04017-070"
+                android:textColor="@color/color_botton"
+                android:textSize="14dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                />
+
+            <TextView
+                android:id="@+id/descView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Descrição do produto: Fone de Ouvido Bluetooth JBL Tune 115BT - Preto"
+                android:textColor="@color/color_botton"
+                android:textSize="14dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                />
+
+            <TextView
+                android:id="@+id/obsView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Observação:"
+                android:textColor="@color/color_botton"
+                android:textSize="14dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Alterar o status:"
+                android:layout_marginTop="15dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="10dp">
+
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/buttonEntregue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/segunda_color_bacground"
+                    android:src="@drawable/tarefa_entregue"
+                    app:elevation="0dp"
+                    android:layout_margin="2dp"
+                    />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/buttonPendente"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/segunda_color_bacground"
+                    android:src="@drawable/tarefa_pendente"
+                    app:elevation="0dp"
+                    android:layout_margin="2dp"
+                    />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/buttonCancelado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/segunda_color_bacground"
+                    android:src="@drawable/tarefa_cancelada"
+                    app:elevation="0dp"
+                    android:layout_margin="2dp"
+                    />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/buttonAtrasado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/segunda_color_bacground"
+                    android:src="@drawable/tarefa_atrasada"
+                    app:elevation="0dp"
+                    android:layout_margin="2dp"
+                    />
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Deletar pedido"
+                android:textSize="12dp"
+                android:layout_marginTop="26dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/button_enviar_drawable"
+                />
+
+
+        </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

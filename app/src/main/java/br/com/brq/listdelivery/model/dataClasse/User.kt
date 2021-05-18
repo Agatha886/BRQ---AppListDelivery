@@ -9,8 +9,9 @@ data class User (
     var cpf: String
 ) : Serializable{
     companion object {
-        val listaUses = hashMapOf<Int,User>()
+        val listaUser = ArrayList<User>()
         lateinit var user : User
+
     }
 }
 

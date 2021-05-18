@@ -5,16 +5,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import br.com.brq.listDelivery.PrincipalActivity
 import br.com.brq.listDelivery.R
+import br.com.brq.listDelivery.model.StatusPedido
 import br.com.brq.listDelivery.model.dataClasse.Pedido
 import br.com.brq.listDelivery.model.dataClasse.Tarefas
-import br.com.brq.listDelivery.model.AdapterRecyclerView as AdapterRecyclerView
+import br.com.brq.listDelivery.model.dataClasse.User
+import com.google.android.material.snackbar.Snackbar
 
 
 class CriarTarefaActivity : AppCompatActivity(){
-    lateinit var listasTarefas: ArrayList<Tarefas>
     lateinit var editTextData: EditText
     lateinit var editTextNomeDoProduto: EditText
     lateinit var editTextDescricao: EditText
@@ -23,24 +23,20 @@ class CriarTarefaActivity : AppCompatActivity(){
     lateinit var editTextCpfDoCliente: EditText
     lateinit var editTextObs: EditText
     lateinit var btnCriarTarefa : Button
-    var adapter: AdapterRecyclerView? = null
-    var recyclerView: RecyclerView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_criar_tarefa)
         CarregarElementos()
         CarregarEventos()
+     }
 
-        AdapterRecyclerView(this, listasTarefas).let {
-            adapter = it
-            recyclerView?.adapter = it
-        }
-        recyclerView?.layoutManager = LinearLayoutManager(this)
+    override fun onStart() {
+        super.onStart()
+        Tarefas.newTarefa = null
     }
 
     fun CarregarElementos(){
-        recyclerView = findViewById(R.id.rv_tarefas)
         btnCriarTarefa = findViewById(R.id.button_criar_tarefa)
         editTextData =findViewById(R.id.editTextData)
         editTextNomeDoProduto = findViewById(R.id.editTextNomeProduto)
@@ -52,39 +48,25 @@ class CriarTarefaActivity : AppCompatActivity(){
     }
 
     fun CarregarEventos(){
-        var pedido = Pedido(
-                nomeDoProduto = "teste",
-                descricaoDoProduto = "teste",
-                destinatario = "teste",
-                enderecoEntrega = "teste",
-                cpfDoDestinatario = "teste"
-        )
 
         btnCriarTarefa.setOnClickListener {
-//            adapter?.addItemLista(Tarefas(StatusPedido.PENDENTE,"01-02-2021", pedido," "))
-            val int = Intent(this, CriarTarefaActivity::class.java)
-            startActivity(int)
+
+            if(validarTarefa(editTextNomeDoProduto.text.toString(),editTextDescricao.text.toString(),editTextDestinatario.text.toString(),editTextEndereco.text.toString(),editTextCpfDoCliente.text.toString(),editTextData.text.toString(),editTextObs.text.toString())){
+                addItemLista(Tarefas.NovaTarefa(editTextNomeDoProduto,editTextDescricao,editTextDestinatario,editTextEndereco,editTextCpfDoCliente,editTextData,editTextObs))
+                val intentTelaPrincipal = Intent(this, PrincipalActivity::class.java)
+                startActivity(intentTelaPrincipal)
+            } else {
+                Snackbar.make(findViewById(R.id.CriarTarefaLayout),"Os espaços não vem estar em branco",Snackbar.LENGTH_SHORT).show()
+            }
         }
     }
-//
-//    fun NovaTarefa():Tarefas{
-//
-//         var pedido = Pedido(
-//         nomeDoProduto = editTextNomeDoProduto.text.toString(),
-//         descricaoDoProduto = editTextDescricao.text.toString(),
-//         destinatario = editTextDestinatario.text.toString(),
-//         enderecoEntrega = editTextEndereco.text.toString(),
-//         cpfDoDestinatario = editTextCpfDoCliente.text.toString()
-//        )
-//
-////        var newTarefa = Tarefas(
-////        status = StatusPedido.PENDENTE,
-////        pedido = pedido,
-////        dataDeEntrega = editTextData.text.toString() ,
-////        obs = editTextObs.text.toString()
-////        )
-//        return newTarefa
-//    }
 
+    fun addItemLista(tarefa : Tarefas){
+        Tarefas.listasTarefas.add(tarefa)
+    }
+
+    fun validarTarefa(nome:String,descricao:String,destinatario:String,endereco:String,cpf:String,data:String,obs:String):Boolean{
+        return nome.isNotBlank()&&descricao.isNotBlank()&&destinatario.isNotBlank()&&endereco.isNotBlank()&&cpf.isNotBlank()&&data.isNotBlank()&&obs.isNotBlank()
+    }
 
 }

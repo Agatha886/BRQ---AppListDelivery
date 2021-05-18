@@ -2,5 +2,9 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+<<<<<<< HEAD
+=======
+    <mapping directory="$PROJECT_DIR$/BRQ---AppListDelivery" vcs="Git" />
+>>>>>>> b0ecd084bef19566df5f9c7add8b1e3cb8261488
   </component>
 </project>
