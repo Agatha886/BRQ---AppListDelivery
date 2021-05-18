@@ -164,13 +164,6 @@ class PrincipalActivity : AppCompatActivity(), ItemClickListener {
 
 //        adapter?.remoteItem(index)
     }
-//
-//    override fun onClickItem(view: View?, index: Int) {
-//        val intent = Intent(this, DetalhesActivity::class.java)
-//        intent.putExtra("parametro_nome", meuArrayDeAnimais[index].nome)
-//        intent.putExtra("parametro_objeto", meuArrayDeAnimais[index])
-//        startActivity(intent)
-//    }
 
     override fun onLongClickItem(view: View?, index: Int):Boolean {
         adapter?.remoteItem(index)
