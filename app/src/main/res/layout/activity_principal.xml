@@ -88,6 +88,18 @@
             app:layout_constraintStart_toEndOf="@+id/mascara"
             app:layout_constraintTop_toTopOf="@+id/mascara" />
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/tarefaAdd"
+            android:theme="@style/padraButtonAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="12dp"
+            android:src="@drawable/img_add"
+            app:elevation="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -134,7 +146,7 @@
         android:layout_marginBottom="4dp">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/buttonEntregue"
+            android:id="@+id/buttonFiltrarEntregue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/segunda_color_bacground"
@@ -144,7 +156,7 @@
             />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/buttonPendente"
+            android:id="@+id/buttonFiltrarPendente"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/segunda_color_bacground"
@@ -154,16 +166,17 @@
             />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/tarefaAdd"
+            android:id="@+id/tarefaVoltar"
+            android:theme="@style/padraButtonAdd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@android:drawable/ic_menu_add"
+            android:src="@drawable/img_todos"
             app:elevation="0dp"
             android:layout_margin="2dp"
             />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/buttonCancelado"
+            android:id="@+id/buttonFiltrarCancelado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/segunda_color_bacground"
@@ -173,7 +186,7 @@
             />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/buttonAtrasado"
+            android:id="@+id/buttonFiltrarAtrasado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/segunda_color_bacground"

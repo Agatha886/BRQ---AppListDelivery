@@ -35,12 +35,30 @@ class AdapterRecyclerView(val context: Context, val listaTarefas: ArrayList<Tare
 
     fun addItemLista(tarefa : Tarefas){
         listaTarefas.add(tarefa)
-        notifyDataSetChanged()
+        notifyList()
     }
+
+    fun addLista(listaTarefas: ArrayList<Tarefas>){
+        this.listaTarefas.clear()
+        this.listaTarefas.addAll(listaTarefas)
+        notifyList()
+    }
+
     fun remoteItem(index: Int){
         listaTarefas.removeAt(index)
+        notifyList()
+    }
+
+    fun updateList(listTarefas: ArrayList<Tarefas>){
+        this.listaTarefas.clear()
+        this.listaTarefas.addAll(listTarefas)
+        notifyList()
+    }
+
+    private fun notifyList(){
         notifyDataSetChanged()
     }
+
 }
 
 class ViewHoldertarefas(itemView: View, private val nossaInterface: ItemClickListener?)

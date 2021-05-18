@@ -22,6 +22,7 @@
     <style name="padraButtonAdd" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/segunda_color_bacground</item>
+        <item name="colorOnSecondary">@color/segunda_color_bacground</item>
     </style>
 
 </resources>
