@@ -20,7 +20,6 @@ class Tarefas(
     companion object{
         val listasTarefas = ArrayList<Tarefas>()
         var newTarefa : Tarefas? = null
-        var img by Delegates.notNull<Int>()
 
         fun NovaTarefa(editTextNomeDoProduto: EditText, editTextDescricao:EditText, editTextDestinatario:EditText, editTextEndereco:EditText, editTextCpfDoCliente:EditText,
                        editTextData:EditText, editTextObs:EditText):Tarefas{
@@ -43,5 +42,6 @@ class Tarefas(
             return newTarefa as Tarefas
         }
     }
+
 
 }
