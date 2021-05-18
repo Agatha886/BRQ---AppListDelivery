@@ -1,9 +1,9 @@
-package br.com.brq.listDelivery.model.dataClasse
+package br.com.brq.listdelivery.model.dataClasse
 
 import android.widget.EditText
 import androidx.annotation.DrawableRes
-import br.com.brq.listDelivery.R
-import br.com.brq.listDelivery.model.StatusPedido
+import br.com.brq.listdelivery.R
+import br.com.brq.listdelivery.model.StatusPedido
 import java.io.Serializable
 import kotlin.properties.Delegates
 

@@ -1,16 +1,11 @@
-package br.com.brq.listDelivery.ui
+package br.com.brq.listdelivery.ui
 
-import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
-import android.widget.Button
 import android.widget.TextView
-import br.com.brq.listDelivery.R
-import br.com.brq.listDelivery.model.StatusPedido
-import br.com.brq.listDelivery.model.dataClasse.Tarefas
-import com.google.android.material.floatingactionbutton.FloatingActionButton
+import br.com.brq.listdelivery.R
 
 class DetalhesItemActivity : AppCompatActivity() {
 

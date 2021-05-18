@@ -1,9 +1,9 @@
-package br.com.brq.listDelivery.model
+package br.com.brq.listdelivery.model
 
-import br.com.brq.listDelivery.R
-import br.com.brq.listDelivery.model.dataClasse.Pedido
-import br.com.brq.listDelivery.model.dataClasse.Tarefas
-import br.com.brq.listDelivery.model.dataClasse.User
+import br.com.brq.listdelivery.R
+import br.com.brq.listdelivery.model.dataClasse.Pedido
+import br.com.brq.listdelivery.model.dataClasse.Tarefas
+import br.com.brq.listdelivery.model.dataClasse.User
 
 class CarregarListas {
     fun carregarListas(){

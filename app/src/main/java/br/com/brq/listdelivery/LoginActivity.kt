@@ -1,4 +1,4 @@
-package br.com.brq.listDelivery
+package br.com.brq.listdelivery
 
 import android.content.Intent
 import android.graphics.Color
@@ -6,10 +6,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import br.com.brq.listDelivery.model.dataClasse.User
-import br.com.brq.listDelivery.model.CarregarListas
-import br.com.brq.listDelivery.model.dataClasse.Tarefas
-import br.com.brq.listDelivery.ui.CriarContaActivity
+import br.com.brq.listdelivery.model.dataClasse.User
+import br.com.brq.listdelivery.model.CarregarListas
+import br.com.brq.listdelivery.model.dataClasse.Tarefas
+import br.com.brq.listdelivery.ui.CriarContaActivity
 import com.google.android.material.snackbar.Snackbar
 
 class LoginActivity : AppCompatActivity() {

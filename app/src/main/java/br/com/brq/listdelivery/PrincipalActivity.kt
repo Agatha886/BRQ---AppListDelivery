@@ -1,4 +1,4 @@
-package br.com.brq.listDelivery
+package br.com.brq.listdelivery
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -8,13 +8,13 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import br.com.brq.listDelivery.model.AdapterRecyclerView
-import br.com.brq.listDelivery.model.ItemClickListener
-import br.com.brq.listDelivery.model.StatusPedido
-import br.com.brq.listDelivery.model.dataClasse.Tarefas
-import br.com.brq.listDelivery.model.dataClasse.User
-import br.com.brq.listDelivery.ui.CriarTarefaActivity
-import br.com.brq.listDelivery.ui.DetalhesItemActivity
+import br.com.brq.listdelivery.model.AdapterRecyclerView
+import br.com.brq.listdelivery.model.ItemClickListener
+import br.com.brq.listdelivery.model.StatusPedido
+import br.com.brq.listdelivery.model.dataClasse.Tarefas
+import br.com.brq.listdelivery.model.dataClasse.User
+import br.com.brq.listdelivery.ui.CriarTarefaActivity
+import br.com.brq.listdelivery.ui.DetalhesItemActivity
 import kotlin.collections.ArrayList
 
 

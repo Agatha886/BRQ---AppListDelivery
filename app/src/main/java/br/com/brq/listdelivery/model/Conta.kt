@@ -1,6 +1,4 @@
-package br.com.brq.listDelivery.model
-
-import br.com.brq.listDelivery.model.dataClasse.User
+package br.com.brq.listdelivery.model
 
 class Conta (){
     var contaUser = listOf<String>("agathamonfredini@gmail.com","alexalves@gmail.com","mariajoaquina@gmail.com")

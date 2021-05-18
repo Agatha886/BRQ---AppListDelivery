@@ -1,16 +1,13 @@
-package br.com.brq.listDelivery.ui
+package br.com.brq.listdelivery.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import br.com.brq.listDelivery.PrincipalActivity
-import br.com.brq.listDelivery.R
-import br.com.brq.listDelivery.model.StatusPedido
-import br.com.brq.listDelivery.model.dataClasse.Pedido
-import br.com.brq.listDelivery.model.dataClasse.Tarefas
-import br.com.brq.listDelivery.model.dataClasse.User
+import br.com.brq.listdelivery.PrincipalActivity
+import br.com.brq.listdelivery.R
+import br.com.brq.listdelivery.model.dataClasse.Tarefas
 import com.google.android.material.snackbar.Snackbar
 
 
@@ -35,7 +32,6 @@ class CriarTarefaActivity : AppCompatActivity(){
         super.onStart()
         Tarefas.newTarefa = null
     }
-
 
     fun CarregarElementos(){
         btnCriarTarefa = findViewById(R.id.button_criar_tarefa)

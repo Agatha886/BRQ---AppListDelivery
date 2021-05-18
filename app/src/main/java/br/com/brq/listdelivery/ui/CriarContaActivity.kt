@@ -1,4 +1,4 @@
-package br.com.brq.listDelivery.ui
+package br.com.brq.listdelivery.ui
 
 import android.content.Intent
 import android.graphics.Color
@@ -7,8 +7,8 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import br.com.brq.listDelivery.LoginActivity
-import br.com.brq.listDelivery.R
+import br.com.brq.listdelivery.LoginActivity
+import br.com.brq.listdelivery.R
 import com.google.android.material.snackbar.Snackbar
 
 class CriarContaActivity : AppCompatActivity() {
