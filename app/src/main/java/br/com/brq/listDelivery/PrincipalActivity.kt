@@ -45,7 +45,7 @@ class PrincipalActivity : AppCompatActivity(), ItemClickListener {
         carregarEventos()
         filtrarLista()
         mensagemSemTarefas()
-        filtrarListaStaus()
+        filtrarListaStatus()
 
         AdapterRecyclerView(this, listaFiltada,this).let {
             adapter = it
@@ -100,20 +100,14 @@ class PrincipalActivity : AppCompatActivity(), ItemClickListener {
         } as ArrayList<Tarefas>
     }
 
-    fun filtrarListaStaus(){
+    fun filtrarListaStatus(){
         btnFiltrarEntregue?.setOnClickListener {
             filtrarLista()
             val listEntregue = listaFiltada.filter {
                  (it.status == StatusPedido.ENTREGUE)
             }as ArrayList<Tarefas>
 
-           adapter?.updateList(listEntregue)
-
-            if(listEntregue.size == 0){
-                textViewSemTarefa.text = "Não há Tarefas"
-            }else{
-                textViewSemTarefa.text = " "
-            }
+            filtroStatus(listEntregue)
         }
 
         btnFiltrarPendente?.setOnClickListener {
@@ -122,13 +116,7 @@ class PrincipalActivity : AppCompatActivity(), ItemClickListener {
                 (it.status == StatusPedido.PENDENTE)
             }as ArrayList<Tarefas>
 
-            adapter?.updateList(listPendente)
-
-            if(listPendente.size == 0){
-                textViewSemTarefa.text = "Não há Tarefas"
-            }else{
-                textViewSemTarefa.text = " "
-            }
+            filtroStatus(listPendente)
         }
 
         btnFiltrarCancelado?.setOnClickListener {
@@ -137,13 +125,7 @@ class PrincipalActivity : AppCompatActivity(), ItemClickListener {
                 (it.status == StatusPedido.CANCELADO)
             }as ArrayList<Tarefas>
 
-            adapter?.updateList(listCancelado)
-
-            if(listCancelado.size == 0){
-                textViewSemTarefa.text = "Não há Tarefas"
-            }else{
-                textViewSemTarefa.text = " "
-            }
+            filtroStatus(listCancelado)
         }
 
         btnFiltrarAtrasado?.setOnClickListener {
@@ -151,20 +133,24 @@ class PrincipalActivity : AppCompatActivity(), ItemClickListener {
             val listAtrasado = listaFiltada.filter {
                 (it.status == StatusPedido.ATRASADO)
             }as ArrayList<Tarefas>
-
-            adapter?.updateList(listAtrasado)
-
-            if(listAtrasado.size == 0){
-                textViewSemTarefa.text = "Não há Tarefas"
-            }else{
-                textViewSemTarefa.text = " "
-            }
+            
+            filtroStatus(listAtrasado)
         }
 
         btnTodasTarefas?.setOnClickListener {
                 filtrarLista()
                 adapter?.addLista(listaFiltada)
                 mensagemSemTarefas()
+        }
+    }
+    
+    fun filtroStatus(listStatus: ArrayList<Tarefas>){
+        adapter?.updateList(listStatus)
+
+        if(listStatus.size == 0){
+            textViewSemTarefa.text = "Não há Tarefas"
+        }else{
+            textViewSemTarefa.text = " "
         }
     }
 
