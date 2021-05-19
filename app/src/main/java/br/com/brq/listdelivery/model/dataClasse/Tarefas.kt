@@ -3,12 +3,11 @@ package br.com.brq.listdelivery.model.dataClasse
 import android.widget.EditText
 import androidx.annotation.DrawableRes
 import br.com.brq.listdelivery.R
-import br.com.brq.listdelivery.model.StatusPedido
+import br.com.brq.listdelivery.model.StatusTarefa
 import java.io.Serializable
-import kotlin.properties.Delegates
 
 class Tarefas(
-    var status: StatusPedido,
+    var status: StatusTarefa,
     var User: User,
     val dataDeEntrega: String,
     val pedido: Pedido,
@@ -18,7 +17,7 @@ class Tarefas(
 
     ):Serializable {
     companion object{
-        val listasTarefas = ArrayList<Tarefas>()
+        val BancoDelistasTarefas = ArrayList<Tarefas>()
         var newTarefa : Tarefas? = null
 
         fun NovaTarefa(editTextNomeDoProduto: EditText, editTextDescricao:EditText, editTextDestinatario:EditText, editTextEndereco:EditText, editTextCpfDoCliente:EditText,
@@ -32,7 +31,7 @@ class Tarefas(
             )
 
             newTarefa = Tarefas(
-                status = StatusPedido.PENDENTE,
+                status = StatusTarefa.PENDENTE,
                 pedido = pedido,
                 dataDeEntrega = editTextData.text.toString() ,
                 obs = editTextObs.text.toString(),
@@ -41,7 +40,6 @@ class Tarefas(
 
             return newTarefa as Tarefas
         }
+
     }
-
-
 }

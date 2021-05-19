@@ -3,12 +3,11 @@ package br.com.brq.listdelivery.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import br.com.brq.listdelivery.R
 import br.com.brq.listdelivery.model.AdapterRecyclerView
-import br.com.brq.listdelivery.model.StatusPedido
+import br.com.brq.listdelivery.model.StatusTarefa
 
 class DetalhesItemActivity : AppCompatActivity() {
 
@@ -106,7 +105,7 @@ class DetalhesItemActivity : AppCompatActivity() {
             println(adapter?.listaTarefas?.get(index))
 
             adapter?.listaTarefas?.get(index)?.apply {
-                status = StatusPedido.ENTREGUE
+                status = StatusTarefa.ENTREGUE
             }
 
         }

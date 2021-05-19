@@ -28,7 +28,7 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         carregarElementos()
-        if(Tarefas.listasTarefas.size == 0){
+        if(Tarefas.BancoDelistasTarefas.size == 0){
             carregarLlistas.carregarListas()
         }
         carregarEventos()

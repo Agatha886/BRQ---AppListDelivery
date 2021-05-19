@@ -59,7 +59,7 @@ class CriarTarefaActivity : AppCompatActivity(){
     }
 
     fun addItemLista(tarefa : Tarefas){
-        Tarefas.listasTarefas.add(tarefa)
+        Tarefas.BancoDelistasTarefas.add(tarefa)
     }
 
     fun validarTarefa(nome:String,descricao:String,destinatario:String,endereco:String,cpf:String,data:String,obs:String):Boolean{

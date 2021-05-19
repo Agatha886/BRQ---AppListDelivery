@@ -7,6 +7,7 @@ import br.com.brq.listdelivery.model.dataClasse.User
 
 class CarregarListas {
     fun carregarListas(){
+
 //  Usuários
         User.listaUser.add(User("agathamonfredini@gmail.com","123","Agatha Monfredini","14788965523"))
         User.listaUser.add(User("alexalves@gmail.com","123","Alex Alves","78955632258"))
@@ -18,10 +19,10 @@ class CarregarListas {
         Pedido.listasPedido.add(Pedido("Fone de Ouvido Bluetooth","Fone de Ouvido Bluetooth JBL Tune 115BT - Preto","Fátima do Carmo","R. Dr. Tomás Alves, 87 - Vila Mariana, São Paulo - SP, 04017-070","7418936625"))
         Pedido.listasPedido.add(Pedido("Jogo de Soquetes","Jogo de Soquetes Tramontina em Aço Cromo Vanádio - 22 Peças","Rodrigo da Silva Antônio","R. Dr. Tomás Alves, 87 - Vila Mariana, São Paulo - SP, 04017-070","7418936625"))
 //  Tarefas:
-        Tarefas.listasTarefas.add(Tarefas(StatusPedido.PENDENTE, User.listaUser[0],"2021-01-01",Pedido.listasPedido[0],"",R.drawable.tarefa_pendente))
-        Tarefas.listasTarefas.add(Tarefas(StatusPedido.ATRASADO, User.listaUser[1],"2021-01-02",Pedido.listasPedido[1],"",R.drawable.tarefa_atrasada))
-        Tarefas.listasTarefas.add(Tarefas(StatusPedido.CANCELADO, User.listaUser[1],"2021-01-01",Pedido.listasPedido[2],"Produto com defeito",R.drawable.tarefa_cancelada))
-        Tarefas.listasTarefas.add(Tarefas(StatusPedido.ENTREGUE, User.listaUser[0],"2021-01-02",Pedido.listasPedido[3], "",R.drawable.tarefa_entregue))
-    }
+        Tarefas.BancoDelistasTarefas.add(Tarefas(StatusTarefa.PENDENTE, User.listaUser[0],"2021-01-01",Pedido.listasPedido[0],"",R.drawable.tarefa_pendente))
+        Tarefas.BancoDelistasTarefas.add(Tarefas(StatusTarefa.ATRASADO, User.listaUser[1],"2021-01-02",Pedido.listasPedido[1],"",R.drawable.tarefa_atrasada))
+        Tarefas.BancoDelistasTarefas.add(Tarefas(StatusTarefa.CANCELADO, User.listaUser[1],"2021-01-01",Pedido.listasPedido[2],"Produto com defeito",R.drawable.tarefa_cancelada))
+        Tarefas.BancoDelistasTarefas.add(Tarefas(StatusTarefa.ENTREGUE, User.listaUser[0],"2021-01-02",Pedido.listasPedido[3], "",R.drawable.tarefa_entregue))
 
+    }
 }
