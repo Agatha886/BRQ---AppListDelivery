@@ -22,4 +22,5 @@
     <string name="erro_cadastro">LOGIN NÃO ENCONTRADO!!!</string>
     <string name="erro_user">USUÁRIO INVÁLIDO!!!</string>
     <string name="erro_senha">SENHA INVÁLIDA!!!</string>
+    <string name="alterar_o_status">Alterar o status:</string>
 </resources>

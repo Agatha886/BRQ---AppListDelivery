@@ -171,4 +171,8 @@ class PrincipalActivity : AppCompatActivity(), ItemClickListener {
         return true
     }
 
+    override fun onClickButtonDelete(view: View?, index: Int) {
+        adapter?.remoteItem(index)
+    }
+
 }
