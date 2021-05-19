@@ -44,7 +44,7 @@ class PrincipalActivity : AppCompatActivity(), ItemClickListener {
         carregarElementos()
         carregarEventos()
         filtrarLista()
-        mensagemSemTarefas()
+        mensagemSemTarefas(listaFiltada)
         filtrarListaStatus()
 
         AdapterRecyclerView(this, listaFiltada,this).let {
@@ -98,64 +98,47 @@ class PrincipalActivity : AppCompatActivity(), ItemClickListener {
         listaFiltada = Tarefas.listasTarefas.filter {
             (it.User!!.email == User.user.email)
         } as ArrayList<Tarefas>
+
     }
 
     fun filtrarListaStatus(){
         btnFiltrarEntregue?.setOnClickListener {
-            filtrarLista()
-            val listEntregue = listaFiltada.filter {
-                 (it.status == StatusPedido.ENTREGUE)
-            }as ArrayList<Tarefas>
-
-            filtroStatus(listEntregue)
+            filtroStatus(StatusPedido.ENTREGUE)
         }
 
         btnFiltrarPendente?.setOnClickListener {
-            filtrarLista()
-           val listPendente = listaFiltada.filter {
-                (it.status == StatusPedido.PENDENTE)
-            }as ArrayList<Tarefas>
-
-            filtroStatus(listPendente)
+            filtroStatus(StatusPedido.PENDENTE)
         }
 
         btnFiltrarCancelado?.setOnClickListener {
-            filtrarLista()
-            val listCancelado = listaFiltada.filter {
-                (it.status == StatusPedido.CANCELADO)
-            }as ArrayList<Tarefas>
-
-            filtroStatus(listCancelado)
+            filtroStatus(StatusPedido.CANCELADO)
         }
 
         btnFiltrarAtrasado?.setOnClickListener {
-            filtrarLista()
-            val listAtrasado = listaFiltada.filter {
-                (it.status == StatusPedido.ATRASADO)
-            }as ArrayList<Tarefas>
-            
-            filtroStatus(listAtrasado)
+            filtroStatus(StatusPedido.ATRASADO)
         }
 
         btnTodasTarefas?.setOnClickListener {
-                filtrarLista()
-                adapter?.addLista(listaFiltada)
-                mensagemSemTarefas()
+            filtrarLista()
+            adapter?.addLista(listaFiltada)
+            mensagemSemTarefas(listaFiltada)
         }
     }
-    
-    fun filtroStatus(listStatus: ArrayList<Tarefas>){
+
+    fun filtroStatus(status: StatusPedido){
+        filtrarLista()
+
+        val listStatus = listaFiltada.filter {
+            (it.status == status)
+        }as ArrayList<Tarefas>
+
         adapter?.updateList(listStatus)
 
-        if(listStatus.size == 0){
-            textViewSemTarefa.text = "Não há Tarefas"
-        }else{
-            textViewSemTarefa.text = " "
-        }
+        mensagemSemTarefas(listStatus)
     }
 
-    fun mensagemSemTarefas(){
-        if (listaFiltada.size == 0){
+    fun mensagemSemTarefas(list: ArrayList<Tarefas>){
+        if (list.size == 0){
             textViewSemTarefa.text = "Não há Tarefas"
         }else{
             textViewSemTarefa.text = " "
@@ -183,13 +166,16 @@ class PrincipalActivity : AppCompatActivity(), ItemClickListener {
     }
 
     override fun onLongClickItem(view: View?, index: Int):Boolean {
-        adapter?.remoteItem(index)
-        Tarefas.listasTarefas.removeAt(index)
         return true
     }
 
     override fun onClickButtonDelete(view: View?, index: Int) {
-        Tarefas.listasTarefas.removeAt(index)
+        var itemDelete = Tarefas.listasTarefas.filter {
+            it.id == listaFiltada[index].id
+        }
+
+        Tarefas.listasTarefas.remove(itemDelete)
+        adapter?.remoteItem(index)
     }
 
 }

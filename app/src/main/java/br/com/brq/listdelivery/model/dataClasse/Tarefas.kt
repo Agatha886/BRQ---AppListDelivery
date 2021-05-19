@@ -8,6 +8,7 @@ import java.io.Serializable
 import kotlin.properties.Delegates
 
 class Tarefas(
+    var id: Int,
     var status: StatusPedido,
     var User: User,
     val dataDeEntrega: String,
@@ -33,6 +34,7 @@ class Tarefas(
             )
 
             newTarefa = Tarefas(
+                id = maiorId(),
                 status = StatusPedido.PENDENTE,
                 pedido = pedido,
                 dataDeEntrega = editTextData.text.toString() ,
@@ -42,6 +44,16 @@ class Tarefas(
 
             return newTarefa as Tarefas
         }
-    }
 
+        fun maiorId():Int{
+            var maior = 0
+
+            for (tarefa in listasTarefas){
+                if(tarefa.id > maior){
+                    maior = tarefa.id
+                }
+            }
+            return maior+1
+        }
+    }
 }

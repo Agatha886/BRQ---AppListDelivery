@@ -50,8 +50,7 @@ class CriarTarefaActivity : AppCompatActivity(){
 
             if(validarTarefa(editTextNomeDoProduto.text.toString(),editTextDescricao.text.toString(),editTextDestinatario.text.toString(),editTextEndereco.text.toString(),editTextCpfDoCliente.text.toString(),editTextData.text.toString(),editTextObs.text.toString())){
                 addItemLista(Tarefas.NovaTarefa(editTextNomeDoProduto,editTextDescricao,editTextDestinatario,editTextEndereco,editTextCpfDoCliente,editTextData,editTextObs))
-                val intentTelaPrincipal = Intent(this, PrincipalActivity::class.java)
-                startActivity(intentTelaPrincipal)
+                finish()
             } else {
                 Snackbar.make(findViewById(R.id.CriarTarefaLayout),"Os espaços não vem estar em branco",Snackbar.LENGTH_SHORT).show()
             }

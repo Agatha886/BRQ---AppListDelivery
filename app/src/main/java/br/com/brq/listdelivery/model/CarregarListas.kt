@@ -19,11 +19,12 @@ class CarregarListas {
         Pedido.listasPedido.add(Pedido("Fone de Ouvido Bluetooth","Fone de Ouvido Bluetooth JBL Tune 115BT - Preto","Fátima do Carmo","R. Dr. Tomás Alves, 87 - Vila Mariana, São Paulo - SP, 04017-070","7418936625"))
         Pedido.listasPedido.add(Pedido("Jogo de Soquetes","Jogo de Soquetes Tramontina em Aço Cromo Vanádio - 22 Peças","Rodrigo da Silva Antônio","R. Dr. Tomás Alves, 87 - Vila Mariana, São Paulo - SP, 04017-070","7418936625"))
 //  Tarefas:
-        Tarefas.listasTarefas.add(Tarefas(StatusPedido.PENDENTE, User.listaUser[0],"2021-01-01",Pedido.listasPedido[0],"",R.drawable.tarefa_pendente))
-        Tarefas.listasTarefas.add(Tarefas(StatusPedido.ATRASADO, User.listaUser[1],"2021-01-02",Pedido.listasPedido[1],"",R.drawable.tarefa_atrasada))
-        Tarefas.listasTarefas.add(Tarefas(StatusPedido.CANCELADO, User.listaUser[1],"2021-01-01",Pedido.listasPedido[2],"Produto com defeito",R.drawable.tarefa_cancelada))
-        Tarefas.listasTarefas.add(Tarefas(StatusPedido.ENTREGUE, User.listaUser[0],"2021-01-02",Pedido.listasPedido[3], "",R.drawable.tarefa_entregue))
+        Tarefas.listasTarefas.add(Tarefas(1,StatusPedido.PENDENTE, User.listaUser[0],"2021-01-01",Pedido.listasPedido[0],"",R.drawable.tarefa_pendente))
+        Tarefas.listasTarefas.add(Tarefas(2,StatusPedido.ATRASADO, User.listaUser[1],"2021-01-02",Pedido.listasPedido[1],"",R.drawable.tarefa_atrasada))
+        Tarefas.listasTarefas.add(Tarefas(3,StatusPedido.CANCELADO, User.listaUser[1],"2021-01-01",Pedido.listasPedido[2],"Produto com defeito",R.drawable.tarefa_cancelada))
+        Tarefas.listasTarefas.add(Tarefas(4,StatusPedido.ENTREGUE, User.listaUser[0],"2021-01-02",Pedido.listasPedido[3], "",R.drawable.tarefa_entregue))
     }
+
 
 //    fun imgStatus(): Int {
 //        var img : Int
