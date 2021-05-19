@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import br.com.brq.listdelivery.PrincipalActivity
 import br.com.brq.listdelivery.R
+import br.com.brq.listdelivery.model.AdapterRecyclerView
 import br.com.brq.listdelivery.model.dataClasse.Tarefas
 import com.google.android.material.snackbar.Snackbar
 

@@ -32,15 +32,6 @@ class DetalhesItemActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detalhes_item)
 
-//        var tituloView: TextView = findViewById(R.id.tituloView)
-//        var dateView: TextView = findViewById(R.id.dateView)
-//        var statusView: TextView = findViewById(R.id.statusView)
-//        var nomeDestinatarioView: TextView = findViewById(R.id.nomeDestinatarioView)
-//        var cpfView: TextView = findViewById(R.id.cpfView)
-//        var enderecoView: TextView = findViewById(R.id.enderecoView)
-//        var descView: TextView = findViewById(R.id.descView)
-//        var imgTarefa: ImageView = findViewById(R.id.imageTarefa)
-
         carregarElementos()
 
         var index: Int = intent.extras?.get("index") as Int

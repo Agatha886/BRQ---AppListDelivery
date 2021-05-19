@@ -162,17 +162,16 @@ class PrincipalActivity : AppCompatActivity(), ItemClickListener {
         intent.putExtra("index",index)
         startActivity(intent)
 
-//        adapter?.remoteItem(index)
     }
 
     override fun onLongClickItem(view: View?, index: Int):Boolean {
         adapter?.remoteItem(index)
-//        Tarefas.listasTarefas.removeAt(index)
+        Tarefas.listasTarefas.removeAt(index)
         return true
     }
 
     override fun onClickButtonDelete(view: View?, index: Int) {
-        adapter?.remoteItem(index)
+        Tarefas.listasTarefas.removeAt(index)
     }
 
 }

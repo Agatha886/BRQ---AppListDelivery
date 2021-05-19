@@ -24,8 +24,6 @@ class AdapterRecyclerView(val context: Context, val listaTarefas: ArrayList<Tare
                 holder.textViewStatus.text = it?.status.toString()
                 holder.textViewData.text = it?.dataDeEntrega
                 holder.textViewNomeProduto.text = "Produto: ${it?.pedido?.nomeDoProduto}"
-//                holder.textViewNomeCliente.text = "Nome: ${it?.pedido?.destinatario}"
-//                holder.textViewCpfCliente.text = "CPF: ${it?.pedido?.cpfDoDestinatario}"
                 holder.imgTarefa.setImageResource(it.photo)
         }
     }
@@ -73,8 +71,6 @@ class ViewHoldertarefas(itemView: View, private val nossaInterface: ItemClickLis
     var textViewStatus : TextView
     var textViewData : TextView
     var textViewNomeProduto : TextView
-//    var textViewNomeCliente : TextView
-//    var textViewCpfCliente : TextView
     var imgTarefa : ImageView
     var buttonDelete : Button
 
@@ -82,8 +78,6 @@ class ViewHoldertarefas(itemView: View, private val nossaInterface: ItemClickLis
         textViewStatus = itemView.findViewById(R.id.textStatus)
         textViewData = itemView.findViewById(R.id.textData)
         textViewNomeProduto = itemView.findViewById(R.id.textNomeProduto)
-//        textViewNomeCliente = itemView.findViewById(R.id.textNomeCliente)
-//        textViewCpfCliente = itemView.findViewById(R.id.textCpfCliente)
         imgTarefa = itemView.findViewById(R.id.imageTarefa)
         buttonDelete = itemView.findViewById(R.id.deleteButton)
 
