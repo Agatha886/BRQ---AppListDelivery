@@ -105,6 +105,10 @@ class DetalhesItemActivity : AppCompatActivity() {
 
             println(adapter?.listaTarefas?.get(index))
 
+            adapter?.listaTarefas?.get(index)?.apply {
+                status = StatusPedido.ENTREGUE
+            }
+
         }
 
     }

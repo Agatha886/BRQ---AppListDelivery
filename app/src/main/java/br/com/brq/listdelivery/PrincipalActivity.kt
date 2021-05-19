@@ -167,8 +167,16 @@ class PrincipalActivity : AppCompatActivity(), ItemClickListener {
 
     override fun onLongClickItem(view: View?, index: Int):Boolean {
         adapter?.remoteItem(index)
-//        Tarefas.listasTarefas.removeAt(index)
         return true
+    }
+
+    override fun onClickButtonDelete(view: View?, index: Int) {
+        for (tarefas in Tarefas.listasTarefas){
+            if(listaFiltada[index] == tarefas){
+                Tarefas.listasTarefas.remove(tarefas)
+                adapter?.remoteItem(index)
+            }
+        }
     }
 
 }
