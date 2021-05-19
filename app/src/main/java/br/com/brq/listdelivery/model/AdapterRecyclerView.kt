@@ -1,4 +1,4 @@
-package br.com.brq.listDelivery.model
+package br.com.brq.listdelivery.model
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,8 +8,8 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import br.com.brq.listDelivery.R
-import br.com.brq.listDelivery.model.dataClasse.Tarefas
+import br.com.brq.listdelivery.R
+import br.com.brq.listdelivery.model.dataClasse.Tarefas
 
 class AdapterRecyclerView(val context: Context, val listaTarefas: ArrayList<Tarefas>,val onClick: ItemClickListener? = null): RecyclerView.Adapter<ViewHoldertarefas>() {
 
@@ -24,6 +24,8 @@ class AdapterRecyclerView(val context: Context, val listaTarefas: ArrayList<Tare
                 holder.textViewStatus.text = it?.status.toString()
                 holder.textViewData.text = it?.dataDeEntrega
                 holder.textViewNomeProduto.text = "Produto: ${it?.pedido?.nomeDoProduto}"
+//                holder.textViewNomeCliente.text = "Nome: ${it?.pedido?.destinatario}"
+//                holder.textViewCpfCliente.text = "CPF: ${it?.pedido?.cpfDoDestinatario}"
                 holder.imgTarefa.setImageResource(it.photo)
         }
     }
@@ -49,7 +51,7 @@ class AdapterRecyclerView(val context: Context, val listaTarefas: ArrayList<Tare
     }
 
     fun setStatusEntregue(index: Int){
-        listaTarefas[index].status = StatusPedido.ENTREGUE
+        listaTarefas[index].status = StatusTarefa.ENTREGUE
         notifyList()
     }
 
@@ -66,7 +68,7 @@ class AdapterRecyclerView(val context: Context, val listaTarefas: ArrayList<Tare
 }
 
 class ViewHoldertarefas(itemView: View, private val nossaInterface: ItemClickListener?)
-    : RecyclerView.ViewHolder(itemView), View.OnClickListener, View.OnLongClickListener{
+    : RecyclerView.ViewHolder(itemView), View.OnClickListener{
 
     var textViewStatus : TextView
     var textViewData : TextView
@@ -82,7 +84,6 @@ class ViewHoldertarefas(itemView: View, private val nossaInterface: ItemClickLis
         buttonDelete = itemView.findViewById(R.id.deleteButton)
 
         itemView.setOnClickListener(this)
-        itemView.setOnLongClickListener(this)
 
         buttonDelete.setOnClickListener(){
             nossaInterface?.onClickButtonDelete(it, adapterPosition)
@@ -90,17 +91,9 @@ class ViewHoldertarefas(itemView: View, private val nossaInterface: ItemClickLis
 
     }
 
-
-
     override fun onClick(v: View?) {
         nossaInterface?.onClickItem(v, adapterPosition)
     }
-
-    override fun onLongClick(v: View?): Boolean {
-        nossaInterface?.onLongClickItem(v, adapterPosition)
-        return true
-    }
-
 
 }
 
@@ -108,6 +101,5 @@ interface ItemClickListener {
 
     fun onClickButtonDelete(view: View?,index: Int)
     fun onClickItem(view: View?, index: Int)
-    fun onLongClickItem(view: View?, index: Int):Boolean
 
 }

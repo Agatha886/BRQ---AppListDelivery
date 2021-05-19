@@ -1,16 +1,13 @@
-package br.com.brq.listDelivery.ui
+package br.com.brq.listdelivery.ui
 
-import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
-import br.com.brq.listDelivery.R
-import br.com.brq.listDelivery.model.AdapterRecyclerView
-import br.com.brq.listDelivery.model.StatusPedido
-
-
+import br.com.brq.listdelivery.R
+import br.com.brq.listdelivery.model.AdapterRecyclerView
+import br.com.brq.listdelivery.model.StatusTarefa
 
 class DetalhesItemActivity : AppCompatActivity() {
 
@@ -33,6 +30,15 @@ class DetalhesItemActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detalhes_item)
+
+//        var tituloView: TextView = findViewById(R.id.tituloView)
+//        var dateView: TextView = findViewById(R.id.dateView)
+//        var statusView: TextView = findViewById(R.id.statusView)
+//        var nomeDestinatarioView: TextView = findViewById(R.id.nomeDestinatarioView)
+//        var cpfView: TextView = findViewById(R.id.cpfView)
+//        var enderecoView: TextView = findViewById(R.id.enderecoView)
+//        var descView: TextView = findViewById(R.id.descView)
+//        var imgTarefa: ImageView = findViewById(R.id.imageTarefa)
 
         carregarElementos()
 
@@ -99,7 +105,7 @@ class DetalhesItemActivity : AppCompatActivity() {
             println(adapter?.listaTarefas?.get(index))
 
             adapter?.listaTarefas?.get(index)?.apply {
-                status = StatusPedido.ENTREGUE
+                status = StatusTarefa.ENTREGUE
             }
 
         }

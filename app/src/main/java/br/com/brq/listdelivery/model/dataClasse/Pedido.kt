@@ -1,6 +1,5 @@
-package br.com.brq.listDelivery.model.dataClasse
+package br.com.brq.listdelivery.model.dataClasse
 
-import androidx.annotation.DrawableRes
 import java.io.Serializable
 
 data class Pedido (

@@ -1,15 +1,15 @@
-package br.com.brq.listDelivery.model.dataClasse
+package br.com.brq.listdelivery.model.dataClasse
 
 import android.widget.EditText
 import androidx.annotation.DrawableRes
-import br.com.brq.listDelivery.R
-import br.com.brq.listDelivery.model.StatusPedido
+import br.com.brq.listdelivery.R
+import br.com.brq.listdelivery.model.StatusTarefa
 import java.io.Serializable
-import kotlin.properties.Delegates
 
 class Tarefas(
+
     var id: Int,
-    var status: StatusPedido,
+    var status: StatusTarefa,
     var User: User,
     val dataDeEntrega: String,
     val pedido: Pedido,
@@ -19,9 +19,8 @@ class Tarefas(
 
     ):Serializable {
     companion object{
-        val listasTarefas = ArrayList<Tarefas>()
+        val BancoDelistasTarefas = ArrayList<Tarefas>()
         var newTarefa : Tarefas? = null
-        var img by Delegates.notNull<Int>()
 
         fun NovaTarefa(editTextNomeDoProduto: EditText, editTextDescricao:EditText, editTextDestinatario:EditText, editTextEndereco:EditText, editTextCpfDoCliente:EditText,
                        editTextData:EditText, editTextObs:EditText):Tarefas{
@@ -34,8 +33,9 @@ class Tarefas(
             )
 
             newTarefa = Tarefas(
+
                 id = maiorId(),
-                status = StatusPedido.PENDENTE,
+                status = StatusTarefa.PENDENTE,
                 pedido = pedido,
                 dataDeEntrega = editTextData.text.toString() ,
                 obs = editTextObs.text.toString(),
@@ -45,15 +45,17 @@ class Tarefas(
             return newTarefa as Tarefas
         }
 
+
         fun maiorId():Int{
             var maior = 0
 
-            for (tarefa in listasTarefas){
+            for (tarefa in BancoDelistasTarefas){
                 if(tarefa.id > maior){
                     maior = tarefa.id
                 }
             }
             return maior+1
         }
+
     }
 }

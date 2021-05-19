@@ -1,4 +1,4 @@
-package br.com.brq.listDelivery.model.dataClasse
+package br.com.brq.listdelivery.model.dataClasse
 
 import java.io.Serializable
 

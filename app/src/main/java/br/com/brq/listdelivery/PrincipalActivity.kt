@@ -1,4 +1,4 @@
-package br.com.brq.listDelivery
+package br.com.brq.listdelivery
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -8,13 +8,13 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import br.com.brq.listDelivery.model.AdapterRecyclerView
-import br.com.brq.listDelivery.model.ItemClickListener
-import br.com.brq.listDelivery.model.StatusPedido
-import br.com.brq.listDelivery.model.dataClasse.Tarefas
-import br.com.brq.listDelivery.model.dataClasse.User
-import br.com.brq.listDelivery.ui.CriarTarefaActivity
-import br.com.brq.listDelivery.ui.DetalhesItemActivity
+import br.com.brq.listdelivery.model.AdapterRecyclerView
+import br.com.brq.listdelivery.model.ItemClickListener
+import br.com.brq.listdelivery.model.StatusTarefa
+import br.com.brq.listdelivery.model.dataClasse.Tarefas
+import br.com.brq.listdelivery.model.dataClasse.User
+import br.com.brq.listdelivery.ui.CriarTarefaActivity
+import br.com.brq.listdelivery.ui.DetalhesItemActivity
 import kotlin.collections.ArrayList
 
 
@@ -22,7 +22,7 @@ class PrincipalActivity : AppCompatActivity(), ItemClickListener {
 
     var recyclerView: RecyclerView? = null
     var adapter: AdapterRecyclerView? = null
-    lateinit var listaFiltada: ArrayList<Tarefas>
+    lateinit var listaTarefas: ArrayList<Tarefas>
 
     lateinit var textViewBemVindo: TextView
     lateinit var textViewSemTarefa: TextView
@@ -36,18 +36,19 @@ class PrincipalActivity : AppCompatActivity(), ItemClickListener {
     var btnFiltrarAtrasado : View? = null
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_principal)
 
         carregarElementos()
         carregarEventos()
-        filtrarLista()
-        mensagemSemTarefas(listaFiltada)
+
+        trazerLista()
+        mensagemSemTarefas(listaTarefas)
+
         filtrarListaStatus()
 
-        AdapterRecyclerView(this, listaFiltada,this).let {
+        AdapterRecyclerView(this, listaTarefas,this).let {
             adapter = it
             recyclerView?.adapter = it
         }
@@ -66,7 +67,7 @@ class PrincipalActivity : AppCompatActivity(), ItemClickListener {
     fun carregarElementos() {
         recyclerView = findViewById(R.id.rv_tarefas)
         textViewSemTarefa = findViewById(R.id.textViewSemTarefas)
-        listaFiltada = ArrayList()
+        listaTarefas = ArrayList()
         textViewBemVindo = findViewById(R.id.textViewBemVindUser)
 
         btnSair = findViewById(R.id.btn_sair)
@@ -94,41 +95,41 @@ class PrincipalActivity : AppCompatActivity(), ItemClickListener {
 
     }
 
-    fun filtrarLista() {
-        listaFiltada = Tarefas.listasTarefas.filter {
-            (it.User!!.email == User.user.email)
+    fun trazerLista() {
+        listaTarefas = Tarefas.BancoDelistasTarefas.filter {
+            (it.User!!.email == User.user.email && it.status != StatusTarefa.DELETADO)
         } as ArrayList<Tarefas>
 
     }
 
     fun filtrarListaStatus(){
         btnFiltrarEntregue?.setOnClickListener {
-            filtroStatus(StatusPedido.ENTREGUE)
+            filtroStatus(StatusTarefa.ENTREGUE)
         }
 
         btnFiltrarPendente?.setOnClickListener {
-            filtroStatus(StatusPedido.PENDENTE)
+            filtroStatus(StatusTarefa.PENDENTE)
         }
 
         btnFiltrarCancelado?.setOnClickListener {
-            filtroStatus(StatusPedido.CANCELADO)
+            filtroStatus(StatusTarefa.CANCELADO)
         }
 
         btnFiltrarAtrasado?.setOnClickListener {
-            filtroStatus(StatusPedido.ATRASADO)
+            filtroStatus(StatusTarefa.ATRASADO)
         }
 
         btnTodasTarefas?.setOnClickListener {
-            filtrarLista()
-            adapter?.addLista(listaFiltada)
-            mensagemSemTarefas(listaFiltada)
+                trazerLista()
+                adapter?.addLista(listaTarefas)
+                mensagemSemTarefas(listaTarefas)
         }
     }
+    
+    fun filtroStatus(status: StatusTarefa){
+        trazerLista()
 
-    fun filtroStatus(status: StatusPedido){
-        filtrarLista()
-
-        val listStatus = listaFiltada.filter {
+       val listStatus = listaTarefas.filter {
             (it.status == status)
         }as ArrayList<Tarefas>
 
@@ -148,7 +149,7 @@ class PrincipalActivity : AppCompatActivity(), ItemClickListener {
     override fun onClickItem(view: View?, index: Int) {
 
         var intent = Intent(this, DetalhesItemActivity::class.java)
-        var item = listaFiltada[index]
+        var item = listaTarefas[index]
 
         intent.putExtra("item",item)
         intent.putExtra("destinatario",item.pedido?.destinatario)
@@ -165,16 +166,12 @@ class PrincipalActivity : AppCompatActivity(), ItemClickListener {
 
     }
 
-    override fun onLongClickItem(view: View?, index: Int):Boolean {
-        return true
-    }
-
     override fun onClickButtonDelete(view: View?, index: Int) {
-        var itemDelete = Tarefas.listasTarefas.filter {
-            it.id == listaFiltada[index].id
+        for (tarefas in Tarefas.BancoDelistasTarefas){
+            if(listaTarefas[index]== tarefas){
+                tarefas.status = StatusTarefa.DELETADO
+            }
         }
-
-        Tarefas.listasTarefas.remove(itemDelete)
         adapter?.remoteItem(index)
     }
 
