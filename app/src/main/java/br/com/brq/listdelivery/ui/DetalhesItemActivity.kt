@@ -1,14 +1,16 @@
-package br.com.brq.listdelivery.ui
+package br.com.brq.listDelivery.ui
 
+import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import br.com.brq.listdelivery.R
-import br.com.brq.listdelivery.model.AdapterRecyclerView
-import br.com.brq.listdelivery.model.StatusPedido
+import br.com.brq.listDelivery.R
+import br.com.brq.listDelivery.model.AdapterRecyclerView
+import br.com.brq.listDelivery.model.StatusPedido
+
+
 
 class DetalhesItemActivity : AppCompatActivity() {
 

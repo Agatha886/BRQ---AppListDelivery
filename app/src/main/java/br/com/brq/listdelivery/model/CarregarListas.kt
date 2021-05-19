@@ -1,12 +1,13 @@
-package br.com.brq.listdelivery.model
+package br.com.brq.listDelivery.model
 
-import br.com.brq.listdelivery.R
-import br.com.brq.listdelivery.model.dataClasse.Pedido
-import br.com.brq.listdelivery.model.dataClasse.Tarefas
-import br.com.brq.listdelivery.model.dataClasse.User
+import br.com.brq.listDelivery.R
+import br.com.brq.listDelivery.model.dataClasse.Pedido
+import br.com.brq.listDelivery.model.dataClasse.Tarefas
+import br.com.brq.listDelivery.model.dataClasse.User
 
 class CarregarListas {
     fun carregarListas(){
+
 //  Usuários
         User.listaUser.add(User("agathamonfredini@gmail.com","123","Agatha Monfredini","14788965523"))
         User.listaUser.add(User("alexalves@gmail.com","123","Alex Alves","78955632258"))
@@ -23,5 +24,23 @@ class CarregarListas {
         Tarefas.listasTarefas.add(Tarefas(StatusPedido.CANCELADO, User.listaUser[1],"2021-01-01",Pedido.listasPedido[2],"Produto com defeito",R.drawable.tarefa_cancelada))
         Tarefas.listasTarefas.add(Tarefas(StatusPedido.ENTREGUE, User.listaUser[0],"2021-01-02",Pedido.listasPedido[3], "",R.drawable.tarefa_entregue))
     }
+
+//    fun imgStatus(): Int {
+//        var img : Int
+//
+//        var listaTarefas = Tarefas.listasTarefas
+//        for (tarefas in listaTarefas){
+//            if(tarefas.status== StatusPedido.PENDENTE){
+//                img = R.drawable.tarefa_pendente
+//            }else if(tarefas.status == StatusPedido.ENTREGUE) {
+//                img = R.drawable.tarefa_entregue
+//            }else if(tarefas.status == StatusPedido.ATRASADO){
+//                img = R.drawable.tarefa_atrasada
+//            }else{
+//                img = R.drawable.tarefa_cancelada
+//            }
+//        }
+//        return img
+//    }
 
 }

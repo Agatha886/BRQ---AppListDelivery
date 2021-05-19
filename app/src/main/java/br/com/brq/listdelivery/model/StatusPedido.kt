@@ -1,11 +1,8 @@
-package br.com.brq.listdelivery.model
-
-import br.com.brq.listdelivery.R
+package br.com.brq.listDelivery.model
 
 enum class StatusPedido {
     PENDENTE,
     ENTREGUE,
     ATRASADO,
     CANCELADO
-
 }

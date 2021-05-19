@@ -1,4 +1,4 @@
-package br.com.brq.listdelivery.model
+package br.com.brq.listDelivery.model
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,8 +8,8 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import br.com.brq.listdelivery.R
-import br.com.brq.listdelivery.model.dataClasse.Tarefas
+import br.com.brq.listDelivery.R
+import br.com.brq.listDelivery.model.dataClasse.Tarefas
 
 class AdapterRecyclerView(val context: Context, val listaTarefas: ArrayList<Tarefas>,val onClick: ItemClickListener? = null): RecyclerView.Adapter<ViewHoldertarefas>() {
 

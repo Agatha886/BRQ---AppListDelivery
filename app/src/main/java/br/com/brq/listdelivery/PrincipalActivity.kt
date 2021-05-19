@@ -1,4 +1,4 @@
-package br.com.brq.listdelivery
+package br.com.brq.listDelivery
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -8,13 +8,13 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import br.com.brq.listdelivery.model.AdapterRecyclerView
-import br.com.brq.listdelivery.model.ItemClickListener
-import br.com.brq.listdelivery.model.StatusPedido
-import br.com.brq.listdelivery.model.dataClasse.Tarefas
-import br.com.brq.listdelivery.model.dataClasse.User
-import br.com.brq.listdelivery.ui.CriarTarefaActivity
-import br.com.brq.listdelivery.ui.DetalhesItemActivity
+import br.com.brq.listDelivery.model.AdapterRecyclerView
+import br.com.brq.listDelivery.model.ItemClickListener
+import br.com.brq.listDelivery.model.StatusPedido
+import br.com.brq.listDelivery.model.dataClasse.Tarefas
+import br.com.brq.listDelivery.model.dataClasse.User
+import br.com.brq.listDelivery.ui.CriarTarefaActivity
+import br.com.brq.listDelivery.ui.DetalhesItemActivity
 import kotlin.collections.ArrayList
 
 
@@ -44,7 +44,7 @@ class PrincipalActivity : AppCompatActivity(), ItemClickListener {
         carregarElementos()
         carregarEventos()
         filtrarLista()
-        mensagemSemTarefas(listaFiltada)
+        mensagemSemTarefas()
         filtrarListaStatus()
 
         AdapterRecyclerView(this, listaFiltada,this).let {
@@ -102,42 +102,60 @@ class PrincipalActivity : AppCompatActivity(), ItemClickListener {
 
     fun filtrarListaStatus(){
         btnFiltrarEntregue?.setOnClickListener {
-            filtroStatus(StatusPedido.ENTREGUE)
+            filtrarLista()
+            val listEntregue = listaFiltada.filter {
+                 (it.status == StatusPedido.ENTREGUE)
+            }as ArrayList<Tarefas>
+
+            filtroStatus(listEntregue)
         }
 
         btnFiltrarPendente?.setOnClickListener {
-            filtroStatus(StatusPedido.PENDENTE)
+            filtrarLista()
+           val listPendente = listaFiltada.filter {
+                (it.status == StatusPedido.PENDENTE)
+            }as ArrayList<Tarefas>
+
+            filtroStatus(listPendente)
         }
 
         btnFiltrarCancelado?.setOnClickListener {
-            filtroStatus(StatusPedido.CANCELADO)
+            filtrarLista()
+            val listCancelado = listaFiltada.filter {
+                (it.status == StatusPedido.CANCELADO)
+            }as ArrayList<Tarefas>
+
+            filtroStatus(listCancelado)
         }
 
         btnFiltrarAtrasado?.setOnClickListener {
-            filtroStatus(StatusPedido.ATRASADO)
+            filtrarLista()
+            val listAtrasado = listaFiltada.filter {
+                (it.status == StatusPedido.ATRASADO)
+            }as ArrayList<Tarefas>
+            
+            filtroStatus(listAtrasado)
         }
 
         btnTodasTarefas?.setOnClickListener {
                 filtrarLista()
                 adapter?.addLista(listaFiltada)
-                mensagemSemTarefas(listaFiltada)
+                mensagemSemTarefas()
         }
     }
     
-    fun filtroStatus(status: StatusPedido){
-        filtrarLista()
-
-       val listStatus = listaFiltada.filter {
-            (it.status == status)
-        }as ArrayList<Tarefas>
-
+    fun filtroStatus(listStatus: ArrayList<Tarefas>){
         adapter?.updateList(listStatus)
 
-        mensagemSemTarefas(listStatus)
+        if(listStatus.size == 0){
+            textViewSemTarefa.text = "Não há Tarefas"
+        }else{
+            textViewSemTarefa.text = " "
+        }
     }
 
-    fun mensagemSemTarefas(list: ArrayList<Tarefas>){
-        if (list.size == 0){
+    fun mensagemSemTarefas(){
+        if (listaFiltada.size == 0){
             textViewSemTarefa.text = "Não há Tarefas"
         }else{
             textViewSemTarefa.text = " "
