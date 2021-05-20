@@ -33,15 +33,6 @@ class DetalhesItemActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detalhes_item)
 
-//        var tituloView: TextView = findViewById(R.id.tituloView)
-//        var dateView: TextView = findViewById(R.id.dateView)
-//        var statusView: TextView = findViewById(R.id.statusView)
-//        var nomeDestinatarioView: TextView = findViewById(R.id.nomeDestinatarioView)
-//        var cpfView: TextView = findViewById(R.id.cpfView)
-//        var enderecoView: TextView = findViewById(R.id.enderecoView)
-//        var descView: TextView = findViewById(R.id.descView)
-//        var imgTarefa: ImageView = findViewById(R.id.imageTarefa)
-
         carregarElementos()
 
         var index: Int = intent.extras?.get("index") as Int
@@ -74,12 +65,9 @@ class DetalhesItemActivity : AppCompatActivity() {
         obsView.text = "Observação: ${obs.toString()}"
         println(obs.toString())
 
-
-
         carregarEventos(index)
 
     }
-
 
     fun carregarElementos() {
         btnEntregue = findViewById(R.id.buttonEntregue)
@@ -102,33 +90,55 @@ class DetalhesItemActivity : AppCompatActivity() {
     fun carregarEventos(index: Int) {
 
         btnEntregue?.setOnClickListener {
-
             statusView.text = "Status: ENTREGUE"
             imgTarefa.setImageResource(R.drawable.tarefa_entregue)
-            parentActivityIntent?.putExtra("entregue",StatusTarefa.ENTREGUE)
-            parentActivityIntent?.putExtra("id", Tarefas.BancoDelistasTarefas[index].id)
+
+            for (tarefas in Tarefas.BancoDelistasTarefas) {
+                if (listaTarefas[index] == tarefas) {
+                    tarefas.status = StatusTarefa.ENTREGUE
+                    tarefas.photo = R.drawable.tarefa_entregue
+                }
+            }
+
+            btnPendente?.setOnClickListener {
+                statusView.text = "Status: PENDENTE"
+                imgTarefa.setImageResource(R.drawable.tarefa_pendente)
+
+                for (tarefas in Tarefas.BancoDelistasTarefas) {
+                    if (listaTarefas[index] == tarefas) {
+                        tarefas.status = StatusTarefa.PENDENTE
+                        tarefas.photo = R.drawable.tarefa_pendente
+                    }
+                }
+
+            }
+
+            btnCancelado?.setOnClickListener {
+                statusView.text = "Status: CANCELADO"
+                imgTarefa.setImageResource(R.drawable.tarefa_cancelada)
+
+                for (tarefas in Tarefas.BancoDelistasTarefas) {
+                    if (listaTarefas[index] == tarefas) {
+                        tarefas.status = StatusTarefa.CANCELADO
+                        tarefas.photo = R.drawable.tarefa_cancelada
+                    }
+                }
+            }
+
+            btnAtrasado?.setOnClickListener {
+                statusView.text = "Status: ATRASADO"
+                imgTarefa.setImageResource(R.drawable.tarefa_atrasada)
+
+                for (tarefas in Tarefas.BancoDelistasTarefas) {
+                    if (listaTarefas[index] == tarefas) {
+                        tarefas.status = StatusTarefa.ATRASADO
+                        tarefas.photo = R.drawable.tarefa_atrasada
+                    }
+                }
+
+            }
+
         }
-
-        btnPendente?.setOnClickListener {
-
-            statusView.text = "Status: PENDENTE"
-            imgTarefa.setImageResource(R.drawable.tarefa_pendente)
-        }
-
-        btnCancelado?.setOnClickListener {
-
-            statusView.text = "Status: CANCELADO"
-            imgTarefa.setImageResource(R.drawable.tarefa_cancelada)
-        }
-
-        btnAtrasado?.setOnClickListener {
-
-            statusView.text = "Status: ATRASADO"
-            imgTarefa.setImageResource(R.drawable.tarefa_atrasada)
-
-
-        }
-
     }
 }
 

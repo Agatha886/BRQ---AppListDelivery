@@ -15,7 +15,7 @@ class Tarefas(
     val pedido: Pedido,
     val obs: String,
     @DrawableRes
-    val photo: Int,
+    var photo: Int,
 
     ):Serializable {
     companion object{

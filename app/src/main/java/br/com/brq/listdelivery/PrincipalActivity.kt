@@ -64,6 +64,8 @@ class PrincipalActivity : AppCompatActivity(), ItemClickListener {
         if(Tarefas.newTarefa != null){
             adapter?.addItemLista(Tarefas.newTarefa!!)
         }
+        adapter?.notifyList()
+
     }
 
     fun carregarElementos() {
