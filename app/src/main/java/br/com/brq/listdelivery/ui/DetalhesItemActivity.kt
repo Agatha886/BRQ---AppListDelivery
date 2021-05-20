@@ -9,6 +9,7 @@ import br.com.brq.listdelivery.R
 import br.com.brq.listdelivery.model.AdapterRecyclerView
 import br.com.brq.listdelivery.model.StatusTarefa
 import br.com.brq.listdelivery.model.dataClasse.Tarefas
+import br.com.brq.listdelivery.model.dataClasse.Tarefas.Companion.listaTarefas
 
 class DetalhesItemActivity : AppCompatActivity() {
 
@@ -101,59 +102,31 @@ class DetalhesItemActivity : AppCompatActivity() {
     fun carregarEventos(index: Int) {
 
         btnEntregue?.setOnClickListener {
-            adapter?.setStatusEntregue(index)
 
-            println(adapter?.listaTarefas?.get(index))
-
-            adapter?.listaTarefas?.get(index)?.apply {
-                status = StatusTarefa.ENTREGUE
-            }
-            Tarefas.BancoDelistasTarefas[index].status = StatusTarefa.ENTREGUE
             statusView.text = "Status: ENTREGUE"
             imgTarefa.setImageResource(R.drawable.tarefa_entregue)
-            onRestart()
+            parentActivityIntent?.putExtra("entregue",StatusTarefa.ENTREGUE)
+            parentActivityIntent?.putExtra("id", Tarefas.BancoDelistasTarefas[index].id)
         }
 
         btnPendente?.setOnClickListener {
-            adapter?.setStatusPendente(index)
 
-            println(adapter?.listaTarefas?.get(index))
-
-            adapter?.listaTarefas?.get(index)?.apply {
-                status = StatusTarefa.PENDENTE
-            }
-            Tarefas.BancoDelistasTarefas[index].status = StatusTarefa.PENDENTE
             statusView.text = "Status: PENDENTE"
             imgTarefa.setImageResource(R.drawable.tarefa_pendente)
-            onRestart()
         }
 
         btnCancelado?.setOnClickListener {
-            adapter?.setStatusCancelado(index)
 
-            println(adapter?.listaTarefas?.get(index))
-
-            adapter?.listaTarefas?.get(index)?.apply {
-                status = StatusTarefa.CANCELADO
-            }
-            Tarefas.BancoDelistasTarefas[index].status = StatusTarefa.CANCELADO
             statusView.text = "Status: CANCELADO"
             imgTarefa.setImageResource(R.drawable.tarefa_cancelada)
-            onRestart()
         }
 
         btnAtrasado?.setOnClickListener {
-            adapter?.setStatusAtrasado(index)
 
-            println(adapter?.listaTarefas?.get(index))
-
-            adapter?.listaTarefas?.get(index)?.apply {
-                status = StatusTarefa.ATRASADO
-            }
-            Tarefas.BancoDelistasTarefas[index].status = StatusTarefa.ATRASADO
             statusView.text = "Status: ATRASADO"
             imgTarefa.setImageResource(R.drawable.tarefa_atrasada)
-            onRestart()
+
+
         }
 
     }

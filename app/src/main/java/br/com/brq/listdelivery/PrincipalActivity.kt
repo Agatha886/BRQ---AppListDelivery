@@ -12,6 +12,7 @@ import br.com.brq.listdelivery.model.AdapterRecyclerView
 import br.com.brq.listdelivery.model.ItemClickListener
 import br.com.brq.listdelivery.model.StatusTarefa
 import br.com.brq.listdelivery.model.dataClasse.Tarefas
+import br.com.brq.listdelivery.model.dataClasse.Tarefas.Companion.listaTarefas
 import br.com.brq.listdelivery.model.dataClasse.User
 import br.com.brq.listdelivery.ui.CriarTarefaActivity
 import br.com.brq.listdelivery.ui.DetalhesItemActivity
@@ -22,7 +23,6 @@ class PrincipalActivity : AppCompatActivity(), ItemClickListener {
 
     var recyclerView: RecyclerView? = null
     var adapter: AdapterRecyclerView? = null
-    lateinit var listaTarefas: ArrayList<Tarefas>
 
     lateinit var textViewBemVindo: TextView
     lateinit var textViewSemTarefa: TextView
@@ -48,6 +48,8 @@ class PrincipalActivity : AppCompatActivity(), ItemClickListener {
 
         filtrarListaStatus()
 
+        intent.hasExtra("")
+
         AdapterRecyclerView(this, listaTarefas,this).let {
             adapter = it
             recyclerView?.adapter = it
@@ -59,9 +61,9 @@ class PrincipalActivity : AppCompatActivity(), ItemClickListener {
 
     override fun onRestart() {
         super.onRestart()
-            if(Tarefas.newTarefa != null){
-                adapter?.addItemLista(Tarefas.newTarefa!!)
-            }
+        if(Tarefas.newTarefa != null){
+            adapter?.addItemLista(Tarefas.newTarefa!!)
+        }
     }
 
     fun carregarElementos() {

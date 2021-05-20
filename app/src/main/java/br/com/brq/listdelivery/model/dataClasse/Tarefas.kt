@@ -21,6 +21,7 @@ class Tarefas(
     companion object{
         val BancoDelistasTarefas = ArrayList<Tarefas>()
         var newTarefa : Tarefas? = null
+        lateinit var listaTarefas: ArrayList<Tarefas>
 
         fun NovaTarefa(editTextNomeDoProduto: EditText, editTextDescricao:EditText, editTextDestinatario:EditText, editTextEndereco:EditText, editTextCpfDoCliente:EditText,
                        editTextData:EditText, editTextObs:EditText):Tarefas{
