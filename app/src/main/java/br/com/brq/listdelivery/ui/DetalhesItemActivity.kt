@@ -1,10 +1,15 @@
 package br.com.brq.listdelivery.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.ContactsContract
 import android.view.View
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import br.com.brq.listdelivery.LoginActivity
+import br.com.brq.listdelivery.PrincipalActivity
 import br.com.brq.listdelivery.R
 import br.com.brq.listdelivery.model.AdapterRecyclerView
 import br.com.brq.listdelivery.model.StatusTarefa
@@ -17,7 +22,6 @@ class DetalhesItemActivity : AppCompatActivity() {
     var btnAtrasado:   View? = null
     var btnCancelado: View? = null
     var btnPendente: View? = null
-    var adapter: AdapterRecyclerView? = null
 
     lateinit var imgTarefa : ImageView
     lateinit var tituloView: TextView
@@ -28,6 +32,8 @@ class DetalhesItemActivity : AppCompatActivity() {
     lateinit var enderecoView: TextView
     lateinit var descView: TextView
     lateinit var obsView: TextView
+    lateinit var btnAlterarStatus : Button
+    lateinit var btnSair : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -74,6 +80,8 @@ class DetalhesItemActivity : AppCompatActivity() {
         btnAtrasado = findViewById(R.id.buttonAtrasado)
         btnPendente = findViewById(R.id.buttonPendente)
         btnCancelado = findViewById(R.id.buttonCancelado)
+        btnAlterarStatus = findViewById(R.id.buttonAlterarTarefa)
+        btnSair = findViewById(R.id.btn_sair_detalhes)
 
         imgTarefa= findViewById(R.id.imageTarefaItem)
         tituloView = findViewById(R.id.tituloView)
@@ -92,53 +100,44 @@ class DetalhesItemActivity : AppCompatActivity() {
         btnEntregue?.setOnClickListener {
             statusView.text = "Status: ENTREGUE"
             imgTarefa.setImageResource(R.drawable.tarefa_entregue)
+            modificarStaus(listaTarefas[index],StatusTarefa.ENTREGUE,R.drawable.tarefa_entregue)
+        }
 
+        btnPendente?.setOnClickListener {
+            statusView.text = "Status: PENDENTE"
+            imgTarefa.setImageResource(R.drawable.tarefa_pendente)
+            modificarStaus(listaTarefas[index],StatusTarefa.PENDENTE,R.drawable.tarefa_pendente)
+
+        }
+
+         btnCancelado?.setOnClickListener {
+             statusView.text = "Status: CANCELADO"
+             imgTarefa.setImageResource(R.drawable.tarefa_cancelada)
+             modificarStaus(listaTarefas[index],StatusTarefa.CANCELADO,R.drawable.tarefa_cancelada)
+         }
+
+         btnAtrasado?.setOnClickListener {
+             statusView.text = "Status: ATRASADO"
+             imgTarefa.setImageResource(R.drawable.tarefa_atrasada)
+             modificarStaus(listaTarefas[index],StatusTarefa.ATRASADO,R.drawable.tarefa_atrasada)
+         }
+
+        btnSair.setOnClickListener {
+            val intentTelaPrincipal = Intent(this, PrincipalActivity::class.java)
+            startActivity(intentTelaPrincipal)
+        }
+
+    }
+
+    fun modificarStaus(tarefaIndex : Tarefas, statusTarefa: StatusTarefa, photo: Int){
+        btnAlterarStatus.setOnClickListener {
             for (tarefas in Tarefas.BancoDelistasTarefas) {
-                if (listaTarefas[index] == tarefas) {
-                    tarefas.status = StatusTarefa.ENTREGUE
-                    tarefas.photo = R.drawable.tarefa_entregue
+                if (tarefaIndex == tarefas) {
+                    tarefas.status = statusTarefa
+                    tarefas.photo = photo
                 }
             }
         }
-
-            btnPendente?.setOnClickListener {
-                statusView.text = "Status: PENDENTE"
-                imgTarefa.setImageResource(R.drawable.tarefa_pendente)
-
-                for (tarefas in Tarefas.BancoDelistasTarefas) {
-                    if (listaTarefas[index] == tarefas) {
-                        tarefas.status = StatusTarefa.PENDENTE
-                        tarefas.photo = R.drawable.tarefa_pendente
-                    }
-                }
-
-            }
-
-            btnCancelado?.setOnClickListener {
-                statusView.text = "Status: CANCELADO"
-                imgTarefa.setImageResource(R.drawable.tarefa_cancelada)
-
-                for (tarefas in Tarefas.BancoDelistasTarefas) {
-                    if (listaTarefas[index] == tarefas) {
-                        tarefas.status = StatusTarefa.CANCELADO
-                        tarefas.photo = R.drawable.tarefa_cancelada
-                    }
-                }
-            }
-
-            btnAtrasado?.setOnClickListener {
-                statusView.text = "Status: ATRASADO"
-                imgTarefa.setImageResource(R.drawable.tarefa_atrasada)
-
-                for (tarefas in Tarefas.BancoDelistasTarefas) {
-                    if (listaTarefas[index] == tarefas) {
-                        tarefas.status = StatusTarefa.ATRASADO
-                        tarefas.photo = R.drawable.tarefa_atrasada
-                    }
-                }
-
-            }
-
     }
 }
 

@@ -1,6 +1,7 @@
 package br.com.brq.listdelivery.ui
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -20,6 +21,7 @@ class CriarTarefaActivity : AppCompatActivity(){
     lateinit var editTextCpfDoCliente: EditText
     lateinit var editTextObs: EditText
     lateinit var btnCriarTarefa : Button
+    lateinit var btnSair : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +37,8 @@ class CriarTarefaActivity : AppCompatActivity(){
 
     fun CarregarElementos(){
         btnCriarTarefa = findViewById(R.id.button_criar_tarefa)
+        btnSair = findViewById(R.id.btn_sair_nova_tarefa)
+
         editTextData =findViewById(R.id.editTextData)
         editTextNomeDoProduto = findViewById(R.id.editTextNomeProduto)
         editTextDescricao = findViewById(R.id.editTextDescricao)
@@ -52,8 +56,14 @@ class CriarTarefaActivity : AppCompatActivity(){
                 addItemLista(Tarefas.NovaTarefa(editTextNomeDoProduto,editTextDescricao,editTextDestinatario,editTextEndereco,editTextCpfDoCliente,editTextData,editTextObs))
                 finish()
             } else {
-                Snackbar.make(findViewById(R.id.CriarTarefaLayout),"Os espaços não vem estar em branco",Snackbar.LENGTH_SHORT).show()
+                Snackbar.make(findViewById(R.id.CriarTarefaLayout),"Todos os espaços devem ser Preenchidos!!",Snackbar.LENGTH_SHORT).setBackgroundTint(getResources().getColor(R.color.color_cancelada))
+                    .setTextColor(Color.WHITE)
+                    .show()
             }
+        }
+        btnSair.setOnClickListener {
+            val intentTelaPrincipal = Intent(this, PrincipalActivity::class.java)
+            startActivity(intentTelaPrincipal)
         }
     }
 

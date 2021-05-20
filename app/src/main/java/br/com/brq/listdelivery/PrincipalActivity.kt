@@ -63,6 +63,7 @@ class PrincipalActivity : AppCompatActivity(), ItemClickListener {
         super.onRestart()
         if(Tarefas.newTarefa != null){
             adapter?.addItemLista(Tarefas.newTarefa!!)
+            Tarefas.newTarefa = null
         }
         adapter?.notifyList()
 
