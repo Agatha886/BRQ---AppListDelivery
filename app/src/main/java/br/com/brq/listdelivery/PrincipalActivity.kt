@@ -169,6 +169,7 @@ class PrincipalActivity : AppCompatActivity(), ItemClickListener {
             }
         }
         adapter?.remoteItem(index)
+        mensagemSemTarefas(listaTarefas)
     }
 
 }

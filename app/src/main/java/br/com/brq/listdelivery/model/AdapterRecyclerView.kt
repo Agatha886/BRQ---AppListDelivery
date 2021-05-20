@@ -24,8 +24,6 @@ class AdapterRecyclerView(val context: Context, val listaTarefas: ArrayList<Tare
                 holder.textViewStatus.text = it?.status.toString()
                 holder.textViewData.text = it?.dataDeEntrega
                 holder.textViewNomeProduto.text = "Produto: ${it?.pedido?.nomeDoProduto}"
-//                holder.textViewNomeCliente.text = "Nome: ${it?.pedido?.destinatario}"
-//                holder.textViewCpfCliente.text = "CPF: ${it?.pedido?.cpfDoDestinatario}"
                 holder.imgTarefa.setImageResource(it.photo)
         }
     }
@@ -49,6 +47,7 @@ class AdapterRecyclerView(val context: Context, val listaTarefas: ArrayList<Tare
         listaTarefas.removeAt(index)
         notifyList()
     }
+
 
     fun setStatusEntregue(index: Int){
         listaTarefas[index].status = StatusTarefa.ENTREGUE
