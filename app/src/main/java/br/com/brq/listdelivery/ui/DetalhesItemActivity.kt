@@ -99,6 +99,7 @@ class DetalhesItemActivity : AppCompatActivity() {
                     tarefas.photo = R.drawable.tarefa_entregue
                 }
             }
+        }
 
             btnPendente?.setOnClickListener {
                 statusView.text = "Status: PENDENTE"
@@ -138,7 +139,6 @@ class DetalhesItemActivity : AppCompatActivity() {
 
             }
 
-        }
     }
 }
 
