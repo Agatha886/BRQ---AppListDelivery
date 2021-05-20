@@ -48,9 +48,27 @@ class AdapterRecyclerView(val context: Context, val listaTarefas: ArrayList<Tare
         notifyList()
     }
 
+    fun setStatusEntregue(id: Int){
 
-    fun setStatusEntregue(index: Int){
-        listaTarefas[index].status = StatusTarefa.ENTREGUE
+        var tarefaStatusNovo = listaTarefas.find {
+            (it.id == id)
+        }
+        tarefaStatusNovo?.status = StatusTarefa.ENTREGUE
+        notifyList()
+    }
+
+    fun setStatusPendente(index: Int){
+        listaTarefas[index].status = StatusTarefa.PENDENTE
+        notifyList()
+    }
+
+    fun setStatusCancelado(index: Int){
+        listaTarefas[index].status = StatusTarefa.CANCELADO
+        notifyList()
+    }
+
+    fun setStatusAtrasado(index: Int){
+        listaTarefas[index].status = StatusTarefa.ATRASADO
         notifyList()
     }
 

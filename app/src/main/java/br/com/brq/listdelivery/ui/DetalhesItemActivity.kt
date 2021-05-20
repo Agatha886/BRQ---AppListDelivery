@@ -8,6 +8,8 @@ import android.widget.TextView
 import br.com.brq.listdelivery.R
 import br.com.brq.listdelivery.model.AdapterRecyclerView
 import br.com.brq.listdelivery.model.StatusTarefa
+import br.com.brq.listdelivery.model.dataClasse.Tarefas
+import br.com.brq.listdelivery.model.dataClasse.Tarefas.Companion.listaTarefas
 
 class DetalhesItemActivity : AppCompatActivity() {
 
@@ -100,13 +102,30 @@ class DetalhesItemActivity : AppCompatActivity() {
     fun carregarEventos(index: Int) {
 
         btnEntregue?.setOnClickListener {
-            adapter?.setStatusEntregue(index)
 
-            println(adapter?.listaTarefas?.get(index))
+            statusView.text = "Status: ENTREGUE"
+            imgTarefa.setImageResource(R.drawable.tarefa_entregue)
+            parentActivityIntent?.putExtra("entregue",StatusTarefa.ENTREGUE)
+            parentActivityIntent?.putExtra("id", Tarefas.BancoDelistasTarefas[index].id)
+        }
 
-            adapter?.listaTarefas?.get(index)?.apply {
-                status = StatusTarefa.ENTREGUE
-            }
+        btnPendente?.setOnClickListener {
+
+            statusView.text = "Status: PENDENTE"
+            imgTarefa.setImageResource(R.drawable.tarefa_pendente)
+        }
+
+        btnCancelado?.setOnClickListener {
+
+            statusView.text = "Status: CANCELADO"
+            imgTarefa.setImageResource(R.drawable.tarefa_cancelada)
+        }
+
+        btnAtrasado?.setOnClickListener {
+
+            statusView.text = "Status: ATRASADO"
+            imgTarefa.setImageResource(R.drawable.tarefa_atrasada)
+
 
         }
 

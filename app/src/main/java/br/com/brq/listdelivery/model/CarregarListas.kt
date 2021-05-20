@@ -19,10 +19,9 @@ class CarregarListas {
         Pedido.listasPedido.add(Pedido("Fone de Ouvido Bluetooth","Fone de Ouvido Bluetooth JBL Tune 115BT - Preto","Fátima do Carmo","R. Dr. Tomás Alves, 87 - Vila Mariana, São Paulo - SP, 04017-070","7418936625"))
         Pedido.listasPedido.add(Pedido("Jogo de Soquetes","Jogo de Soquetes Tramontina em Aço Cromo Vanádio - 22 Peças","Rodrigo da Silva Antônio","R. Dr. Tomás Alves, 87 - Vila Mariana, São Paulo - SP, 04017-070","7418936625"))
 //  Tarefas:
-        Tarefas.BancoDelistasTarefas.add(Tarefas(StatusTarefa.PENDENTE, User.listaUser[0],"2021-01-01",Pedido.listasPedido[0],"",R.drawable.tarefa_pendente))
-        Tarefas.BancoDelistasTarefas.add(Tarefas(StatusTarefa.ATRASADO, User.listaUser[1],"2021-01-02",Pedido.listasPedido[1],"",R.drawable.tarefa_atrasada))
-        Tarefas.BancoDelistasTarefas.add(Tarefas(StatusTarefa.CANCELADO, User.listaUser[1],"2021-01-01",Pedido.listasPedido[2],"Produto com defeito",R.drawable.tarefa_cancelada))
-        Tarefas.BancoDelistasTarefas.add(Tarefas(StatusTarefa.ENTREGUE, User.listaUser[0],"2021-01-02",Pedido.listasPedido[3], "",R.drawable.tarefa_entregue))
-
+        Tarefas.BancoDelistasTarefas.add(Tarefas(1,StatusTarefa.PENDENTE, User.listaUser[0],"2021-01-01",Pedido.listasPedido[0],"",R.drawable.tarefa_pendente))
+        Tarefas.BancoDelistasTarefas.add(Tarefas(2,StatusTarefa.ATRASADO, User.listaUser[1],"2021-01-02",Pedido.listasPedido[1],"",R.drawable.tarefa_atrasada))
+        Tarefas.BancoDelistasTarefas.add(Tarefas(3,StatusTarefa.CANCELADO, User.listaUser[1],"2021-01-01",Pedido.listasPedido[2],"Produto com defeito",R.drawable.tarefa_cancelada))
+        Tarefas.BancoDelistasTarefas.add(Tarefas(4,StatusTarefa.ENTREGUE, User.listaUser[0],"2021-01-02",Pedido.listasPedido[3], "",R.drawable.tarefa_entregue))
     }
 }

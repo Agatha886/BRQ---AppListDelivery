@@ -7,6 +7,8 @@ import br.com.brq.listdelivery.model.StatusTarefa
 import java.io.Serializable
 
 class Tarefas(
+
+    var id: Int,
     var status: StatusTarefa,
     var User: User,
     val dataDeEntrega: String,
@@ -19,6 +21,7 @@ class Tarefas(
     companion object{
         val BancoDelistasTarefas = ArrayList<Tarefas>()
         var newTarefa : Tarefas? = null
+        lateinit var listaTarefas: ArrayList<Tarefas>
 
         fun NovaTarefa(editTextNomeDoProduto: EditText, editTextDescricao:EditText, editTextDestinatario:EditText, editTextEndereco:EditText, editTextCpfDoCliente:EditText,
                        editTextData:EditText, editTextObs:EditText):Tarefas{
@@ -31,6 +34,8 @@ class Tarefas(
             )
 
             newTarefa = Tarefas(
+
+                id = maiorId(),
                 status = StatusTarefa.PENDENTE,
                 pedido = pedido,
                 dataDeEntrega = editTextData.text.toString() ,
@@ -39,6 +44,18 @@ class Tarefas(
                 photo = R.drawable.tarefa_pendente)
 
             return newTarefa as Tarefas
+        }
+
+
+        fun maiorId():Int{
+            var maior = 0
+
+            for (tarefa in BancoDelistasTarefas){
+                if(tarefa.id > maior){
+                    maior = tarefa.id
+                }
+            }
+            return maior+1
         }
 
     }
